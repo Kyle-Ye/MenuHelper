@@ -13,5 +13,8 @@ struct FinderHelperApp: App {
         WindowGroup {
             ContentView()
         }
+//        Settings {
+//            SettingView()
+//        }
     }
 }
