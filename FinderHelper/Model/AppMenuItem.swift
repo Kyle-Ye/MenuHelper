@@ -42,3 +42,7 @@ extension AppMenuItem {
 }
 
 extension AppMenuItem: Equatable {}
+
+extension AppMenuItem: Identifiable {
+    var id: String { name }
+}
