@@ -9,14 +9,7 @@ import AppKit
 import Foundation
 
 struct AppMenuItem {
-    init?(bundleIdentifier identifier: String) {
-        guard let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: identifier) else {
-            return nil
-        }
-        self.init(appURL: url)
-    }
-
-    private init(appURL url: URL) {
+    init(appURL url: URL) {
         self.url = url
         icon = NSWorkspace.shared.icon(forFile: url.path)
         itemName = url.deletingPathExtension().lastPathComponent
@@ -25,6 +18,7 @@ struct AppMenuItem {
     var url: URL
     var icon: NSImage
     var itemName: String
+    var enabled: Bool = true
 
     var appName: String {
         url.deletingPathExtension().lastPathComponent
@@ -36,6 +30,13 @@ struct AppMenuItem {
 }
 
 extension AppMenuItem {
+    init?(bundleIdentifier identifier: String) {
+        guard let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: identifier) else {
+            return nil
+        }
+        self.init(appURL: url)
+    }
+
     static let xcode = AppMenuItem(bundleIdentifier: "com.apple.dt.Xcode")
     static let vscode = AppMenuItem(bundleIdentifier: "com.microsoft.VSCode")
     static let terminal = AppMenuItem(bundleIdentifier: "com.apple.Terminal")

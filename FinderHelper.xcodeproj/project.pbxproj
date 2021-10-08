@@ -22,6 +22,8 @@
 		27952049268B6A2D00492ABF /* AppMenuItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952048268B6A2D00492ABF /* AppMenuItemStore.swift */; };
 		27AC028726896D31000CCE63 /* AppMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AC028626896D31000CCE63 /* AppMenuItem.swift */; };
 		27AC028826896D31000CCE63 /* AppMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AC028626896D31000CCE63 /* AppMenuItem.swift */; };
+		27AEF644270FEC8B0014739C /* CheckmarkStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AEF643270FEC8B0014739C /* CheckmarkStyle.swift */; };
+		27CA03AB270F53E0007BEC40 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 27CA03AA270F53E0007BEC40 /* Preferences */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,7 @@
 		27952044268B5F1E00492ABF /* AboutSettingTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSettingTab.swift; sourceTree = "<group>"; };
 		27952048268B6A2D00492ABF /* AppMenuItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuItemStore.swift; sourceTree = "<group>"; };
 		27AC028626896D31000CCE63 /* AppMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuItem.swift; sourceTree = "<group>"; };
+		27AEF643270FEC8B0014739C /* CheckmarkStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkStyle.swift; sourceTree = "<group>"; };
 		27C5B8192688D24B00AFCF9D /* FinderHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinderHelper.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27CA03AB270F53E0007BEC40 /* Preferences in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +165,7 @@
 			children = (
 				2795203E268B5D3600492ABF /* AppMenuItemEditor.swift */,
 				2795203C268B5C1D00492ABF /* SettingView */,
+				27AEF643270FEC8B0014739C /* CheckmarkStyle.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +204,9 @@
 				2781C5962688A4540042B453 /* PBXTargetDependency */,
 			);
 			name = FinderHelper;
+			packageProductDependencies = (
+				27CA03AA270F53E0007BEC40 /* Preferences */,
+			);
 			productName = FinderHelper;
 			productReference = 2781A6252688A0260042B453 /* FinderHelper.app */;
 			productType = "com.apple.product-type.application";
@@ -250,6 +258,7 @@
 			);
 			mainGroup = 2781A61C2688A0260042B453;
 			packageReferences = (
+				27CA03A9270F53E0007BEC40 /* XCRemoteSwiftPackageReference "Preferences" */,
 			);
 			productRefGroup = 2781A6262688A0260042B453 /* Products */;
 			projectDirPath = "";
@@ -294,6 +303,7 @@
 				2795203B268B5B7E00492ABF /* SettingView.swift in Sources */,
 				2781A6292688A0260042B453 /* FinderHelperApp.swift in Sources */,
 				27AC028726896D31000CCE63 /* AppMenuItem.swift in Sources */,
+				27AEF644270FEC8B0014739C /* CheckmarkStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +598,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		27CA03A9270F53E0007BEC40 /* XCRemoteSwiftPackageReference "Preferences" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Preferences.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		27CA03AA270F53E0007BEC40 /* Preferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27CA03A9270F53E0007BEC40 /* XCRemoteSwiftPackageReference "Preferences" */;
+			productName = Preferences;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2781A61D2688A0260042B453 /* Project object */;
 }

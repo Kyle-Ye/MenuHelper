@@ -40,7 +40,7 @@ struct ContentView: View {
                 logger.notice("Open Preferences Panel")
                 NSApplication.shared.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
             } label: {
-                Text("Open Preferences Panel")
+                Text("Open Preferences Panel...")
             }
         }.frame(width: 425, height: 325)
     }
