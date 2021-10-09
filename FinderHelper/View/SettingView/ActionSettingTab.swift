@@ -14,14 +14,31 @@ struct ActionSettingTab: View {
 
     var body: some View {
         Preferences.Container(contentWidth: 450.0) {
-            itemsSection
-            buttonSection
+            appItemSection
+            actionItemSection
         }
     }
 
-    var itemsSection: Preferences.Section {
+    var appItemSection: Preferences.Section {
         Preferences.Section(bottomDivider: true, verticalAlignment: .top) {
-            Text("Actions")
+            VStack {
+                Text("Application Items")
+                Spacer()
+                Button {
+                    let panel = NSOpenPanel()
+                    panel.allowsMultipleSelection = true
+                    panel.allowedContentTypes = [.application]
+                    panel.canChooseDirectories = false
+                    panel.directoryURL = URL(fileURLWithPath: "/Applications/")
+                    if panel.runModal() == .OK {
+                        let items = panel.urls.map { AppMenuItem(appURL: $0) }
+                        store.appendItems(items)
+                    }
+                } label: {
+                    Image(systemName: "plus.app")
+                    Text("Add Application")
+                }
+            }
         } content: {
             List {
                 ForEach(store.appItems) { item in
@@ -50,7 +67,25 @@ struct ActionSettingTab: View {
                         store.insertItems(items, at: index)
                     }
                 }
-                Divider()
+            }
+            .background(.background)
+        }
+    }
+
+    var actionItemSection: Preferences.Section {
+        Preferences.Section {
+            VStack {
+                Text("Action Items")
+                Spacer()
+
+                Button {
+                    store.appendItem(ActionMenuItem.copyPath)
+                } label: {
+                    Text("Add Copy Path")
+                }
+            }
+        } content: {
+            List {
                 ForEach(store.actionItems) { item in
                     HStack {
                         Checkmark(isOn: item.enabled)
@@ -60,35 +95,7 @@ struct ActionSettingTab: View {
                     }
                 }
                 .onDelete(perform: store.deleteActionItems(offsets:))
-            }
-            .background(.background)
-        }
-    }
-
-    var buttonSection: Preferences.Section {
-        Preferences.Section {
-            EmptyView()
-        } content: {
-            HStack {
-                Button {
-                    let panel = NSOpenPanel()
-                    panel.allowsMultipleSelection = true
-                    panel.allowedContentTypes = [.application]
-                    panel.canChooseDirectories = false
-                    panel.directoryURL = URL(fileURLWithPath: "/Applications/")
-                    if panel.runModal() == .OK {
-                        let items = panel.urls.map { AppMenuItem(appURL: $0) }
-                        store.appendItems(items)
-                    }
-                } label: {
-                    Image(systemName: "plus.app")
-                    Text("Add Application")
-                }
-                Button {
-                    store.appendItem(ActionMenuItem.copyPath)
-                } label: {
-                    Text("Add Copy Path")
-                }
+                .onMove(perform: store.moveActionItems(from:to:))
             }
         }
     }

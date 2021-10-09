@@ -98,6 +98,13 @@ class MenuItemStore: ObservableObject {
         try? save()
     }
 
+    func moveActionItems(from source: IndexSet, to destination: Int) {
+        withAnimation {
+            actionItems.move(fromOffsets: source, toOffset: destination)
+        }
+        try? save()
+    }
+
     // MARK: - Get Item
 
     func getAppItem(name: String) -> AppMenuItem? {
