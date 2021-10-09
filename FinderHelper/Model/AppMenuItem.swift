@@ -15,8 +15,8 @@ struct AppMenuItem: MenuItem {
     }
 
     var url: URL
-    var icon: NSImage { NSWorkspace.shared.icon(forFile: url.path) }
     var itemName: String
+
     var enabled: Bool = true
 
     var appName: String {
@@ -25,6 +25,13 @@ struct AppMenuItem: MenuItem {
 
     var name: String {
         itemName.isEmpty ? appName : itemName
+    }
+
+    var icon: NSImage { NSWorkspace.shared.icon(forFile: url.path) }
+
+    static func == (lhs: AppMenuItem, rhs: AppMenuItem) -> Bool {
+        lhs.url == rhs.url &&
+            lhs.itemName == rhs.itemName
     }
 }
 
@@ -39,7 +46,9 @@ extension AppMenuItem {
     static let xcode = AppMenuItem(bundleIdentifier: "com.apple.dt.Xcode")
     static let vscode = AppMenuItem(bundleIdentifier: "com.microsoft.VSCode")
     static let terminal = AppMenuItem(bundleIdentifier: "com.apple.Terminal")
+    static let typora = AppMenuItem(bundleIdentifier: "abnerworks.Typora")
+    static let tower = AppMenuItem(bundleIdentifier: "com.fournova.Tower3")
     static var defaultApps: [AppMenuItem] {
-        [.xcode, .vscode, .terminal].compactMap { $0 }
+        [.terminal, .xcode, .vscode, .typora, .tower].compactMap { $0 }
     }
 }

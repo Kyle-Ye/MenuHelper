@@ -6,10 +6,26 @@
 //
 
 import SwiftUI
+// import Preferences
 
 struct SettingView: View {
     var body: some View {
         TabView {
+//            Preferences.Container(contentWidth: 450.0) {
+//                Preferences.Section(bottomDivider: true, verticalAlignment: .top) {
+//                    Text("Actions")
+//                } content: {
+//                    List {
+//                        ForEach(0 ..< 5) { index in
+//                            Text("\(index)")
+//                        }
+//                        .onInsert(of: [.fileURL]) { _, _ in
+//                        }
+//                    }
+//                }
+//            }
+//
+//            .tabItem { Label("General", systemImage: "wand.and.stars") }
             GeneralSettingTab()
                 .tabItem { Label("General", systemImage: "wand.and.stars") }
             ActionSettingTab(store: MenuItemStore())

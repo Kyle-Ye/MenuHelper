@@ -27,7 +27,6 @@ struct GeneralSettingTab: View {
                 Toggle(isOn: $showContextualMenuForItem) { Text("Show in contextual menu for item") }
                 Toggle(isOn: $showContextualMenuForContainer) { Text("Show in contextual menu for container") }
                 Toggle(isOn: $showContextualMenuForSidebar) { Text("Show in contextual menu for sidebar") }
-                // Add a reload button to kill finder process to reload the extension
             }
         }
     }

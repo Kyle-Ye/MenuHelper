@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol MenuItem: Equatable, Identifiable,Codable {
+protocol MenuItem: Hashable, Identifiable, Codable {
     var name: String { get }
     var enabled: Bool { get set }
 }
 
-extension MenuItem{
+extension MenuItem {
     var id: String { name }
 }

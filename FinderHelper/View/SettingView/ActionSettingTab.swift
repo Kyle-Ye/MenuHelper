@@ -10,7 +10,6 @@ import SwiftUI
 
 struct ActionSettingTab: View {
     @ObservedObject var store: MenuItemStore
-//    @State private var editItem: AppMenuItem?
     @State private var isDrogTargeted = false
 
     var body: some View {
@@ -25,51 +24,42 @@ struct ActionSettingTab: View {
             Text("Actions")
         } content: {
             List {
-                ForEach($store.appItems) { $item in
+                ForEach(store.appItems) { item in
                     HStack {
-                        Toggle(isOn: $item.enabled) { EmptyView() }.toggleStyle(.checkmark)
+                        Checkmark(isOn: item.enabled)
                         Image(nsImage: item.icon)
                         Text(item.name)
+                    }.onTapGesture {
+                        store.toggleItem(item)
                     }
-//                    .swipeActions(edge: .trailing) {
-//                        Button {
-//                            //                                    editItem = item
-//                        } label: {
-//                            Label("Edit", systemImage: "pencil")
-//                        }
-//
-//                        Button(role: .destructive) {
-//                            guard let index = store.items.firstIndex(of: item) else { return }
-//                            store.items.remove(at: index)
-//                        } label: {
-//                            Label("Delete", systemImage: "trash")
-//                        }
-//                    }
-//                    .sheet(item: $editItem, onDismiss: {
-//                        editItem = nil
-//                    }, content: { _ in
-//                        EmptyView()
-//                        AppMenuItemEditor(item: $editItem)
-//                    })
-                }.onInsert(of: [.fileURL]) { _, providers in
+                }
+                .onDelete(perform: store.deleteAppItems(offsets:))
+                .onMove(perform: store.moveAppItems(from:to:))
+                .onInsert(of: [.fileURL, .folder]) { index, providers in
                     Task {
+                        var items = [AppMenuItem]()
                         for provider in providers {
                             if let coding = try? await provider.loadItem(forTypeIdentifier: "public.file-url", options: nil),
                                let data = coding as? Data,
                                let urlString = String(data: data, encoding: .utf8),
                                let url = URL(string: urlString) {
                                 let item = AppMenuItem(appURL: url)
-                                store.appItems.append(item)
+                                items.append(item)
                             }
                         }
+                        store.insertItems(items, at: index)
                     }
                 }
-                ForEach($store.actionItems){$item in
+                Divider()
+                ForEach(store.actionItems) { item in
                     HStack {
-                        Toggle(isOn: $item.enabled) { EmptyView() }.toggleStyle(.checkmark)
+                        Checkmark(isOn: item.enabled)
                         Text(item.name)
+                    }.onTapGesture {
+                        store.toggleItem(item)
                     }
                 }
+                .onDelete(perform: store.deleteActionItems(offsets:))
             }
             .background(.background)
         }
