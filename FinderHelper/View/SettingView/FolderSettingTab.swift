@@ -5,12 +5,18 @@
 //  Created by Kyle on 2021/6/29.
 //
 
+import Preferences
 import SwiftUI
 
 struct FolderSettingTab: View {
     var body: some View {
-        AppMenuItemEditor(item: .constant(.vscode!))
-            .tabItem { Label("Menu", systemImage: "folder.badge.plus") }
+        Preferences.Container(contentWidth: 450) {
+            Preferences.Section {
+                Text("TODO:")
+            } content: {
+               Text("TODO")
+            }
+        }
     }
 }
 

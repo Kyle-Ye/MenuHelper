@@ -10,9 +10,12 @@ import SwiftUI
 struct SettingView: View {
     var body: some View {
         TabView {
-            ActionSettingTab(store: AppMenuItemStore())
+            GeneralSettingTab()
+                .tabItem { Label("General", systemImage: "wand.and.stars") }
+            ActionSettingTab(store: MenuItemStore())
                 .tabItem { Label("Action", systemImage: "terminal") }
-//            FolderSettingTab()
+            FolderSettingTab()
+                .tabItem { Label("Menu", systemImage: "folder.badge.plus") }
             AboutSettingTab()
                 .tabItem { Label("About", systemImage: "info.circle") }
         }

@@ -27,64 +27,77 @@ class FinderSync: FIFinderSync {
 
     // MARK: - Menu and toolbar item support
 
-    override var toolbarItemName: String {
-        return "FinderHelper"
-    }
+    override var toolbarItemName: String { showToolbarItemMenu ? "FinderHelper" : "" }
 
-    override var toolbarItemToolTip: String {
-        return "FinderHelper Menu"
-    }
+    override var toolbarItemToolTip: String { showToolbarItemMenu ? "FinderHelper Menu" : "" }
 
-    override var toolbarItemImage: NSImage {
-        let image = NSImage(systemSymbolName: "terminal", accessibilityDescription: "FinderHelper Menu")!
-        return image
-    }
+    override var toolbarItemImage: NSImage { showToolbarItemMenu ? NSImage(systemSymbolName: "terminal", accessibilityDescription: "FinderHelper Menu")! : NSImage() }
 
-    let store = AppMenuItemStore()
+    let store = MenuItemStore()
 
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
+        switch menuKind {
+        case .contextualMenuForItems:
+            if !showContextualMenuForItem { return NSMenu() }
+        case .contextualMenuForContainer:
+            if !showContextualMenuForContainer { return NSMenu() }
         // NOTE: contextualMenuForSidebar will not called since macOS Big Sur
+        case .contextualMenuForSidebar:
+            if !showContextualMenuForSidebar { return NSMenu() }
+        case .toolbarItemMenu:
+            if !showToolbarItemMenu { return NSMenu() }
+        @unknown default:
+            break
+        }
+
+        if storeNeedUpdate {
+            try? store.load()
+            storeNeedUpdate = false
+        }
+
         // Produce a menu for the extension.
         logger.notice("Create menu for \(menuKind.rawValue)")
         let menu = NSMenu(title: "FinderHelper")
         menu.showsStateColumn = true
-        for (index, item) in store.items.enumerated() {
+        for item in store.appItems.filter(\.enabled) {
             let menuItem = NSMenuItem()
             menuItem.target = self
             menuItem.title = "Open in \(item.name)"
-            menuItem.action = #selector(openUsingSender(_:))
-            menuItem.toolTip = "item.name"
-            menuItem.tag = index
+            menuItem.action = #selector(menuAction(_:))
+            menuItem.toolTip = "\(item.name)"
+            menuItem.tag = 0
             if menuKind == .toolbarItemMenu {
                 menuItem.image = item.icon
             }
             menu.addItem(menuItem)
         }
+        for item in store.actionItems.filter(\.enabled) {
+            let menuItem = NSMenuItem()
+            menuItem.target = self
+            menuItem.title = item.name
+            menuItem.action = #selector(menuAction(_:))
+            menuItem.toolTip = "\(item.name)"
+            menuItem.tag = 1
+            menu.addItem(menuItem)
+        }
         return menu
     }
 
-    @objc func openUsingSender(_ menuItem: NSMenuItem) {
+    @objc func menuAction(_ menuItem: NSMenuItem) {
         guard let targetURL = FIFinderSyncController.default().targetedURL(),
               let itemURLs = FIFinderSyncController.default().selectedItemURLs() else { return }
         logger.notice("Click menu \"\(menuItem.title, privacy: .public)\", index = \(menuItem.tag, privacy: .public), target = \(targetURL, privacy: .public), items = \(itemURLs, privacy: .public)]")
 
-        if let appURL = store.getAppURL(from: menuItem.tag) {
-            let urls = itemURLs.isEmpty ? [targetURL] : itemURLs
-            let config = NSWorkspace.OpenConfiguration()
-            config.promptsUserIfNeeded = true
-            NSWorkspace.shared.open(urls, withApplicationAt: appURL, configuration: config) { application, error in
-                if let error = error {
-                    logger.error("Error: \(error.localizedDescription)")
-                    return
-                }
-                if let application = application {
-                    if let path = application.bundleURL?.path,
-                       let identifier = application.bundleIdentifier,
-                       let date = application.launchDate {
-                        logger.notice("Success: open \(identifier, privacy: .public) app at \(path, privacy: .public) in \(date, privacy: .public)")
-                    }
-                }
-            }
+        let urls = itemURLs.isEmpty ? [targetURL] : itemURLs
+        switch menuItem.tag {
+        case 0:
+            let item = store.getAppItem(name: menuItem.title)
+            item?.menuClick(with: urls)
+        case 1:
+            let item = store.getActionItem(name: menuItem.title)
+            item?.menuClick(with: urls)
+        default:
+            break
         }
         //            let home = URL(fileURLWithPath: "\(NSHomeDirectory())/Downloads")
         //            let urls = [home]

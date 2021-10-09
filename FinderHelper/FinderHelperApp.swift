@@ -16,6 +16,6 @@ struct FinderHelperApp: App {
         Settings {
             SettingView()
         }
-        .windowToolbarStyle(.unifiedCompact)
+//        .windowToolbarStyle(.unifiedCompact)
     }
 }

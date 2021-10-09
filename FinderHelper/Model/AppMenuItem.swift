@@ -8,15 +8,14 @@
 import AppKit
 import Foundation
 
-struct AppMenuItem {
+struct AppMenuItem: MenuItem {
     init(appURL url: URL) {
         self.url = url
-        icon = NSWorkspace.shared.icon(forFile: url.path)
         itemName = url.deletingPathExtension().lastPathComponent
     }
 
     var url: URL
-    var icon: NSImage
+    var icon: NSImage { NSWorkspace.shared.icon(forFile: url.path) }
     var itemName: String
     var enabled: Bool = true
 
@@ -40,10 +39,7 @@ extension AppMenuItem {
     static let xcode = AppMenuItem(bundleIdentifier: "com.apple.dt.Xcode")
     static let vscode = AppMenuItem(bundleIdentifier: "com.microsoft.VSCode")
     static let terminal = AppMenuItem(bundleIdentifier: "com.apple.Terminal")
-}
-
-extension AppMenuItem: Equatable {}
-
-extension AppMenuItem: Identifiable {
-    var id: String { name }
+    static var defaultApps: [AppMenuItem] {
+        [.xcode, .vscode, .terminal].compactMap { $0 }
+    }
 }

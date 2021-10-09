@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		270857DE269449E800EB636C /* AppMenuItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952048268B6A2D00492ABF /* AppMenuItemStore.swift */; };
+		270857DE269449E800EB636C /* MenuItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952048268B6A2D00492ABF /* MenuItemStore.swift */; };
 		2781A6292688A0260042B453 /* FinderHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A6282688A0260042B453 /* FinderHelperApp.swift */; };
 		2781A62B2688A0260042B453 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A62A2688A0260042B453 /* ContentView.swift */; };
 		2781A62D2688A0260042B453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2781A62C2688A0260042B453 /* Assets.xcassets */; };
@@ -19,7 +19,14 @@
 		27952041268B5F0700492ABF /* FolderSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952040268B5F0700492ABF /* FolderSettingTab.swift */; };
 		27952043268B5F1100492ABF /* ActionSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952042268B5F1100492ABF /* ActionSettingTab.swift */; };
 		27952045268B5F1E00492ABF /* AboutSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952044268B5F1E00492ABF /* AboutSettingTab.swift */; };
-		27952049268B6A2D00492ABF /* AppMenuItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952048268B6A2D00492ABF /* AppMenuItemStore.swift */; };
+		27952049268B6A2D00492ABF /* MenuItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952048268B6A2D00492ABF /* MenuItemStore.swift */; };
+		279C37652711912F00436979 /* FinderSync+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279C376427118F2100436979 /* FinderSync+UserDefaults.swift */; };
+		279C37672711979600436979 /* GeneralSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279C37662711979600436979 /* GeneralSettingTab.swift */; };
+		279C37832711BDBF00436979 /* ActionMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279C37822711BDBF00436979 /* ActionMenuItem.swift */; };
+		279C37842711BDBF00436979 /* ActionMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279C37822711BDBF00436979 /* ActionMenuItem.swift */; };
+		279C37872711BE6400436979 /* MenuItemClickable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279C37852711BE6400436979 /* MenuItemClickable.swift */; };
+		279C37892711C9CD00436979 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279C37882711C9CD00436979 /* MenuItem.swift */; };
+		279C378B2711CB0E00436979 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279C37882711C9CD00436979 /* MenuItem.swift */; };
 		27AC028726896D31000CCE63 /* AppMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AC028626896D31000CCE63 /* AppMenuItem.swift */; };
 		27AC028826896D31000CCE63 /* AppMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AC028626896D31000CCE63 /* AppMenuItem.swift */; };
 		27AEF644270FEC8B0014739C /* CheckmarkStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AEF643270FEC8B0014739C /* CheckmarkStyle.swift */; };
@@ -65,7 +72,12 @@
 		27952040268B5F0700492ABF /* FolderSettingTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSettingTab.swift; sourceTree = "<group>"; };
 		27952042268B5F1100492ABF /* ActionSettingTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSettingTab.swift; sourceTree = "<group>"; };
 		27952044268B5F1E00492ABF /* AboutSettingTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSettingTab.swift; sourceTree = "<group>"; };
-		27952048268B6A2D00492ABF /* AppMenuItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuItemStore.swift; sourceTree = "<group>"; };
+		27952048268B6A2D00492ABF /* MenuItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemStore.swift; sourceTree = "<group>"; };
+		279C376427118F2100436979 /* FinderSync+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinderSync+UserDefaults.swift"; sourceTree = "<group>"; };
+		279C37662711979600436979 /* GeneralSettingTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingTab.swift; sourceTree = "<group>"; };
+		279C37822711BDBF00436979 /* ActionMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionMenuItem.swift; sourceTree = "<group>"; };
+		279C37852711BE6400436979 /* MenuItemClickable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemClickable.swift; sourceTree = "<group>"; };
+		279C37882711C9CD00436979 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		27AC028626896D31000CCE63 /* AppMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuItem.swift; sourceTree = "<group>"; };
 		27AEF643270FEC8B0014739C /* CheckmarkStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkStyle.swift; sourceTree = "<group>"; };
 		27C5B8192688D24B00AFCF9D /* FinderHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinderHelper.entitlements; sourceTree = "<group>"; };
@@ -144,6 +156,8 @@
 			children = (
 				2781C59C2688A7280042B453 /* FinderMenu.entitlements */,
 				2781C5922688A4540042B453 /* FinderSync.swift */,
+				279C376427118F2100436979 /* FinderSync+UserDefaults.swift */,
+				279C37852711BE6400436979 /* MenuItemClickable.swift */,
 				2781C5942688A4540042B453 /* Info.plist */,
 			);
 			path = FinderMenu;
@@ -153,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				2795203A268B5B7E00492ABF /* SettingView.swift */,
+				279C37662711979600436979 /* GeneralSettingTab.swift */,
 				27952042268B5F1100492ABF /* ActionSettingTab.swift */,
 				27952040268B5F0700492ABF /* FolderSettingTab.swift */,
 				27952044268B5F1E00492ABF /* AboutSettingTab.swift */,
@@ -163,8 +178,8 @@
 		2795203D268B5C2A00492ABF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2795203E268B5D3600492ABF /* AppMenuItemEditor.swift */,
 				2795203C268B5C1D00492ABF /* SettingView */,
+				2795203E268B5D3600492ABF /* AppMenuItemEditor.swift */,
 				27AEF643270FEC8B0014739C /* CheckmarkStyle.swift */,
 			);
 			path = View;
@@ -173,7 +188,9 @@
 		27952046268B6A0C00492ABF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				279C37882711C9CD00436979 /* MenuItem.swift */,
 				27AC028626896D31000CCE63 /* AppMenuItem.swift */,
+				279C37822711BDBF00436979 /* ActionMenuItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,7 +198,7 @@
 		27952047268B6A1200492ABF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				27952048268B6A2D00492ABF /* AppMenuItemStore.swift */,
+				27952048268B6A2D00492ABF /* MenuItemStore.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -295,11 +312,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				27952045268B5F1E00492ABF /* AboutSettingTab.swift in Sources */,
+				279C37672711979600436979 /* GeneralSettingTab.swift in Sources */,
 				27952043268B5F1100492ABF /* ActionSettingTab.swift in Sources */,
 				27952041268B5F0700492ABF /* FolderSettingTab.swift in Sources */,
 				2795203F268B5D3600492ABF /* AppMenuItemEditor.swift in Sources */,
 				2781A62B2688A0260042B453 /* ContentView.swift in Sources */,
-				27952049268B6A2D00492ABF /* AppMenuItemStore.swift in Sources */,
+				279C37892711C9CD00436979 /* MenuItem.swift in Sources */,
+				279C37832711BDBF00436979 /* ActionMenuItem.swift in Sources */,
+				27952049268B6A2D00492ABF /* MenuItemStore.swift in Sources */,
 				2795203B268B5B7E00492ABF /* SettingView.swift in Sources */,
 				2781A6292688A0260042B453 /* FinderHelperApp.swift in Sources */,
 				27AC028726896D31000CCE63 /* AppMenuItem.swift in Sources */,
@@ -311,9 +331,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				279C378B2711CB0E00436979 /* MenuItem.swift in Sources */,
 				2781C5932688A4540042B453 /* FinderSync.swift in Sources */,
+				279C37842711BDBF00436979 /* ActionMenuItem.swift in Sources */,
 				27AC028826896D31000CCE63 /* AppMenuItem.swift in Sources */,
-				270857DE269449E800EB636C /* AppMenuItemStore.swift in Sources */,
+				279C37872711BE6400436979 /* MenuItemClickable.swift in Sources */,
+				270857DE269449E800EB636C /* MenuItemStore.swift in Sources */,
+				279C37652711912F00436979 /* FinderSync+UserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
