@@ -5,6 +5,7 @@
 //  Created by Kyle on 2021/10/9.
 //
 
+import AppKit
 import Foundation
 
 struct ActionMenuItem: MenuItem {
@@ -22,8 +23,9 @@ extension ActionMenuItem {
 
     static let actions: [([URL]) -> Void] = [
         { urls in
-            // TODO: - Copy to clipborad
-            print(urls)
+            let board = NSPasteboard.general
+            board.clearContents()
+            board.setString(urls[0].path, forType: .string)
         }
     ]
 }
