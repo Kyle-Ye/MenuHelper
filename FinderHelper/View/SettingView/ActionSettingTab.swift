@@ -50,8 +50,8 @@ struct ActionSettingTab: View {
                         store.toggleItem(item)
                     }
                 }
-                .onDelete{ store.deleteAppItems(offsets: $0) }
-                .onMove{ store.moveAppItems(from: $0, to: $1) }
+                .onDelete { store.deleteAppItems(offsets: $0) }
+                .onMove { store.moveAppItems(from: $0, to: $1) }
                 .onInsert(of: [.fileURL, .folder]) { index, providers in
                     Task {
                         var items = [AppMenuItem]()
@@ -77,7 +77,6 @@ struct ActionSettingTab: View {
             VStack {
                 Text("Action Items")
                 Spacer()
-
                 Button {
                     store.appendItem(ActionMenuItem.copyPath)
                 } label: {
@@ -89,13 +88,17 @@ struct ActionSettingTab: View {
                 ForEach(store.actionItems) { item in
                     HStack {
                         Checkmark(isOn: item.enabled)
+                        Image(nsImage: item.icon)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 32, height: 32)
                         Text(item.name)
                     }.onTapGesture {
                         store.toggleItem(item)
                     }
                 }
-                .onDelete{ store.deleteActionItems(offsets: $0) }
-                .onMove{ store.moveActionItems(from: $0, to: $1) }
+                .onDelete { store.deleteActionItems(offsets: $0) }
+                .onMove { store.moveActionItems(from: $0, to: $1) }
             }
         }
     }

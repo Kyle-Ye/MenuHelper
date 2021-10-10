@@ -32,6 +32,7 @@
 		27AC028826896D31000CCE63 /* AppMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AC028626896D31000CCE63 /* AppMenuItem.swift */; };
 		27AEF644270FEC8B0014739C /* CheckmarkStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AEF643270FEC8B0014739C /* CheckmarkStyle.swift */; };
 		27CA03AB270F53E0007BEC40 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 27CA03AA270F53E0007BEC40 /* Preferences */; };
+		27F15ED2271293A00042944A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F15ED1271293A00042944A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		27AC028626896D31000CCE63 /* AppMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuItem.swift; sourceTree = "<group>"; };
 		27AEF643270FEC8B0014739C /* CheckmarkStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkStyle.swift; sourceTree = "<group>"; };
 		27C5B8192688D24B00AFCF9D /* FinderHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinderHelper.entitlements; sourceTree = "<group>"; };
+		27F15ED1271293A00042944A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				279C376427118F2100436979 /* FinderSync+UserDefaults.swift */,
 				279C37852711BE6400436979 /* MenuItemClickable.swift */,
 				2781C5942688A4540042B453 /* Info.plist */,
+				27F15ED1271293A00042944A /* Assets.xcassets */,
 			);
 			path = FinderMenu;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F15ED2271293A00042944A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -79,6 +79,9 @@ class FinderSync: FIFinderSync {
             menuItem.action = #selector(menuAction(_:))
             menuItem.toolTip = "\(item.name)"
             menuItem.tag = 1
+            if menuKind == .toolbarItemMenu {
+                menuItem.image = item.icon
+            }
             menu.addItem(menuItem)
         }
         return menu

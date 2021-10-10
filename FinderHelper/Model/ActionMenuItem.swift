@@ -16,6 +16,8 @@ struct ActionMenuItem: MenuItem {
     var name: String
     var enabled: Bool = true
     var actionIndex: Int
+    
+    var icon: NSImage { NSImage(named: "icon")! }
 }
 
 extension ActionMenuItem {
