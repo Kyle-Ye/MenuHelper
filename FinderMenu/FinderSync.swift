@@ -20,7 +20,8 @@ class FinderSync: FIFinderSync {
         if let pw = getpwuid(getuid()), let home = pw.pointee.pw_dir {
             let path = FileManager.default.string(withFileSystemRepresentation: home, length: strlen(home))
             let home = URL(fileURLWithPath: path)
-            FIFinderSyncController.default().directoryURLs = [home]
+            let application = URL(fileURLWithPath: "/Applications")
+            FIFinderSyncController.default().directoryURLs = [home, application]
             logger.notice("FIFinderSyncController directoryURLs: \(FIFinderSyncController.default().directoryURLs, privacy: .public)")
         }
     }
@@ -92,10 +93,10 @@ class FinderSync: FIFinderSync {
         switch menuItem.tag {
         case 0:
             let item = store.getAppItem(name: menuItem.title)
-            item?.menuClick(with: urls)
+            item?.menuClick(with: urls, in: store)
         case 1:
             let item = store.getActionItem(name: menuItem.title)
-            item?.menuClick(with: urls)
+            item?.menuClick(with: urls, in: store)
         default:
             break
         }

@@ -9,16 +9,32 @@ import AppKit
 import Foundation
 
 protocol MenuItemClickable {
-    func menuClick(with urls: [URL])
+    func menuClick(with urls: [URL], in store: MenuItemStore)
 }
 
 extension AppMenuItem: MenuItemClickable {
-    func menuClick(with urls: [URL]) {
+    func menuClick(with urls: [URL], in store: MenuItemStore) {
         let config = NSWorkspace.OpenConfiguration()
         config.promptsUserIfNeeded = true
         NSWorkspace.shared.open(urls, withApplicationAt: url, configuration: config) { application, error in
             if let error = error {
                 logger.error("Error: \(error.localizedDescription)")
+                DispatchQueue.main.async {
+                    let alert = NSAlert(error: error)
+                    alert.addButton(withTitle: "OK")
+                    alert.addButton(withTitle: "Remove app")
+                    switch alert.runModal() {
+                    case .alertFirstButtonReturn:
+                        logger.notice("Dismiss error with OK")
+                    case .alertSecondButtonReturn:
+                        logger.notice("Dismiss error with Remove app")
+                        if let index = store.appItems.firstIndex(of: self) {
+                            store.deleteAppItems(offsets: IndexSet(integer: index))
+                        }
+                    default:
+                        break
+                    }
+                }
                 return
             }
             if let application = application {
@@ -33,7 +49,7 @@ extension AppMenuItem: MenuItemClickable {
 }
 
 extension ActionMenuItem: MenuItemClickable {
-    func menuClick(with urls: [URL]) {
+    func menuClick(with urls: [URL], in store: MenuItemStore) {
         ActionMenuItem.actions[actionIndex](urls)
     }
 }

@@ -75,14 +75,14 @@ class MenuItemStore: ObservableObject {
 
     // MARK: - Delete Items
 
-    func deleteAppItems(offsets: IndexSet) {
+    @MainActor func deleteAppItems(offsets: IndexSet) {
         withAnimation {
             appItems.remove(atOffsets: offsets)
         }
         try? save()
     }
 
-    func deleteActionItems(offsets: IndexSet) {
+    @MainActor func deleteActionItems(offsets: IndexSet) {
         withAnimation {
             actionItems.remove(atOffsets: offsets)
         }
@@ -91,14 +91,14 @@ class MenuItemStore: ObservableObject {
 
     // MARK: - Remove Items
 
-    func moveAppItems(from source: IndexSet, to destination: Int) {
+    @MainActor func moveAppItems(from source: IndexSet, to destination: Int) {
         withAnimation {
             appItems.move(fromOffsets: source, toOffset: destination)
         }
         try? save()
     }
 
-    func moveActionItems(from source: IndexSet, to destination: Int) {
+    @MainActor func moveActionItems(from source: IndexSet, to destination: Int) {
         withAnimation {
             actionItems.move(fromOffsets: source, toOffset: destination)
         }

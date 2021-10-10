@@ -50,8 +50,8 @@ struct ActionSettingTab: View {
                         store.toggleItem(item)
                     }
                 }
-                .onDelete(perform: store.deleteAppItems(offsets:))
-                .onMove(perform: store.moveAppItems(from:to:))
+                .onDelete{ store.deleteAppItems(offsets: $0) }
+                .onMove{ store.moveAppItems(from: $0, to: $1) }
                 .onInsert(of: [.fileURL, .folder]) { index, providers in
                     Task {
                         var items = [AppMenuItem]()
@@ -94,8 +94,8 @@ struct ActionSettingTab: View {
                         store.toggleItem(item)
                     }
                 }
-                .onDelete(perform: store.deleteActionItems(offsets:))
-                .onMove(perform: store.moveActionItems(from:to:))
+                .onDelete{ store.deleteActionItems(offsets: $0) }
+                .onMove{ store.moveActionItems(from: $0, to: $1) }
             }
         }
     }
