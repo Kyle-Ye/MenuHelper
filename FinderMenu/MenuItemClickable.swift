@@ -46,7 +46,7 @@ extension AppMenuItem: MenuItemClickable {
                         panel.canChooseDirectories = true
                         panel.directoryURL = URL(fileURLWithPath: urls[0].path)
                         if panel.runModal() == .OK {
-                            folderStore.appendItems(panel.urls.map { FolderItem($0) })
+                            folderStore.appendItems(panel.urls.map { BookmarkFolderItem($0) })
                         }
                     }
                 }

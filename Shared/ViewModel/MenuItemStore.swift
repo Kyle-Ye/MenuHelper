@@ -24,57 +24,54 @@ class MenuItemStore: ObservableObject {
 
     // MARK: - Toggle Item
 
-    @MainActor func toggleItem<MenuItemType: MenuItem>(_ item: MenuItemType) {
-        if let app = item as? AppMenuItem,
-           let index = appItems.firstIndex(of: app) {
+    @MainActor func toggleItem(_ item: AppMenuItem) {
+        if let index = appItems.firstIndex(of: item) {
             appItems[index].enabled.toggle()
+            try? save()
         }
+    }
 
-        if let action = item as? ActionMenuItem,
-           let index = actionItems.firstIndex(of: action) {
+    @MainActor func toggleItem(_ item: ActionMenuItem) {
+        if let index = actionItems.firstIndex(of: item) {
             actionItems[index].enabled.toggle()
+            try? save()
         }
-
-        try? save()
     }
 
     // MARK: - Append Item
 
-    @MainActor func appendItems<MenuItemType: MenuItem>(_ items: [MenuItemType]) {
-        if let apps = items as? [AppMenuItem] {
-            appItems.append(contentsOf: apps.filter { !appItems.contains($0) })
-        }
-
-        if let actions = items as? [ActionMenuItem] {
-            actionItems.append(contentsOf: actions.filter { !actionItems.contains($0) })
-        }
+    @MainActor func appendItems(_ items: [AppMenuItem]) {
+        appItems.append(contentsOf: items.filter { !appItems.contains($0) })
         try? save()
     }
 
-    @MainActor func insertItems<MenuItemType: MenuItem>(_ items: [MenuItemType], at index: Int) {
-        if let apps = items as? [AppMenuItem] {
-            appItems.insert(contentsOf: apps.filter { !appItems.contains($0) }, at: index)
-        }
-
-        if let actions = items as? [ActionMenuItem] {
-            actionItems.insert(contentsOf: actions.filter { !actionItems.contains($0) }, at: index)
-        }
+    @MainActor func appendItems(_ items: [ActionMenuItem]) {
+        actionItems.append(contentsOf: items.filter { !actionItems.contains($0) })
         try? save()
     }
 
-    @MainActor func appendItem<MenuItemType: MenuItem>(_ item: MenuItemType) {
-        if let app = item as? AppMenuItem {
-            if !appItems.contains(app) {
-                appItems.append(app)
-            }
-        }
-
-        if let action = item as? ActionMenuItem {
-            if !actionItems.contains(action) {
-                actionItems.append(action)
-            }
-        }
+    @MainActor func insertItems(_ items: [AppMenuItem], at index: Int) {
+        appItems.insert(contentsOf: items.filter { !appItems.contains($0) }, at: index)
         try? save()
+    }
+
+    @MainActor func insertItems(_ items: [ActionMenuItem], at index: Int) {
+        actionItems.insert(contentsOf: items.filter { !actionItems.contains($0) }, at: index)
+        try? save()
+    }
+
+    @MainActor func appendItem(_ item: AppMenuItem) {
+        if !appItems.contains(item) {
+            appItems.append(item)
+            try? save()
+        }
+    }
+
+    @MainActor func appendItem(_ item: ActionMenuItem) {
+        if !actionItems.contains(item) {
+            actionItems.append(item)
+            try? save()
+        }
     }
 
     // MARK: - Delete Items
@@ -122,11 +119,11 @@ class MenuItemStore: ObservableObject {
     // MARK: - UserDefaults
 
     private func load() throws {
-        if let appItemsData = UserDefaults.group.data(forKey: "APP_ITEMS"),
-           let actionItemsData = UserDefaults.group.data(forKey: "ACTION_ITEMS") {
+        if let appItemData = UserDefaults.group.data(forKey: "APP_ITEMS"),
+           let actionItemData = UserDefaults.group.data(forKey: "ACTION_ITEMS") {
             let decoder = PropertyListDecoder()
-            var appItems = try decoder.decode([AppMenuItem].self, from: appItemsData)
-            let actionItems = try decoder.decode([ActionMenuItem].self, from: actionItemsData)
+            var appItems = try decoder.decode([AppMenuItem].self, from: appItemData)
+            let actionItems = try decoder.decode([ActionMenuItem].self, from: actionItemData)
             if appItems.isEmpty {
                 appItems = AppMenuItem.defaultApps
             }

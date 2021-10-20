@@ -20,14 +20,7 @@ class FinderSync: FIFinderSync {
         super.init()
         channel.setup()
         logger.notice("FinderSync() launched from \(Bundle.main.bundlePath, privacy: .public)")
-        // Get home directory
-        if let pw = getpwuid(getuid()), let home = pw.pointee.pw_dir {
-            let path = FileManager.default.string(withFileSystemRepresentation: home, length: strlen(home))
-            let home = URL(fileURLWithPath: path)
-            let application = URL(fileURLWithPath: "/Applications")
-            FIFinderSyncController.default().directoryURLs = [home, application]
-            logger.notice("FIFinderSyncController directoryURLs: \(FIFinderSyncController.default().directoryURLs, privacy: .public)")
-        }
+        FIFinderSyncController.default().directoryURLs = Set(folderStore.syncItems.map { URL(fileURLWithPath: $0.path) })
     }
 
     // MARK: - Menu and toolbar item support

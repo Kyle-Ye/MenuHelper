@@ -33,13 +33,15 @@ struct FolderSettingTab: View {
             }
         } content: {
             List {
-                ForEach(store.folderItems) { item in
+                ForEach(store.bookmarkItems) { item in
                     HStack {
                         Image(systemName: "folder")
                         Text(item.path)
                     }
-                }.onDelete { store.deleteItems(offsets: $0) }
-            }.background(.background)
+                }.onDelete { store.deleteBookmarkItems(offsets: $0) }
+            }
+            .background(.background)
+            .frame(minHeight: 200)
         }
     }
 
@@ -60,28 +62,36 @@ struct FolderSettingTab: View {
                         panel.directoryURL = URL(fileURLWithPath: "/Users")
                     }
                     if panel.runModal() == .OK {
-                        store.folderItems.append(contentsOf: panel.urls.map { FolderItem($0) })
+                        store.appendItems(panel.urls.map { SyncFolderItem($0) })
                     }
                 } label: { Label("Add Folder(s)", systemImage: "folder.badge.plus") }
             }
         } content: {
-            Text("TODO")
-                .onTapGesture {
-                    let path = "/Users/kyle/Postman"
-                    let config = NSWorkspace.OpenConfiguration()
-                    config.promptsUserIfNeeded = true
-                    NSWorkspace.shared.open([URL(fileURLWithPath: path)], withApplicationAt: URL(fileURLWithPath: "/Applications/Tower.app"), configuration: config) { _, _ in
+            List {
+                ForEach(store.syncItems) { item in
+                    HStack {
+                        Image(systemName: "folder")
+                        Text(item.path)
                     }
                 }
-//            List {
-//                ForEach(store.folderItems) { item in
-//                    HStack {
-//                        Image(systemName: "folder")
-//                        Text(item.path)
-//                    }
-//                }
-//            }
-//            .background(.background)
+                .onDelete { store.deleteSyncItems(offsets: $0) }
+                .onInsert(of: [.fileURL, .folder]) { index, providers in
+                    Task {
+                        var items = [SyncFolderItem]()
+                        for provider in providers {
+                            if let coding = try? await provider.loadItem(forTypeIdentifier: "public.file-url", options: nil),
+                               let data = coding as? Data,
+                               let urlString = String(data: data, encoding: .utf8),
+                               let url = URL(string: urlString) {
+                                let item = SyncFolderItem(url)
+                                items.append(item)
+                            }
+                        }
+                        store.insertItems(items, at: index)
+                    }
+                }
+            }
+            .background(.background)
         }
     }
 }

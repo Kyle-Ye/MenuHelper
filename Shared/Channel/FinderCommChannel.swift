@@ -39,18 +39,19 @@ class FinderCommChannel {
         } else {
             panel.directoryURL = URL(fileURLWithPath: "/Users")
         }
-        logger.error("The windows count \(NSApp.windows.count)")
         if panel.runModal() == .OK {
-            folderStore.appendItems(panel.urls.map { FolderItem($0) })
+            folderStore.appendItems(panel.urls.map { BookmarkFolderItem($0) })
             send(name: "AppRefreshFolderItems", data: nil)
         }
     }
     
     @MainActor @objc func refreshMenuItems(_ notification: Notification) {
+        logger.notice("Refresh menu items")
         menuStore.refresh()
     }
     
     @MainActor @objc func refreshFolderItems(_ notification: Notification) {
+        logger.notice("Refresh folder items")
         folderStore.refresh()
     }
 

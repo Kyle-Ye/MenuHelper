@@ -28,6 +28,7 @@ class AppCommChannel {
     }
 
     @MainActor @objc func refreshFolderItems(_ notification: Notification) {
+        logger.notice("Refresh folder items")
         folderItemStore?.refresh()
     }
 }

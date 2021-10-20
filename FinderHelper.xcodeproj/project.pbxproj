@@ -36,11 +36,15 @@
 		27AC028826896D31000CCE63 /* AppMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AC028626896D31000CCE63 /* AppMenuItem.swift */; };
 		27AEF644270FEC8B0014739C /* CheckmarkStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AEF643270FEC8B0014739C /* CheckmarkStyle.swift */; };
 		27CA03AB270F53E0007BEC40 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 27CA03AA270F53E0007BEC40 /* Preferences */; };
+		27CC3F2F272038F2000A6005 /* SyncFolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CC3F2E272038F2000A6005 /* SyncFolderItem.swift */; };
+		27CC3F30272038F2000A6005 /* SyncFolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CC3F2E272038F2000A6005 /* SyncFolderItem.swift */; };
+		27CC3F3227203924000A6005 /* FolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CC3F3127203924000A6005 /* FolderItem.swift */; };
+		27CC3F3327203924000A6005 /* FolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CC3F3127203924000A6005 /* FolderItem.swift */; };
 		27F15ED2271293A00042944A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F15ED1271293A00042944A /* Assets.xcassets */; };
 		27F15ED5271298690042944A /* FolderItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F15ED3271298650042944A /* FolderItemStore.swift */; };
 		27F15ED62712986B0042944A /* FolderItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F15ED3271298650042944A /* FolderItemStore.swift */; };
-		27F15ED9271299E50042944A /* FolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F15ED7271299580042944A /* FolderItem.swift */; };
-		27F15EDA271299E80042944A /* FolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F15ED7271299580042944A /* FolderItem.swift */; };
+		27F15ED9271299E50042944A /* BookmarkFolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F15ED7271299580042944A /* BookmarkFolderItem.swift */; };
+		27F15EDA271299E80042944A /* BookmarkFolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F15ED7271299580042944A /* BookmarkFolderItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,9 +107,11 @@
 		27AC028626896D31000CCE63 /* AppMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuItem.swift; sourceTree = "<group>"; };
 		27AEF643270FEC8B0014739C /* CheckmarkStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkStyle.swift; sourceTree = "<group>"; };
 		27C5B8192688D24B00AFCF9D /* FinderHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinderHelper.entitlements; sourceTree = "<group>"; };
+		27CC3F2E272038F2000A6005 /* SyncFolderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncFolderItem.swift; sourceTree = "<group>"; };
+		27CC3F3127203924000A6005 /* FolderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderItem.swift; sourceTree = "<group>"; };
 		27F15ED1271293A00042944A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27F15ED3271298650042944A /* FolderItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderItemStore.swift; sourceTree = "<group>"; };
-		27F15ED7271299580042944A /* FolderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderItem.swift; sourceTree = "<group>"; };
+		27F15ED7271299580042944A /* BookmarkFolderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkFolderItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,7 +243,9 @@
 				279C37882711C9CD00436979 /* MenuItem.swift */,
 				27AC028626896D31000CCE63 /* AppMenuItem.swift */,
 				279C37822711BDBF00436979 /* ActionMenuItem.swift */,
-				27F15ED7271299580042944A /* FolderItem.swift */,
+				27CC3F3127203924000A6005 /* FolderItem.swift */,
+				27F15ED7271299580042944A /* BookmarkFolderItem.swift */,
+				27CC3F2E272038F2000A6005 /* SyncFolderItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -368,13 +376,15 @@
 				27952045268B5F1E00492ABF /* AboutSettingTab.swift in Sources */,
 				279C37672711979600436979 /* GeneralSettingTab.swift in Sources */,
 				27952043268B5F1100492ABF /* ActionSettingTab.swift in Sources */,
+				27CC3F2F272038F2000A6005 /* SyncFolderItem.swift in Sources */,
 				27421A9C271FF10400A0BD28 /* StringExtension.swift in Sources */,
 				27952041268B5F0700492ABF /* FolderSettingTab.swift in Sources */,
 				27F15ED5271298690042944A /* FolderItemStore.swift in Sources */,
 				2781A62B2688A0260042B453 /* ContentView.swift in Sources */,
 				279C37892711C9CD00436979 /* MenuItem.swift in Sources */,
 				279C37832711BDBF00436979 /* ActionMenuItem.swift in Sources */,
-				27F15ED9271299E50042944A /* FolderItem.swift in Sources */,
+				27F15ED9271299E50042944A /* BookmarkFolderItem.swift in Sources */,
+				27CC3F3227203924000A6005 /* FolderItem.swift in Sources */,
 				27952049268B6A2D00492ABF /* MenuItemStore.swift in Sources */,
 				2795203B268B5B7E00492ABF /* SettingView.swift in Sources */,
 				2781A6292688A0260042B453 /* FinderHelperApp.swift in Sources */,
@@ -390,8 +400,10 @@
 				279C378B2711CB0E00436979 /* MenuItem.swift in Sources */,
 				2781C5932688A4540042B453 /* FinderSync.swift in Sources */,
 				279C37842711BDBF00436979 /* ActionMenuItem.swift in Sources */,
-				27F15EDA271299E80042944A /* FolderItem.swift in Sources */,
+				27CC3F30272038F2000A6005 /* SyncFolderItem.swift in Sources */,
+				27F15EDA271299E80042944A /* BookmarkFolderItem.swift in Sources */,
 				27AC028826896D31000CCE63 /* AppMenuItem.swift in Sources */,
+				27CC3F3327203924000A6005 /* FolderItem.swift in Sources */,
 				279C37872711BE6400436979 /* MenuItemClickable.swift in Sources */,
 				27F15ED62712986B0042944A /* FolderItemStore.swift in Sources */,
 				270857DE269449E800EB636C /* MenuItemStore.swift in Sources */,
