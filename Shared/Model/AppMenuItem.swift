@@ -20,7 +20,7 @@ struct AppMenuItem: MenuItem {
     var enabled: Bool = true
 
     var appName: String {
-        url.deletingPathExtension().lastPathComponent
+        FileManager.default.displayName(atPath: url.path)
     }
 
     var name: String {

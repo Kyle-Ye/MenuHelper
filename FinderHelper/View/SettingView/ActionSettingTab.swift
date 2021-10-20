@@ -76,10 +76,12 @@ struct ActionSettingTab: View {
             VStack {
                 Text("Action Items")
                 Spacer()
-                Button {
-                    store.appendItem(ActionMenuItem.copyPath)
-                } label: {
-                    Label("Add Copy Path", systemImage: "plus.app")
+                ForEach(ActionMenuItem.all){ item in
+                    Button {
+                        store.appendItem(item)
+                    } label: {
+                        Label("Add \(item.name)", systemImage: "plus.app")
+                    }
                 }
             }
         } content: {
