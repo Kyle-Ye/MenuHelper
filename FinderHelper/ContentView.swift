@@ -8,7 +8,7 @@
 import os.log
 import SwiftUI
 
-private let logger = Logger(subsystem: "top.kyleye.FinderHelper", category: "main")
+private let logger = Logger(subsystem: subsystem, category: "main")
 
 struct ContentView: View {
     var body: some View {

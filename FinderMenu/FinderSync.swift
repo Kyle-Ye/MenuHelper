@@ -10,7 +10,9 @@ import Darwin
 import FinderSync
 import os.log
 
-let logger = Logger(subsystem: "top.kyleye.FinderHelper.FinderMenu", category: "menu")
+private let logger = Logger(subsystem: subsystem, category: "menu")
+let menuStore = MenuItemStore()
+let folderStore = FolderItemStore()
 
 class FinderSync: FIFinderSync {
     override init() {
@@ -34,8 +36,6 @@ class FinderSync: FIFinderSync {
 
     override var toolbarItemImage: NSImage { showToolbarItemMenu ? NSImage(systemSymbolName: "terminal", accessibilityDescription: "FinderHelper Menu")! : NSImage() }
 
-    let store = MenuItemStore()
-
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
         switch menuKind {
         case .contextualMenuForItems:
@@ -51,16 +51,21 @@ class FinderSync: FIFinderSync {
             break
         }
 
-        if storeNeedUpdate {
-            try? store.load()
-            storeNeedUpdate = false
+        if menuItemStoreNeedUpdate {
+            try? menuStore.load()
+            menuItemStoreNeedUpdate = false
+        }
+        
+        if folderItemStoreNeedUpdate {
+            try? folderStore.load()
+            folderItemStoreNeedUpdate = false
         }
 
         // Produce a menu for the extension.
         logger.notice("Create menu for \(menuKind.rawValue)")
         let menu = NSMenu(title: "FinderHelper")
         menu.showsStateColumn = true
-        for item in store.appItems.filter(\.enabled) {
+        for item in menuStore.appItems.filter(\.enabled) {
             let menuItem = NSMenuItem()
             menuItem.target = self
             menuItem.title = "Open in \(item.name)"
@@ -72,7 +77,7 @@ class FinderSync: FIFinderSync {
             }
             menu.addItem(menuItem)
         }
-        for item in store.actionItems.filter(\.enabled) {
+        for item in menuStore.actionItems.filter(\.enabled) {
             let menuItem = NSMenuItem()
             menuItem.target = self
             menuItem.title = item.name
@@ -95,19 +100,13 @@ class FinderSync: FIFinderSync {
         let urls = itemURLs.isEmpty ? [targetURL] : itemURLs
         switch menuItem.tag {
         case 0:
-            let item = store.getAppItem(name: menuItem.title)
-            item?.menuClick(with: urls, in: store)
+            let item = menuStore.getAppItem(name: menuItem.title)
+            item?.menuClick(with: urls)
         case 1:
-            let item = store.getActionItem(name: menuItem.title)
-            item?.menuClick(with: urls, in: store)
+            let item = menuStore.getActionItem(name: menuItem.title)
+            item?.menuClick(with: urls)
         default:
             break
         }
-        //            let home = URL(fileURLWithPath: "\(NSHomeDirectory())/Downloads")
-        //            let urls = [home]
-        //            targetURL.startAccessingSecurityScopedResource()
-        //            NSWorkspace.shared.activateFileViewerSelecting([targetURL])
-        //            NSWorkspace.shared.selectFile(targetURL.path, inFileViewerRootedAtPath: "")
-        //            targetURL.stopAccessingSecurityScopedResource()ˆ
     }
 }

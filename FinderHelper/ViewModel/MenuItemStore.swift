@@ -89,7 +89,7 @@ class MenuItemStore: ObservableObject {
         try? save()
     }
 
-    // MARK: - Remove Items
+    // MARK: - Move Items
 
     @MainActor func moveAppItems(from source: IndexSet, to destination: Int) {
         withAnimation {
@@ -118,17 +118,18 @@ class MenuItemStore: ObservableObject {
     // MARK: - UserDefaults
 
     func load() throws {
-        let appItemsData = UserDefaults.group.data(forKey: "APP_ITEMS")!
-        let actionItemsData = UserDefaults.group.data(forKey: "ACTION_ITEMS")!
-        let decoder = PropertyListDecoder()
-        var appItems = try decoder.decode([AppMenuItem].self, from: appItemsData)
-        let actionItems = try decoder.decode([ActionMenuItem].self, from: actionItemsData)
-        if appItems.isEmpty {
-            appItems = AppMenuItem.defaultApps
-        }
-        DispatchQueue.main.async {
-            self.appItems = appItems
-            self.actionItems = actionItems
+        if let appItemsData = UserDefaults.group.data(forKey: "APP_ITEMS"),
+           let actionItemsData = UserDefaults.group.data(forKey: "ACTION_ITEMS") {
+            let decoder = PropertyListDecoder()
+            var appItems = try decoder.decode([AppMenuItem].self, from: appItemsData)
+            let actionItems = try decoder.decode([ActionMenuItem].self, from: actionItemsData)
+            if appItems.isEmpty {
+                appItems = AppMenuItem.defaultApps
+            }
+            DispatchQueue.main.async {
+                self.appItems = appItems
+                self.actionItems = actionItems
+            }
         }
     }
 
@@ -138,7 +139,7 @@ class MenuItemStore: ObservableObject {
         let actionItemsData = try encoder.encode(OrderedSet(actionItems))
         UserDefaults.group.set(appItemsData, forKey: "APP_ITEMS")
         UserDefaults.group.set(actionItemsData, forKey: "ACTION_ITEMS")
-        UserDefaults.group.set(true, forKey: "STORE_NEED_UPDATE")
+        UserDefaults.group.set(true, forKey: "MENU_ITEM_STORE_NEED_UPDATE")
     }
 }
 

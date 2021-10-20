@@ -24,12 +24,21 @@ extension FinderSync {
         UserDefaults.group.bool(forKey: "SHOW_TOOLBAR_ITEM_MENU")
     }
     
-    var storeNeedUpdate: Bool {
+    var menuItemStoreNeedUpdate: Bool {
         get {
-            UserDefaults.group.bool(forKey: "STORE_NEED_UPDATE")
+            UserDefaults.group.bool(forKey: "MENU_ITEM_STORE_NEED_UPDATE")
         }
         set {
-            UserDefaults.group.set(newValue, forKey: "STORE_NEED_UPDATE")
+            UserDefaults.group.set(newValue, forKey: "MENU_ITEM_STORE_NEED_UPDATE")
+        }
+    }
+    
+    var folderItemStoreNeedUpdate: Bool {
+        get {
+            UserDefaults.group.bool(forKey: "FOLDER_ITEM_STORE_NEED_UPDATE")
+        }
+        set {
+            UserDefaults.group.set(newValue, forKey: "FOLDER_ITEM_STORE_NEED_UPDATE")
         }
     }
 }

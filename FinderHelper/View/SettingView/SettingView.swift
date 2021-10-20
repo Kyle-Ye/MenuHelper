@@ -30,7 +30,7 @@ struct SettingView: View {
                 .tabItem { Label("General", systemImage: "wand.and.stars") }
             ActionSettingTab(store: MenuItemStore())
                 .tabItem { Label("Action", systemImage: "terminal") }
-            FolderSettingTab()
+            FolderSettingTab(store: FolderItemStore())
                 .tabItem { Label("Menu", systemImage: "folder.badge.plus") }
             AboutSettingTab()
                 .tabItem { Label("About", systemImage: "info.circle") }

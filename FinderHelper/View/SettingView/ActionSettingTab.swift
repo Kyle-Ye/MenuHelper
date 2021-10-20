@@ -35,8 +35,7 @@ struct ActionSettingTab: View {
                         store.appendItems(items)
                     }
                 } label: {
-                    Image(systemName: "plus.app")
-                    Text("Add Application")
+                    Label("Add Application(s)", systemImage: "plus.app")
                 }
             }
         } content: {
@@ -80,7 +79,7 @@ struct ActionSettingTab: View {
                 Button {
                     store.appendItem(ActionMenuItem.copyPath)
                 } label: {
-                    Text("Add Copy Path")
+                    Label("Add Copy Path", systemImage: "plus.app")
                 }
             }
         } content: {
