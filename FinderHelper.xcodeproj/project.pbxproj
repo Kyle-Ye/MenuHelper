@@ -10,6 +10,10 @@
 		270857DE269449E800EB636C /* MenuItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952048268B6A2D00492ABF /* MenuItemStore.swift */; };
 		272986B92711FDAF00EBCCBF /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 272986B82711FDAF00EBCCBF /* OrderedCollections */; };
 		272986BB2711FDCD00EBCCBF /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 272986BA2711FDCD00EBCCBF /* OrderedCollections */; };
+		27421A97271FCB0E00A0BD28 /* AppCommChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27421A96271FCB0E00A0BD28 /* AppCommChannel.swift */; };
+		27421A9A271FCB1A00A0BD28 /* FinderCommChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27421A98271FCB1600A0BD28 /* FinderCommChannel.swift */; };
+		27421A9C271FF10400A0BD28 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27421A9B271FF10400A0BD28 /* StringExtension.swift */; };
+		27421A9D271FF10400A0BD28 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27421A9B271FF10400A0BD28 /* StringExtension.swift */; };
 		2781A6292688A0260042B453 /* FinderHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A6282688A0260042B453 /* FinderHelperApp.swift */; };
 		2781A62B2688A0260042B453 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A62A2688A0260042B453 /* ContentView.swift */; };
 		2781A62D2688A0260042B453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2781A62C2688A0260042B453 /* Assets.xcassets */; };
@@ -50,6 +54,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		27421AC12720083800A0BD28 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2781C5982688A4540042B453 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,6 +78,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		27421A96271FCB0E00A0BD28 /* AppCommChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommChannel.swift; sourceTree = "<group>"; };
+		27421A98271FCB1600A0BD28 /* FinderCommChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderCommChannel.swift; sourceTree = "<group>"; };
+		27421A9B271FF10400A0BD28 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		2781A6252688A0260042B453 /* MenuHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2781A6282688A0260042B453 /* FinderHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderHelperApp.swift; sourceTree = "<group>"; };
 		2781A62A2688A0260042B453 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +129,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27421A92271FCA9600A0BD28 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				27421A9B271FF10400A0BD28 /* StringExtension.swift */,
+				27421A93271FCABF00A0BD28 /* Channel */,
+				27952047268B6A1200492ABF /* ViewModel */,
+				27952046268B6A0C00492ABF /* Model */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		27421A93271FCABF00A0BD28 /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				27421A96271FCB0E00A0BD28 /* AppCommChannel.swift */,
+				27421A98271FCB1600A0BD28 /* FinderCommChannel.swift */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
 		276EF6472688C25F0046FE54 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +159,7 @@
 		2781A61C2688A0260042B453 = {
 			isa = PBXGroup;
 			children = (
+				27421A92271FCA9600A0BD28 /* Shared */,
 				2781A6272688A0260042B453 /* FinderHelper */,
 				2781C5912688A4540042B453 /* FinderMenu */,
 				2781A6262688A0260042B453 /* Products */,
@@ -144,8 +182,6 @@
 				27C5B8192688D24B00AFCF9D /* FinderHelper.entitlements */,
 				2781A6282688A0260042B453 /* FinderHelperApp.swift */,
 				2781A62A2688A0260042B453 /* ContentView.swift */,
-				27952046268B6A0C00492ABF /* Model */,
-				27952047268B6A1200492ABF /* ViewModel */,
 				2795203D268B5C2A00492ABF /* View */,
 				2781A62C2688A0260042B453 /* Assets.xcassets */,
 				2781A62E2688A0260042B453 /* Preview Content */,
@@ -166,8 +202,8 @@
 			children = (
 				2781C59C2688A7280042B453 /* FinderMenu.entitlements */,
 				2781C5922688A4540042B453 /* FinderSync.swift */,
-				279C376427118F2100436979 /* FinderSync+UserDefaults.swift */,
 				279C37852711BE6400436979 /* MenuItemClickable.swift */,
+				279C376427118F2100436979 /* FinderSync+UserDefaults.swift */,
 				2781C5942688A4540042B453 /* Info.plist */,
 				27F15ED1271293A00042944A /* Assets.xcassets */,
 			);
@@ -226,6 +262,7 @@
 				2781A6222688A0260042B453 /* Frameworks */,
 				2781A6232688A0260042B453 /* Resources */,
 				2781C5982688A4540042B453 /* Embed App Extensions */,
+				27421AC12720083800A0BD28 /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
@@ -268,7 +305,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					2781A6242688A0260042B453 = {
@@ -327,9 +364,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27421A97271FCB0E00A0BD28 /* AppCommChannel.swift in Sources */,
 				27952045268B5F1E00492ABF /* AboutSettingTab.swift in Sources */,
 				279C37672711979600436979 /* GeneralSettingTab.swift in Sources */,
 				27952043268B5F1100492ABF /* ActionSettingTab.swift in Sources */,
+				27421A9C271FF10400A0BD28 /* StringExtension.swift in Sources */,
 				27952041268B5F0700492ABF /* FolderSettingTab.swift in Sources */,
 				27F15ED5271298690042944A /* FolderItemStore.swift in Sources */,
 				2781A62B2688A0260042B453 /* ContentView.swift in Sources */,
@@ -357,6 +396,8 @@
 				27F15ED62712986B0042944A /* FolderItemStore.swift in Sources */,
 				270857DE269449E800EB636C /* MenuItemStore.swift in Sources */,
 				279C37652711912F00436979 /* FinderSync+UserDefaults.swift in Sources */,
+				27421A9D271FF10400A0BD28 /* StringExtension.swift in Sources */,
+				27421A9A271FCB1A00A0BD28 /* FinderCommChannel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

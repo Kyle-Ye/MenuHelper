@@ -17,6 +17,9 @@ struct FolderSettingTab: View {
             openSection
             syncSection
         }
+        .onAppear {
+            channel.setup(store: store)
+        }
     }
 
     var openSection: Preferences.Section {
@@ -25,19 +28,7 @@ struct FolderSettingTab: View {
                 Text("Open Permission Directories")
                 Spacer()
                 Button {
-                    let panel = NSOpenPanel()
-                    panel.allowsMultipleSelection = true
-                    panel.allowedContentTypes = [.folder]
-                    panel.canChooseDirectories = true
-                    if let pw = getpwuid(getuid()), let home = pw.pointee.pw_dir {
-                        let path = FileManager.default.string(withFileSystemRepresentation: home, length: strlen(home))
-                        panel.directoryURL = URL(fileURLWithPath: path)
-                    } else {
-                        panel.directoryURL = URL(fileURLWithPath: "/Users")
-                    }
-                    if panel.runModal() == .OK {
-                        store.appendItems(panel.urls.map { FolderItem($0) })
-                    }
+                    channel.send(name: "ChoosePermissionFolder", data: nil)
                 } label: { Label("Add Folder(s)", systemImage: "folder.badge.plus") }
             }
         } content: {

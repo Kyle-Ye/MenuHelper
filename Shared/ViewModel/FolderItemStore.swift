@@ -17,6 +17,10 @@ class FolderItemStore: ObservableObject {
     init() {
         try? load()
     }
+    
+    func refresh(){
+        try? load()
+    }
 
     // MARK: - Append Item
 
@@ -43,7 +47,7 @@ class FolderItemStore: ObservableObject {
 
     // MARK: - UserDefaults
 
-    func load() throws {
+    private func load() throws {
         if let folderItemsData = UserDefaults.group.data(forKey: "FOLDER_ITEMS") {
             let decoder = PropertyListDecoder()
             let folderItems = try decoder.decode([FolderItem].self, from: folderItemsData)
@@ -57,6 +61,6 @@ class FolderItemStore: ObservableObject {
         let encoder = PropertyListEncoder()
         let folderItemData = try encoder.encode(OrderedSet(folderItems))
         UserDefaults.group.set(folderItemData, forKey: "FOLDER_ITEMS")
-        UserDefaults.group.set(true, forKey: "FOLDER_ITEM_STORE_NEED_UPDATE")
+        channel.send(name: "RefreshFolderItems")
     }
 }

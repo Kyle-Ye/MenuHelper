@@ -10,13 +10,15 @@ import Darwin
 import FinderSync
 import os.log
 
-private let logger = Logger(subsystem: subsystem, category: "menu")
 let menuStore = MenuItemStore()
 let folderStore = FolderItemStore()
+let channel = FinderCommChannel()
+private let logger = Logger(subsystem: subsystem, category: "menu")
 
 class FinderSync: FIFinderSync {
     override init() {
         super.init()
+        channel.setup()
         logger.notice("FinderSync() launched from \(Bundle.main.bundlePath, privacy: .public)")
         // Get home directory
         if let pw = getpwuid(getuid()), let home = pw.pointee.pw_dir {
@@ -50,17 +52,6 @@ class FinderSync: FIFinderSync {
         @unknown default:
             break
         }
-
-        if menuItemStoreNeedUpdate {
-            try? menuStore.load()
-            menuItemStoreNeedUpdate = false
-        }
-        
-        if folderItemStoreNeedUpdate {
-            try? folderStore.load()
-            folderItemStoreNeedUpdate = false
-        }
-
         // Produce a menu for the extension.
         logger.notice("Create menu for \(menuKind.rawValue)")
         let menu = NSMenu(title: "FinderHelper")

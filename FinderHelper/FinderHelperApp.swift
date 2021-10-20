@@ -16,6 +16,7 @@ struct FinderHelperApp: App {
         Settings {
             SettingView()
         }
-//        .windowToolbarStyle(.unifiedCompact)
     }
 }
+
+let channel = AppCommChannel()

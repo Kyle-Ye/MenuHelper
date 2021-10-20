@@ -18,6 +18,10 @@ class MenuItemStore: ObservableObject {
         try? load()
     }
 
+    func refresh() {
+        try? load()
+    }
+
     // MARK: - Toggle Item
 
     @MainActor func toggleItem<MenuItemType: MenuItem>(_ item: MenuItemType) {
@@ -117,7 +121,7 @@ class MenuItemStore: ObservableObject {
 
     // MARK: - UserDefaults
 
-    func load() throws {
+    private func load() throws {
         if let appItemsData = UserDefaults.group.data(forKey: "APP_ITEMS"),
            let actionItemsData = UserDefaults.group.data(forKey: "ACTION_ITEMS") {
             let decoder = PropertyListDecoder()
@@ -139,7 +143,7 @@ class MenuItemStore: ObservableObject {
         let actionItemsData = try encoder.encode(OrderedSet(actionItems))
         UserDefaults.group.set(appItemsData, forKey: "APP_ITEMS")
         UserDefaults.group.set(actionItemsData, forKey: "ACTION_ITEMS")
-        UserDefaults.group.set(true, forKey: "MENU_ITEM_STORE_NEED_UPDATE")
+        channel.send(name: "RefreshMenuItems")
     }
 }
 

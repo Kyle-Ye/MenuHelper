@@ -16,5 +16,3 @@ protocol MenuItem: Hashable, Identifiable, Codable {
 extension MenuItem {
     var id: String { name }
 }
-
-let subsystem = Bundle.main.bundleIdentifier ?? ""
