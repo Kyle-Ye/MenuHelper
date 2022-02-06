@@ -25,11 +25,13 @@ class FinderSync: FIFinderSync {
 
     // MARK: - Menu and toolbar item support
 
-    override var toolbarItemName: String { showToolbarItemMenu ? "FinderHelper" : "" }
+    override var toolbarItemName: String { showToolbarItemMenu ? "MenuHelper" : "" }
 
-    override var toolbarItemToolTip: String { showToolbarItemMenu ? "FinderHelper Menu" : "" }
+    override var toolbarItemToolTip: String { showToolbarItemMenu ? "MenuHelper Menu" : "" }
 
-    override var toolbarItemImage: NSImage { showToolbarItemMenu ? NSImage(systemSymbolName: "terminal", accessibilityDescription: "FinderHelper Menu")! : NSImage() }
+    override var toolbarItemImage: NSImage {
+        showToolbarItemMenu ? NSImage(systemSymbolName: "terminal", accessibilityDescription: "MenuHelper Menu")! : NSImage()
+    }
 
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
         switch menuKind {
@@ -47,7 +49,7 @@ class FinderSync: FIFinderSync {
         }
         // Produce a menu for the extension.
         logger.notice("Create menu for \(menuKind.rawValue)")
-        let menu = NSMenu(title: "FinderHelper")
+        let menu = NSMenu(title: "MenuHelper")
         menu.showsStateColumn = true
         for item in menuStore.appItems.filter(\.enabled) {
             let menuItem = NSMenuItem()
