@@ -112,6 +112,7 @@
 		27F15ED1271293A00042944A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27F15ED3271298650042944A /* FolderItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderItemStore.swift; sourceTree = "<group>"; };
 		27F15ED7271299580042944A /* BookmarkFolderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkFolderItem.swift; sourceTree = "<group>"; };
+		AE5F668B27B1762C0043669D /* MenuHelper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MenuHelper-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +166,7 @@
 		2781A61C2688A0260042B453 = {
 			isa = PBXGroup;
 			children = (
+				AE5F668B27B1762C0043669D /* MenuHelper-Info.plist */,
 				27421A92271FCA9600A0BD28 /* Shared */,
 				2781A6272688A0260042B453 /* FinderHelper */,
 				2781C5912688A4540042B453 /* FinderMenu */,
@@ -557,6 +559,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MenuHelper-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -590,6 +593,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MenuHelper-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
