@@ -11,8 +11,6 @@ import SwiftUI
 struct AboutSettingTab: View {
     private let contentWidth: Double = 450.0
 
-    // onHover currently not working on macOS setting windows
-//    @State var redacted = true
     var body: some View {
         VStack {
             HStack {
@@ -21,11 +19,9 @@ struct AboutSettingTab: View {
                     Image("Kyle")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-//                        .onHover { redacted = !$0 }
-                        .frame(width: 40, height: 40)
-                        .background(Color.accentColor)
+                        .frame(width: 45, height: 45)
                         .clipShape(Circle())
-//                        .if(redacted) { $0.redacted(reason: .placeholder) }
+                        .rainbowGlow()
                 }
                 Text("with 🥰")
             }
@@ -50,6 +46,27 @@ extension View {
             transform(self)
         } else {
             self
+        }
+    }
+}
+
+extension View {
+    func glow(color: Color = .red, radius: CGFloat = 20) -> some View {
+        self
+            .shadow(color: color, radius: radius / 3)
+            .shadow(color: color, radius: radius / 3)
+            .shadow(color: color, radius: radius / 3)
+    }
+
+    func rainbowGlow() -> some View {
+        ZStack {
+            ForEach(0 ..< 2) { i in
+                Rectangle()
+                    .fill(AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center))
+                    .frame(width: 80, height: 80)
+                    .mask(blur(radius: 8))
+                    .overlay(blur(radius: 5 - CGFloat(i * 5)))
+            }
         }
     }
 }
