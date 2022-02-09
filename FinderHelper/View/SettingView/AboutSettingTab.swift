@@ -11,7 +11,8 @@ import SwiftUI
 struct AboutSettingTab: View {
     private let contentWidth: Double = 450.0
 
-    @State var redacted = true
+    // onHover currently not working on macOS setting windows
+//    @State var redacted = true
     var body: some View {
         VStack {
             HStack {
@@ -20,11 +21,11 @@ struct AboutSettingTab: View {
                     Image("Kyle")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
+//                        .onHover { redacted = !$0 }
                         .frame(width: 40, height: 40)
                         .background(Color.accentColor)
                         .clipShape(Circle())
-                        .onHover { redacted = !$0 }
-                        .if(redacted) { $0.redacted(reason: .placeholder) }
+//                        .if(redacted) { $0.redacted(reason: .placeholder) }
                 }
                 Text("with 🥰")
             }
