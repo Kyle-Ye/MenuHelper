@@ -1,6 +1,6 @@
 //
 //  FinderSync.swift
-//  FinderMenu
+//  MenuHelperExtension
 //
 //  Created by Kyle on 2021/6/27.
 //

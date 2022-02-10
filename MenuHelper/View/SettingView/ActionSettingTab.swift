@@ -1,6 +1,6 @@
 //
 //  ActionSettingTab.swift
-//  FinderHelper
+//  MenuHelper
 //
 //  Created by Kyle on 2021/6/29.
 //

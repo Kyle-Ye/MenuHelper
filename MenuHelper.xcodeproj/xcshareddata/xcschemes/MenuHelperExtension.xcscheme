@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1310"
+   LastUpgradeVersion = "1320"
    wasCreatedForAppExtension = "YES"
    version = "2.0">
    <BuildAction
@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2781C58F2688A4540042B453"
-               BuildableName = "MenuHeperExtension.appex"
-               BlueprintName = "MenuHeperExtension"
-               ReferencedContainer = "container:FinderHelper.xcodeproj">
+               BuildableName = "MenuHelperExtension.appex"
+               BlueprintName = "MenuHelperExtension"
+               ReferencedContainer = "container:MenuHelper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -32,7 +32,7 @@
                BlueprintIdentifier = "2781A6242688A0260042B453"
                BuildableName = "MenuHelper.app"
                BlueprintName = "MenuHelper"
-               ReferencedContainer = "container:FinderHelper.xcodeproj">
+               ReferencedContainer = "container:MenuHelper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "2781A6242688A0260042B453"
             BuildableName = "MenuHelper.app"
             BlueprintName = "MenuHelper"
-            ReferencedContainer = "container:FinderHelper.xcodeproj">
+            ReferencedContainer = "container:MenuHelper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -83,7 +83,7 @@
             BlueprintIdentifier = "2781A6242688A0260042B453"
             BuildableName = "MenuHelper.app"
             BlueprintName = "MenuHelper"
-            ReferencedContainer = "container:FinderHelper.xcodeproj">
+            ReferencedContainer = "container:MenuHelper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

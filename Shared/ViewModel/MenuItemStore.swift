@@ -1,6 +1,6 @@
 //
 //  MenuItemStore.swift
-//  FinderHelper
+//  MenuHelper
 //
 //  Created by Kyle on 2021/6/29.
 //
@@ -146,6 +146,6 @@ class MenuItemStore: ObservableObject {
 
 extension UserDefaults {
     static var group: UserDefaults {
-        UserDefaults(suiteName: "group.top.kyleye.FinderHelper")!
+        UserDefaults(suiteName: "group.top.kyleye.MenuHelper")!
     }
 }

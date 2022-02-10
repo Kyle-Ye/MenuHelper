@@ -14,12 +14,12 @@
 		27421A9A271FCB1A00A0BD28 /* FinderCommChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27421A98271FCB1600A0BD28 /* FinderCommChannel.swift */; };
 		27421A9C271FF10400A0BD28 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27421A9B271FF10400A0BD28 /* StringExtension.swift */; };
 		27421A9D271FF10400A0BD28 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27421A9B271FF10400A0BD28 /* StringExtension.swift */; };
-		2781A6292688A0260042B453 /* FinderHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A6282688A0260042B453 /* FinderHelperApp.swift */; };
+		2781A6292688A0260042B453 /* MenuHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A6282688A0260042B453 /* MenuHelperApp.swift */; };
 		2781A62B2688A0260042B453 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A62A2688A0260042B453 /* ContentView.swift */; };
 		2781A62D2688A0260042B453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2781A62C2688A0260042B453 /* Assets.xcassets */; };
 		2781A6302688A0260042B453 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2781A62F2688A0260042B453 /* Preview Assets.xcassets */; };
 		2781C5932688A4540042B453 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781C5922688A4540042B453 /* FinderSync.swift */; };
-		2781C5972688A4540042B453 /* MenuHeperExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2781C5902688A4540042B453 /* MenuHeperExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2781C5972688A4540042B453 /* MenuHelperExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2781C5902688A4540042B453 /* MenuHelperExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2795203B268B5B7E00492ABF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795203A268B5B7E00492ABF /* SettingView.swift */; };
 		27952041268B5F0700492ABF /* FolderSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952040268B5F0700492ABF /* FolderSettingTab.swift */; };
 		27952043268B5F1100492ABF /* ActionSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952042268B5F1100492ABF /* ActionSettingTab.swift */; };
@@ -75,7 +75,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				2781C5972688A4540042B453 /* MenuHeperExtension.appex in Embed App Extensions */,
+				2781C5972688A4540042B453 /* MenuHelperExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,14 +87,13 @@
 		27421A98271FCB1600A0BD28 /* FinderCommChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderCommChannel.swift; sourceTree = "<group>"; };
 		27421A9B271FF10400A0BD28 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		2781A6252688A0260042B453 /* MenuHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2781A6282688A0260042B453 /* FinderHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderHelperApp.swift; sourceTree = "<group>"; };
+		2781A6282688A0260042B453 /* MenuHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHelperApp.swift; sourceTree = "<group>"; };
 		2781A62A2688A0260042B453 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2781A62C2688A0260042B453 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2781A62F2688A0260042B453 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2781C5902688A4540042B453 /* MenuHeperExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MenuHeperExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2781C5902688A4540042B453 /* MenuHelperExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MenuHelperExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2781C5922688A4540042B453 /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
 		2781C5942688A4540042B453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2781C59C2688A7280042B453 /* FinderMenu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinderMenu.entitlements; sourceTree = "<group>"; };
 		2795203A268B5B7E00492ABF /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		27952040268B5F0700492ABF /* FolderSettingTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSettingTab.swift; sourceTree = "<group>"; };
 		27952042268B5F1100492ABF /* ActionSettingTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSettingTab.swift; sourceTree = "<group>"; };
@@ -107,7 +106,7 @@
 		279C37882711C9CD00436979 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		27AC028626896D31000CCE63 /* AppMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuItem.swift; sourceTree = "<group>"; };
 		27AEF643270FEC8B0014739C /* CheckmarkStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkStyle.swift; sourceTree = "<group>"; };
-		27C5B8192688D24B00AFCF9D /* FinderHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinderHelper.entitlements; sourceTree = "<group>"; };
+		27C5B8192688D24B00AFCF9D /* MenuHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MenuHelper.entitlements; sourceTree = "<group>"; };
 		27CC3F2E272038F2000A6005 /* SyncFolderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncFolderItem.swift; sourceTree = "<group>"; };
 		27CC3F3127203924000A6005 /* FolderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderItem.swift; sourceTree = "<group>"; };
 		27F15ED1271293A00042944A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,6 +114,7 @@
 		27F15ED7271299580042944A /* BookmarkFolderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkFolderItem.swift; sourceTree = "<group>"; };
 		AE5F668B27B1762C0043669D /* MenuHelper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MenuHelper-Info.plist"; sourceTree = "<group>"; };
 		AE92166627B4EA1800471742 /* AcknowledgementsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcknowledgementsWindow.swift; sourceTree = "<group>"; };
+		AEA24CF127B4F8F700F155DA /* MenuHelperExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MenuHelperExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,8 +170,8 @@
 			children = (
 				AE5F668B27B1762C0043669D /* MenuHelper-Info.plist */,
 				27421A92271FCA9600A0BD28 /* Shared */,
-				2781A6272688A0260042B453 /* FinderHelper */,
-				2781C5912688A4540042B453 /* FinderMenu */,
+				2781A6272688A0260042B453 /* MenuHelper */,
+				2781C5912688A4540042B453 /* MenuHelperExtension */,
 				2781A6262688A0260042B453 /* Products */,
 				276EF6472688C25F0046FE54 /* Frameworks */,
 			);
@@ -181,23 +181,23 @@
 			isa = PBXGroup;
 			children = (
 				2781A6252688A0260042B453 /* MenuHelper.app */,
-				2781C5902688A4540042B453 /* MenuHeperExtension.appex */,
+				2781C5902688A4540042B453 /* MenuHelperExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2781A6272688A0260042B453 /* FinderHelper */ = {
+		2781A6272688A0260042B453 /* MenuHelper */ = {
 			isa = PBXGroup;
 			children = (
-				27C5B8192688D24B00AFCF9D /* FinderHelper.entitlements */,
-				2781A6282688A0260042B453 /* FinderHelperApp.swift */,
+				27C5B8192688D24B00AFCF9D /* MenuHelper.entitlements */,
+				2781A6282688A0260042B453 /* MenuHelperApp.swift */,
 				2781A62A2688A0260042B453 /* ContentView.swift */,
 				AE92166627B4EA1800471742 /* AcknowledgementsWindow.swift */,
 				2795203D268B5C2A00492ABF /* View */,
 				2781A62C2688A0260042B453 /* Assets.xcassets */,
 				2781A62E2688A0260042B453 /* Preview Content */,
 			);
-			path = FinderHelper;
+			path = MenuHelper;
 			sourceTree = "<group>";
 		};
 		2781A62E2688A0260042B453 /* Preview Content */ = {
@@ -208,17 +208,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2781C5912688A4540042B453 /* FinderMenu */ = {
+		2781C5912688A4540042B453 /* MenuHelperExtension */ = {
 			isa = PBXGroup;
 			children = (
-				2781C59C2688A7280042B453 /* FinderMenu.entitlements */,
+				AEA24CF127B4F8F700F155DA /* MenuHelperExtension.entitlements */,
 				2781C5922688A4540042B453 /* FinderSync.swift */,
 				279C37852711BE6400436979 /* MenuItemClickable.swift */,
 				279C376427118F2100436979 /* FinderSync+UserDefaults.swift */,
 				2781C5942688A4540042B453 /* Info.plist */,
 				27F15ED1271293A00042944A /* Assets.xcassets */,
 			);
-			path = FinderMenu;
+			path = MenuHelperExtension;
 			sourceTree = "<group>";
 		};
 		2795203C268B5C1D00492ABF /* SettingView */ = {
@@ -291,9 +291,9 @@
 			productReference = 2781A6252688A0260042B453 /* MenuHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2781C58F2688A4540042B453 /* MenuHeperExtension */ = {
+		2781C58F2688A4540042B453 /* MenuHelperExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2781C59B2688A4540042B453 /* Build configuration list for PBXNativeTarget "MenuHeperExtension" */;
+			buildConfigurationList = 2781C59B2688A4540042B453 /* Build configuration list for PBXNativeTarget "MenuHelperExtension" */;
 			buildPhases = (
 				2781C58C2688A4540042B453 /* Sources */,
 				2781C58D2688A4540042B453 /* Frameworks */,
@@ -303,12 +303,12 @@
 			);
 			dependencies = (
 			);
-			name = MenuHeperExtension;
+			name = MenuHelperExtension;
 			packageProductDependencies = (
 				272986BA2711FDCD00EBCCBF /* OrderedCollections */,
 			);
 			productName = FinderMenu;
-			productReference = 2781C5902688A4540042B453 /* MenuHeperExtension.appex */;
+			productReference = 2781C5902688A4540042B453 /* MenuHelperExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -329,7 +329,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2781A6202688A0260042B453 /* Build configuration list for PBXProject "FinderHelper" */;
+			buildConfigurationList = 2781A6202688A0260042B453 /* Build configuration list for PBXProject "MenuHelper" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -347,7 +347,7 @@
 			projectRoot = "";
 			targets = (
 				2781A6242688A0260042B453 /* MenuHelper */,
-				2781C58F2688A4540042B453 /* MenuHeperExtension */,
+				2781C58F2688A4540042B453 /* MenuHelperExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -393,7 +393,7 @@
 				27CC3F3227203924000A6005 /* FolderItem.swift in Sources */,
 				27952049268B6A2D00492ABF /* MenuItemStore.swift in Sources */,
 				2795203B268B5B7E00492ABF /* SettingView.swift in Sources */,
-				2781A6292688A0260042B453 /* FinderHelperApp.swift in Sources */,
+				2781A6292688A0260042B453 /* MenuHelperApp.swift in Sources */,
 				27AC028726896D31000CCE63 /* AppMenuItem.swift in Sources */,
 				27AEF644270FEC8B0014739C /* CheckmarkStyle.swift in Sources */,
 			);
@@ -424,7 +424,7 @@
 /* Begin PBXTargetDependency section */
 		2781C5962688A4540042B453 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2781C58F2688A4540042B453 /* MenuHeperExtension */;
+			target = 2781C58F2688A4540042B453 /* MenuHelperExtension */;
 			targetProxy = 2781C5952688A4540042B453 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -551,12 +551,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = FinderHelper/FinderHelper.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MenuHelper/MenuHelper.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"FinderHelper/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MenuHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = VB7MJ8R223;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -572,7 +572,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.FinderHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.MenuHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -585,12 +585,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = FinderHelper/FinderHelper.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MenuHelper/MenuHelper.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"FinderHelper/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MenuHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = VB7MJ8R223;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -606,7 +606,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.FinderHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.MenuHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -616,7 +616,7 @@
 		2781C5992688A4540042B453 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = FinderMenu/FinderMenu.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MenuHelperExtension/MenuHelperExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -626,8 +626,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FinderMenu/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = FinderMenu;
+				INFOPLIST_FILE = MenuHelperExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MenuHelperExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -635,7 +635,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.FinderHelper.FinderMenu;
+				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.MenuHelper.MenuHelperExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -646,7 +646,7 @@
 		2781C59A2688A4540042B453 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = FinderMenu/FinderMenu.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MenuHelperExtension/MenuHelperExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -656,8 +656,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FinderMenu/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = FinderMenu;
+				INFOPLIST_FILE = MenuHelperExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MenuHelperExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -665,7 +665,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.FinderHelper.FinderMenu;
+				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.MenuHelper.MenuHelperExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -676,7 +676,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2781A6202688A0260042B453 /* Build configuration list for PBXProject "FinderHelper" */ = {
+		2781A6202688A0260042B453 /* Build configuration list for PBXProject "MenuHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2781A6312688A0260042B453 /* Debug */,
@@ -694,7 +694,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2781C59B2688A4540042B453 /* Build configuration list for PBXNativeTarget "MenuHeperExtension" */ = {
+		2781C59B2688A4540042B453 /* Build configuration list for PBXNativeTarget "MenuHelperExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2781C5992688A4540042B453 /* Debug */,

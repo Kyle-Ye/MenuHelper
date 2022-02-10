@@ -1,11 +1,11 @@
 //
 //  FolderSettingTab.swift
-//  FinderHelper
+//  MenuHelper
 //
 //  Created by Kyle on 2021/6/29.
 //
 
-import MenuHeperExtension
+import MenuHelperExtension
 import Preferences
 import SwiftUI
 
