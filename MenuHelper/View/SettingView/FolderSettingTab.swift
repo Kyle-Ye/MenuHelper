@@ -18,7 +18,9 @@ struct FolderSettingTab: View {
             syncSection
         }
         .onAppear {
-            channel.setup(store: store)
+            Task {
+                await channel.setup(store: store)
+            }
         }
     }
 

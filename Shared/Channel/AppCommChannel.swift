@@ -10,7 +10,7 @@ import os.log
 
 private let logger = Logger(subsystem: subsystem, category: "app_comm_channel")
 
-class AppCommChannel {
+actor AppCommChannel {
     weak var folderItemStore: FolderItemStore?
     func setup(store: FolderItemStore) {
         let center = DistributedNotificationCenter.default()
@@ -18,7 +18,7 @@ class AppCommChannel {
         folderItemStore = store
     }
 
-    func send(name: String, data: [AnyHashable: Any]? = nil) {
+    nonisolated func send(name: String, data: [AnyHashable: Any]? = nil) {
         logger.notice("Sending \(name) data: \(data ?? [:])")
         DistributedNotificationCenter.default()
             .postNotificationName(.init(rawValue: name),
@@ -29,6 +29,8 @@ class AppCommChannel {
 
     @MainActor @objc func refreshFolderItems(_ notification: Notification) {
         logger.notice("Refresh folder items")
-        folderItemStore?.refresh()
+        Task {
+            await folderItemStore?.refresh()
+        }
     }
 }
