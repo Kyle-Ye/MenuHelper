@@ -15,10 +15,14 @@ class MenuItemStore: ObservableObject {
     // MARK: - Init
 
     init() {
-        try? load()
+        Task {
+            await MainActor.run {
+                try? load()
+            }
+        }
     }
 
-    func refresh() {
+    @MainActor func refresh() {
         try? load()
     }
 
@@ -118,19 +122,15 @@ class MenuItemStore: ObservableObject {
 
     // MARK: - UserDefaults
 
-    private func load() throws {
+    @MainActor private func load() throws {
         if let appItemData = UserDefaults.group.data(forKey: "APP_ITEMS"),
            let actionItemData = UserDefaults.group.data(forKey: "ACTION_ITEMS") {
             let decoder = PropertyListDecoder()
-            var appItems = try decoder.decode([AppMenuItem].self, from: appItemData)
-            let actionItems = try decoder.decode([ActionMenuItem].self, from: actionItemData)
-            if appItems.isEmpty {
-                appItems = AppMenuItem.defaultApps
-            }
-            DispatchQueue.main.async {
-                self.appItems = appItems
-                self.actionItems = actionItems
-            }
+            appItems = try decoder.decode([AppMenuItem].self, from: appItemData)
+            actionItems = try decoder.decode([ActionMenuItem].self, from: actionItemData)
+        } else {
+            appItems = AppMenuItem.defaultApps
+            actionItems = ActionMenuItem.all
         }
     }
 

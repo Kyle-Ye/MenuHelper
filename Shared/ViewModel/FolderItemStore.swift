@@ -5,9 +5,9 @@
 //  Created by Kyle on 2021/10/10.
 //
 
+import FinderSync
 import OrderedCollections
 import SwiftUI
-import FinderSync
 
 class FolderItemStore: ObservableObject {
     @Published private(set) var bookmarkItems: [BookmarkFolderItem] = []
@@ -16,10 +16,14 @@ class FolderItemStore: ObservableObject {
     // MARK: - Init
 
     init() {
-        try? load()
+        Task {
+            await MainActor.run {
+                try? load()
+            }
+        }
     }
 
-    func refresh() {
+    @MainActor func refresh() {
         try? load()
     }
 
@@ -74,22 +78,19 @@ class FolderItemStore: ObservableObject {
         }
         try? save()
     }
+
     // MARK: - UserDefaults
 
-    private func load() throws {
+    @MainActor private func load() throws {
         if let bookmarkItemData = UserDefaults.group.data(forKey: "BOOKMARK_ITEMS"),
            let syncItemData = UserDefaults.group.data(forKey: "SYNC_ITEMS") {
             let decoder = PropertyListDecoder()
-            let bookmarkItems = try decoder.decode([BookmarkFolderItem].self, from: bookmarkItemData)
-            var syncItems = try decoder.decode([SyncFolderItem].self, from: syncItemData)
-            if syncItems.isEmpty {
-                syncItems = SyncFolderItem.defaultFolders
-            }
-            DispatchQueue.main.async {
-                self.bookmarkItems = bookmarkItems
-                self.syncItems = syncItems
-                FIFinderSyncController.default().directoryURLs = Set(syncItems.map { URL(fileURLWithPath: $0.path) })
-            }
+            bookmarkItems = try decoder.decode([BookmarkFolderItem].self, from: bookmarkItemData)
+            syncItems = try decoder.decode([SyncFolderItem].self, from: syncItemData)
+            FIFinderSyncController.default().directoryURLs = Set(syncItems.map { URL(fileURLWithPath: $0.path) })
+        } else {
+            syncItems = SyncFolderItem.defaultFolders
+            FIFinderSyncController.default().directoryURLs = Set(syncItems.map { URL(fileURLWithPath: $0.path) })
         }
     }
 
