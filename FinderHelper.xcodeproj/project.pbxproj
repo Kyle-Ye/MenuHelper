@@ -45,6 +45,7 @@
 		27F15ED62712986B0042944A /* FolderItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F15ED3271298650042944A /* FolderItemStore.swift */; };
 		27F15ED9271299E50042944A /* BookmarkFolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F15ED7271299580042944A /* BookmarkFolderItem.swift */; };
 		27F15EDA271299E80042944A /* BookmarkFolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F15ED7271299580042944A /* BookmarkFolderItem.swift */; };
+		AE92166727B4EA1800471742 /* AcknowledgementsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92166627B4EA1800471742 /* AcknowledgementsWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		27F15ED3271298650042944A /* FolderItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderItemStore.swift; sourceTree = "<group>"; };
 		27F15ED7271299580042944A /* BookmarkFolderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkFolderItem.swift; sourceTree = "<group>"; };
 		AE5F668B27B1762C0043669D /* MenuHelper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MenuHelper-Info.plist"; sourceTree = "<group>"; };
+		AE92166627B4EA1800471742 /* AcknowledgementsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcknowledgementsWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				27C5B8192688D24B00AFCF9D /* FinderHelper.entitlements */,
 				2781A6282688A0260042B453 /* FinderHelperApp.swift */,
 				2781A62A2688A0260042B453 /* ContentView.swift */,
+				AE92166627B4EA1800471742 /* AcknowledgementsWindow.swift */,
 				2795203D268B5C2A00492ABF /* View */,
 				2781A62C2688A0260042B453 /* Assets.xcassets */,
 				2781A62E2688A0260042B453 /* Preview Content */,
@@ -376,6 +379,7 @@
 			files = (
 				27421A97271FCB0E00A0BD28 /* AppCommChannel.swift in Sources */,
 				27952045268B5F1E00492ABF /* AboutSettingTab.swift in Sources */,
+				AE92166727B4EA1800471742 /* AcknowledgementsWindow.swift in Sources */,
 				279C37672711979600436979 /* GeneralSettingTab.swift in Sources */,
 				27952043268B5F1100492ABF /* ActionSettingTab.swift in Sources */,
 				27CC3F2F272038F2000A6005 /* SyncFolderItem.swift in Sources */,
