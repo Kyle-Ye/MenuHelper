@@ -7,7 +7,10 @@
 
 import FinderSync
 import OrderedCollections
+import os.log
 import SwiftUI
+
+private let logger = Logger(subsystem: subsystem, category: "folder_item_store")
 
 class FolderItemStore: ObservableObject {
     @Published private(set) var bookmarkItems: [BookmarkFolderItem] = []
@@ -86,11 +89,15 @@ class FolderItemStore: ObservableObject {
            let syncItemData = UserDefaults.group.data(forKey: "SYNC_ITEMS") {
             let decoder = PropertyListDecoder()
             bookmarkItems = try decoder.decode([BookmarkFolderItem].self, from: bookmarkItemData)
-            syncItems = try decoder.decode([SyncFolderItem].self, from: syncItemData)
+            let syncItems = try decoder.decode([SyncFolderItem].self, from: syncItemData)
+            self.syncItems = syncItems
             FIFinderSyncController.default().directoryURLs = Set(syncItems.map { URL(fileURLWithPath: $0.path) })
+            logger.notice("Sync directory set to \(syncItems.map(\.path).joined(separator: "\n"), privacy: .public)")
         } else {
-            syncItems = SyncFolderItem.defaultFolders
+            let syncItems = SyncFolderItem.defaultFolders
+            self.syncItems = syncItems
             FIFinderSyncController.default().directoryURLs = Set(syncItems.map { URL(fileURLWithPath: $0.path) })
+            logger.notice("Sync directory set to \(syncItems.map(\.path).joined(separator: "\n"), privacy: .public)")
         }
     }
 

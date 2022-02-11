@@ -21,6 +21,7 @@ class FinderSync: FIFinderSync {
         channel.setup()
         logger.notice("FinderSync() launched from \(Bundle.main.bundlePath, privacy: .public)")
         FIFinderSyncController.default().directoryURLs = Set(folderStore.syncItems.map { URL(fileURLWithPath: $0.path) })
+        logger.notice("Init sync directory is \(folderStore.syncItems.map(\.path).joined(separator: "\n"), privacy: .public)")
     }
 
     // MARK: - Menu and toolbar item support
@@ -30,7 +31,15 @@ class FinderSync: FIFinderSync {
     override var toolbarItemToolTip: String { showToolbarItemMenu ? "MenuHelper Menu" : "" }
 
     override var toolbarItemImage: NSImage {
-        showToolbarItemMenu ? NSImage(systemSymbolName: "terminal", accessibilityDescription: "MenuHelper Menu")! : NSImage()
+        func defaultImage() -> NSImage {
+            logger.info("showToolbarItemMenu: \(self.showToolbarItemMenu, privacy: .public)")
+            return NSImage()
+        }
+        if showToolbarItemMenu {
+            return NSImage(systemSymbolName: "terminal", accessibilityDescription: "MenuHelper Menu") ?? defaultImage()
+        } else {
+            return defaultImage()
+        }
     }
 
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
