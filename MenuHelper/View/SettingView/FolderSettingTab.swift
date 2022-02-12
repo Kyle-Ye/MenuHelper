@@ -13,7 +13,7 @@ struct FolderSettingTab: View {
     @ObservedObject var store: FolderItemStore
 
     var body: some View {
-        Preferences.Container(contentWidth: 450) {
+        Preferences.Container(contentWidth: 500) {
             openSection
             syncSection
         }
@@ -37,8 +37,8 @@ struct FolderSettingTab: View {
                     } label: { Label("Add Folder(s)", systemImage: "folder.badge.plus") }
                 }
                 VStack(alignment: .leading) {
-                    Text("Directories which you have permission to open apps due to the sandbox limitation of macOS")
-                    Text("Recommended folder is ~ (home directory)")
+                    Text("Directories where you have permission to open apps using this app")
+                    Text("Recommended folder is \("/Users/\(NSUserName())") (current user's 🏠 directory)")
                 }
                 .foregroundColor(.secondary)
                 .font(.caption)

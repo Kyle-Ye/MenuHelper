@@ -1,5 +1,5 @@
 //
-//  ActionSettingTab.swift
+//  MenuSettingTab.swift
 //  MenuHelper
 //
 //  Created by Kyle on 2021/6/29.
@@ -8,12 +8,12 @@
 import Preferences
 import SwiftUI
 
-struct ActionSettingTab: View {
+struct MenuSettingTab: View {
     @ObservedObject var store: MenuItemStore
     @State private var isDrogTargeted = false
 
     var body: some View {
-        Preferences.Container(contentWidth: 450.0) {
+        Preferences.Container(contentWidth: 520) {
             appItemSection
             actionItemSection
         }
@@ -25,7 +25,7 @@ struct ActionSettingTab: View {
         } content: {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("Application Items")
+                    Text("Application Menu Items")
                     Spacer()
                     Button {
                         let panel = NSOpenPanel()
@@ -80,7 +80,7 @@ struct ActionSettingTab: View {
         } content: {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("Action Items")
+                    Text("Action Menu Items")
                     Spacer()
                     ForEach(ActionMenuItem.all) { item in
                         Button {
@@ -113,10 +113,10 @@ struct ActionSettingTab: View {
 
 struct ActionSettingTab_Previews: PreviewProvider {
     static var previews: some View {
-        ActionSettingTab(store: MenuItemStore())
+        MenuSettingTab(store: MenuItemStore())
             .background(.background)
             .preferredColorScheme(.light)
-        ActionSettingTab(store: MenuItemStore())
+        MenuSettingTab(store: MenuItemStore())
             .background(.background)
             .preferredColorScheme(.dark)
     }

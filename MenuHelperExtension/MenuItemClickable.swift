@@ -26,8 +26,8 @@ extension AppMenuItem: MenuItemClickable {
                 DispatchQueue.main.async {
                     if underlyingError._code == -10820 {
                         let alert = NSAlert(error: error)
-                        alert.addButton(withTitle: "OK")
-                        alert.addButton(withTitle: "Remove app")
+                        alert.addButton(withTitle: NSLocalizedString("OK", comment: "OK button"))
+                        alert.addButton(withTitle: NSLocalizedString("Remove", comment: "Remove app button"))
                         switch alert.runModal() {
                         case .alertFirstButtonReturn:
                             logger.notice("Dismiss error with OK")

@@ -1,0 +1,105 @@
+/* No comment provided by engineer. */
+"*(Custom toolbar in Finder to show/hide this app in Finder toolbar)*" = "*(在访达中自定义工具栏来添加/移除本App)*";
+
+/* No comment provided by engineer. */
+"*(Unavailable since macOS Big Sur)*" = "*(从macOS Big Sur开始不可用)*";
+
+/* No comment provided by engineer. */
+"About" = "关于";
+
+/* No comment provided by engineer. */
+"Acknowledgements" = "致谢";
+
+/* No comment provided by engineer. */
+"Acknowledgements..." = "致谢...";
+
+/* No comment provided by engineer. */
+"Action Menu Items" = "“动作”菜单项";
+
+/* No comment provided by engineer. */
+"Add %@" = "添加 %@ “动作”";
+
+/* No comment provided by engineer. */
+"Add Application(s)" = "添加应用程序";
+
+/* No comment provided by engineer. */
+"Add Folder(s)" = "添加文件夹";
+
+/* No comment provided by engineer. */
+"Application Menu Items" = "“应用程序”菜单项";
+
+/* No comment provided by engineer. */
+"But *contextual menu* will only show in sync permission directories" = "但是*上下文菜单*只会出现在拥有“同步”权限的文件夹中";
+
+/* No comment provided by engineer. */
+"Clicks on the extension’s toolbar button." = "点击该扩展的访达工具栏按钮";
+
+/* No comment provided by engineer. */
+"Control-clicks on an item in the sidebar." = "在侧边栏项目上Control点击";
+
+/* No comment provided by engineer. */
+"Control-clicks on an item or a group of selected items inside the Finder window." = "在访达窗口的一个或一组项目上Control点击";
+
+/* No comment provided by engineer. */
+"Control-clicks on the Finder window’s background." = "在访达窗口的背景上Control点击";
+
+/* Copy Path */
+"Copy Path" = "拷贝路径";
+
+/* No comment provided by engineer. */
+"Copyright ©️ 2022 YEXULEI. All rights reserved" = "Copyright ©️ 2022 YEXULEI. All rights reserved 叶絮雷 版权所有";
+
+/* No comment provided by engineer. */
+"Directories where you have permission to open apps using this app" = "可以使用“应用程序”菜单项打开的文件夹";
+
+/* No comment provided by engineer. */
+"Folder" = "文件夹";
+
+/* No comment provided by engineer. */
+"General" = "通用";
+
+/* Go Parent Directory */
+"Go Parent Directory" = "前往上层文件夹";
+
+/* No comment provided by engineer. */
+"Inspired by [SwiftyMenu](https://apps.apple.com/cn/app/swiftymenu/id1567748223?l=en&mt=12) [Lex Tang](https://twitter.com/lexrus)" = "灵感来源 [SwiftyMenu](https://apps.apple.com/cn/app/swiftymenu/id1567748223?l=en&mt=12) [Lex Tang](https://twitter.com/lexrus)";
+
+/* No comment provided by engineer. */
+"Made by" = "由";
+
+/* No comment provided by engineer. */
+"Menu" = "菜单";
+
+/* No comment provided by engineer. */
+"Menu Helper is made possible with following projects:" = "“速达”的产生离不开以下开源项目：";
+
+/* No comment provided by engineer. */
+"Menu Settings (When to show related menus)" = "菜单设置（以下情况时展示相关菜单）";
+
+/* No comment provided by engineer. */
+"Open Permission Directories" = "拥有“打开”权限的文件夹";
+
+/* No comment provided by engineer. */
+"Open Preferences Panel..." = "打开偏好设置...";
+
+/* No comment provided by engineer. */
+"Quit and Open Finder Extensinos Preferences..." = "退出并打开“访达”扩展设置...";
+
+/* No comment provided by engineer. */
+"Recommended folder is %@ (current user's 🏠 directory)" = "建议文件夹为 %@ （当前用户的🏠目录）";
+
+/* No comment provided by engineer. */
+"Right-click is the same as control-click" = "右击和Control点击等价";
+
+/* No comment provided by engineer. */
+"Sync Permission Directories" = "拥有“同步”权限的文件夹";
+
+/* No comment provided by engineer. */
+"Toolbar item menu will show in every directory" = "工具栏菜单会出现在所有文件夹中";
+
+/* No comment provided by engineer. */
+"with 🥰" = "用 🥰 编写";
+
+/* No comment provided by engineer. */
+"You can turn on MenuHelper's extension in **Finder Extensions prefrences**" = "您可以在 **系统偏好设置-扩展-“访达”扩展** 中启用“速达-访达扩展”";
+

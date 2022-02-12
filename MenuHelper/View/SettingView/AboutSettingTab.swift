@@ -9,7 +9,7 @@ import Preferences
 import SwiftUI
 
 struct AboutSettingTab: View {
-    private let contentWidth: Double = 450.0
+    private let contentWidth: Double = 400
 
     var body: some View {
         VStack {
@@ -25,7 +25,7 @@ struct AboutSettingTab: View {
                 }
                 Text("with 🥰")
             }
-            Text("Inspired by [SwiftyMenu](https://apps.apple.com/cn/app/swiftymenu/id1567748223?l=en&mt=12) [Shengang Tang](https://twitter.com/lexrus)")
+            Text("Inspired by [SwiftyMenu](https://apps.apple.com/cn/app/swiftymenu/id1567748223?l=en&mt=12) [Lex Tang](https://twitter.com/lexrus)")
                 .font(.footnote)
         }
         .font(.title)

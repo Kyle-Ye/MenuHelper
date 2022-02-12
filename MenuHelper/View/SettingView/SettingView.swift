@@ -12,11 +12,11 @@ struct SettingView: View {
         TabView {
             GeneralSettingTab()
                 .tabItem { Label("General", systemImage: "wand.and.stars") }
-            ActionSettingTab(store: MenuItemStore())
-                .tabItem { Label("Action", systemImage: "terminal") }
+            MenuSettingTab(store: MenuItemStore())
+                .tabItem { Label("Menu", systemImage: "terminal") }
                 .frame(height: 400)
             FolderSettingTab(store: FolderItemStore())
-                .tabItem { Label("Menu", systemImage: "folder.badge.plus") }
+                .tabItem { Label("Folder", systemImage: "folder.badge.plus") }
                 .frame(height: 400)
             AboutSettingTab()
                 .tabItem { Label("About", systemImage: "info.circle") }

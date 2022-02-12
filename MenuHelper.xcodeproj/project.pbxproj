@@ -22,7 +22,7 @@
 		2781C5972688A4540042B453 /* MenuHelperExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2781C5902688A4540042B453 /* MenuHelperExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2795203B268B5B7E00492ABF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795203A268B5B7E00492ABF /* SettingView.swift */; };
 		27952041268B5F0700492ABF /* FolderSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952040268B5F0700492ABF /* FolderSettingTab.swift */; };
-		27952043268B5F1100492ABF /* ActionSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952042268B5F1100492ABF /* ActionSettingTab.swift */; };
+		27952043268B5F1100492ABF /* MenuSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952042268B5F1100492ABF /* MenuSettingTab.swift */; };
 		27952045268B5F1E00492ABF /* AboutSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952044268B5F1E00492ABF /* AboutSettingTab.swift */; };
 		27952049268B6A2D00492ABF /* MenuItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952048268B6A2D00492ABF /* MenuItemStore.swift */; };
 		279C37652711912F00436979 /* FinderSync+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279C376427118F2100436979 /* FinderSync+UserDefaults.swift */; };
@@ -45,6 +45,10 @@
 		27F15ED62712986B0042944A /* FolderItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F15ED3271298650042944A /* FolderItemStore.swift */; };
 		27F15ED9271299E50042944A /* BookmarkFolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F15ED7271299580042944A /* BookmarkFolderItem.swift */; };
 		27F15EDA271299E80042944A /* BookmarkFolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F15ED7271299580042944A /* BookmarkFolderItem.swift */; };
+		AE45812127B7FBD40096404C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE45811F27B7FBD40096404C /* Localizable.strings */; };
+		AE45812427B7FBD40096404C /* MenuHelper-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE45812227B7FBD40096404C /* MenuHelper-InfoPlist.strings */; };
+		AE45812727B7FBD40096404C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE45812527B7FBD40096404C /* InfoPlist.strings */; };
+		AE45812C27B811BA0096404C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE45812A27B811BA0096404C /* Localizable.strings */; };
 		AE92166727B4EA1800471742 /* AcknowledgementsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92166627B4EA1800471742 /* AcknowledgementsWindow.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,7 +100,7 @@
 		2781C5942688A4540042B453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2795203A268B5B7E00492ABF /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		27952040268B5F0700492ABF /* FolderSettingTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSettingTab.swift; sourceTree = "<group>"; };
-		27952042268B5F1100492ABF /* ActionSettingTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSettingTab.swift; sourceTree = "<group>"; };
+		27952042268B5F1100492ABF /* MenuSettingTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSettingTab.swift; sourceTree = "<group>"; };
 		27952044268B5F1E00492ABF /* AboutSettingTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSettingTab.swift; sourceTree = "<group>"; };
 		27952048268B6A2D00492ABF /* MenuItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemStore.swift; sourceTree = "<group>"; };
 		279C376427118F2100436979 /* FinderSync+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinderSync+UserDefaults.swift"; sourceTree = "<group>"; };
@@ -112,6 +116,11 @@
 		27F15ED1271293A00042944A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27F15ED3271298650042944A /* FolderItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderItemStore.swift; sourceTree = "<group>"; };
 		27F15ED7271299580042944A /* BookmarkFolderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkFolderItem.swift; sourceTree = "<group>"; };
+		AE45812027B7FBD40096404C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		AE45812327B7FBD40096404C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MenuHelper-InfoPlist.strings"; sourceTree = "<group>"; };
+		AE45812627B7FBD40096404C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		AE45812927B80F7C0096404C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AE45812B27B811BA0096404C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		AE5F668B27B1762C0043669D /* MenuHelper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MenuHelper-Info.plist"; sourceTree = "<group>"; };
 		AE92166627B4EA1800471742 /* AcknowledgementsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcknowledgementsWindow.swift; sourceTree = "<group>"; };
 		AEA24CF127B4F8F700F155DA /* MenuHelperExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MenuHelperExtension.entitlements; sourceTree = "<group>"; };
@@ -169,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				AE5F668B27B1762C0043669D /* MenuHelper-Info.plist */,
+				AE45812227B7FBD40096404C /* MenuHelper-InfoPlist.strings */,
+				AE45811F27B7FBD40096404C /* Localizable.strings */,
 				27421A92271FCA9600A0BD28 /* Shared */,
 				2781A6272688A0260042B453 /* MenuHelper */,
 				2781C5912688A4540042B453 /* MenuHelperExtension */,
@@ -216,6 +227,8 @@
 				279C37852711BE6400436979 /* MenuItemClickable.swift */,
 				279C376427118F2100436979 /* FinderSync+UserDefaults.swift */,
 				2781C5942688A4540042B453 /* Info.plist */,
+				AE45812A27B811BA0096404C /* Localizable.strings */,
+				AE45812527B7FBD40096404C /* InfoPlist.strings */,
 				27F15ED1271293A00042944A /* Assets.xcassets */,
 			);
 			path = MenuHelperExtension;
@@ -226,7 +239,7 @@
 			children = (
 				2795203A268B5B7E00492ABF /* SettingView.swift */,
 				279C37662711979600436979 /* GeneralSettingTab.swift */,
-				27952042268B5F1100492ABF /* ActionSettingTab.swift */,
+				27952042268B5F1100492ABF /* MenuSettingTab.swift */,
 				27952040268B5F0700492ABF /* FolderSettingTab.swift */,
 				27952044268B5F1E00492ABF /* AboutSettingTab.swift */,
 			);
@@ -335,7 +348,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				"zh-Hans",
 			);
 			mainGroup = 2781A61C2688A0260042B453;
 			packageReferences = (
@@ -358,6 +371,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2781A6302688A0260042B453 /* Preview Assets.xcassets in Resources */,
+				AE45812127B7FBD40096404C /* Localizable.strings in Resources */,
+				AE45812427B7FBD40096404C /* MenuHelper-InfoPlist.strings in Resources */,
 				2781A62D2688A0260042B453 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +382,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				27F15ED2271293A00042944A /* Assets.xcassets in Resources */,
+				AE45812C27B811BA0096404C /* Localizable.strings in Resources */,
+				AE45812727B7FBD40096404C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +398,7 @@
 				27952045268B5F1E00492ABF /* AboutSettingTab.swift in Sources */,
 				AE92166727B4EA1800471742 /* AcknowledgementsWindow.swift in Sources */,
 				279C37672711979600436979 /* GeneralSettingTab.swift in Sources */,
-				27952043268B5F1100492ABF /* ActionSettingTab.swift in Sources */,
+				27952043268B5F1100492ABF /* MenuSettingTab.swift in Sources */,
 				27CC3F2F272038F2000A6005 /* SyncFolderItem.swift in Sources */,
 				27421A9C271FF10400A0BD28 /* StringExtension.swift in Sources */,
 				27952041268B5F0700492ABF /* FolderSettingTab.swift in Sources */,
@@ -428,6 +445,42 @@
 			targetProxy = 2781C5952688A4540042B453 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AE45811F27B7FBD40096404C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE45812027B7FBD40096404C /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		AE45812227B7FBD40096404C /* MenuHelper-InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE45812327B7FBD40096404C /* zh-Hans */,
+			);
+			name = "MenuHelper-InfoPlist.strings";
+			sourceTree = "<group>";
+		};
+		AE45812527B7FBD40096404C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE45812627B7FBD40096404C /* zh-Hans */,
+				AE45812927B80F7C0096404C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AE45812A27B811BA0096404C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE45812B27B811BA0096404C /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2781A6312688A0260042B453 /* Debug */ = {

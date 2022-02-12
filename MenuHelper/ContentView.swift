@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 30) {
             Image("icon")
-            Text("You can turn on MenuHelper's extension in Finder Extensions prefrences")
+            Text("You can turn on MenuHelper's extension in **Finder Extensions prefrences**")
                 .multilineTextAlignment(.center)
             Button {
                 // See this post https://stackoverflow.com/questions/24701362/os-x-system-preferences-url-scheme

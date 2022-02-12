@@ -63,7 +63,7 @@ class FinderSync: FIFinderSync {
         for item in menuStore.appItems.filter(\.enabled) {
             let menuItem = NSMenuItem()
             menuItem.target = self
-            menuItem.title = "Open in \(item.name)"
+            menuItem.title = String(format: NSLocalizedString("Open in %@", comment: "Open in the given application"), item.name)
             menuItem.action = #selector(menuAction(_:))
             menuItem.toolTip = "\(item.name)"
             menuItem.tag = 0

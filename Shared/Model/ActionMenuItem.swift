@@ -13,7 +13,9 @@ struct ActionMenuItem: MenuItem {
         lhs.name == rhs.name
     }
 
-    var name: String
+    var key: String
+    var comment: String = ""
+    var name: String { NSLocalizedString(key, comment: comment) }
     var enabled: Bool = true
     var actionIndex: Int
 
@@ -22,8 +24,15 @@ struct ActionMenuItem: MenuItem {
 
 extension ActionMenuItem {
     static var all: [ActionMenuItem] = [.copyPath, .goParent]
-    static let copyPath = ActionMenuItem(name: "Copy Path", actionIndex: 0)
-    static let goParent = ActionMenuItem(name: "Go Parent Directory", actionIndex: 1)
+
+    static let copyPath = ActionMenuItem(key: "Copy Path", actionIndex: 0)
+    static let goParent = ActionMenuItem(key: "Go Parent Directory", actionIndex: 1)
+
+    #if DEBUG
+    // FIXME: - Refactor this when compiler time const is introduced to Swift
+    private static let copyPathString = NSLocalizedString("Copy Path", comment: "Copy Path")
+    private static let goParentString = NSLocalizedString("Go Parent Directory", comment: "Go Parent Directory")
+    #endif
 
     static let actions: [([URL]) -> Void] = [{ urls in
         let board = NSPasteboard.general
