@@ -14,6 +14,11 @@
 		27421A9A271FCB1A00A0BD28 /* FinderCommChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27421A98271FCB1600A0BD28 /* FinderCommChannel.swift */; };
 		27421A9C271FF10400A0BD28 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27421A9B271FF10400A0BD28 /* StringExtension.swift */; };
 		27421A9D271FF10400A0BD28 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27421A9B271FF10400A0BD28 /* StringExtension.swift */; };
+		2746558827B903E100DC2F91 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2746558727B903E100DC2F91 /* Store.swift */; };
+		2746558B27B90A6400DC2F91 /* SupportWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2746558A27B90A6400DC2F91 /* SupportWindow.swift */; };
+		2746558F27B90E2F00DC2F91 /* CoffieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2746558E27B90E2F00DC2F91 /* CoffieView.swift */; };
+		2746559127B90E8C00DC2F91 /* CoffieStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2746559027B90E8C00DC2F91 /* CoffieStoreView.swift */; };
+		2746559327B9319600DC2F91 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2746559227B9319600DC2F91 /* StoreKit.framework */; };
 		2781A6292688A0260042B453 /* MenuHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A6282688A0260042B453 /* MenuHelperApp.swift */; };
 		2781A62B2688A0260042B453 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A62A2688A0260042B453 /* ContentView.swift */; };
 		2781A62D2688A0260042B453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2781A62C2688A0260042B453 /* Assets.xcassets */; };
@@ -90,6 +95,13 @@
 		27421A96271FCB0E00A0BD28 /* AppCommChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommChannel.swift; sourceTree = "<group>"; };
 		27421A98271FCB1600A0BD28 /* FinderCommChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderCommChannel.swift; sourceTree = "<group>"; };
 		27421A9B271FF10400A0BD28 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		2746558627B8BA3500DC2F91 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		2746558727B903E100DC2F91 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		2746558A27B90A6400DC2F91 /* SupportWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportWindow.swift; sourceTree = "<group>"; };
+		2746558E27B90E2F00DC2F91 /* CoffieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffieView.swift; sourceTree = "<group>"; };
+		2746559027B90E8C00DC2F91 /* CoffieStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffieStoreView.swift; sourceTree = "<group>"; };
+		2746559227B9319600DC2F91 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2746559727B946A900DC2F91 /* MenuHelper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MenuHelper-Info.plist"; sourceTree = "<group>"; };
 		2781A6252688A0260042B453 /* MenuHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2781A6282688A0260042B453 /* MenuHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHelperApp.swift; sourceTree = "<group>"; };
 		2781A62A2688A0260042B453 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -121,7 +133,6 @@
 		AE45812627B7FBD40096404C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		AE45812927B80F7C0096404C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AE45812B27B811BA0096404C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		AE5F668B27B1762C0043669D /* MenuHelper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MenuHelper-Info.plist"; sourceTree = "<group>"; };
 		AE92166627B4EA1800471742 /* AcknowledgementsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcknowledgementsWindow.swift; sourceTree = "<group>"; };
 		AEA24CF127B4F8F700F155DA /* MenuHelperExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MenuHelperExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2746559327B9319600DC2F91 /* StoreKit.framework in Frameworks */,
 				272986B92711FDAF00EBCCBF /* OrderedCollections in Frameworks */,
 				27CA03AB270F53E0007BEC40 /* Preferences in Frameworks */,
 			);
@@ -167,9 +179,30 @@
 			path = Channel;
 			sourceTree = "<group>";
 		};
+		2746558527B8BA1700DC2F91 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				2746558627B8BA3500DC2F91 /* Products.storekit */,
+				2746558727B903E100DC2F91 /* Store.swift */,
+				2746559027B90E8C00DC2F91 /* CoffieStoreView.swift */,
+				2746558E27B90E2F00DC2F91 /* CoffieView.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		2746558927B90A0A00DC2F91 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				AE92166627B4EA1800471742 /* AcknowledgementsWindow.swift */,
+				2746558A27B90A6400DC2F91 /* SupportWindow.swift */,
+			);
+			path = Windows;
+			sourceTree = "<group>";
+		};
 		276EF6472688C25F0046FE54 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2746559227B9319600DC2F91 /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -177,7 +210,7 @@
 		2781A61C2688A0260042B453 = {
 			isa = PBXGroup;
 			children = (
-				AE5F668B27B1762C0043669D /* MenuHelper-Info.plist */,
+				2746559727B946A900DC2F91 /* MenuHelper-Info.plist */,
 				AE45812227B7FBD40096404C /* MenuHelper-InfoPlist.strings */,
 				AE45811F27B7FBD40096404C /* Localizable.strings */,
 				27421A92271FCA9600A0BD28 /* Shared */,
@@ -203,8 +236,9 @@
 				27C5B8192688D24B00AFCF9D /* MenuHelper.entitlements */,
 				2781A6282688A0260042B453 /* MenuHelperApp.swift */,
 				2781A62A2688A0260042B453 /* ContentView.swift */,
-				AE92166627B4EA1800471742 /* AcknowledgementsWindow.swift */,
+				2746558927B90A0A00DC2F91 /* Windows */,
 				2795203D268B5C2A00492ABF /* View */,
+				2746558527B8BA1700DC2F91 /* Store */,
 				2781A62C2688A0260042B453 /* Assets.xcassets */,
 				2781A62E2688A0260042B453 /* Preview Content */,
 			);
@@ -401,14 +435,18 @@
 				27952043268B5F1100492ABF /* MenuSettingTab.swift in Sources */,
 				27CC3F2F272038F2000A6005 /* SyncFolderItem.swift in Sources */,
 				27421A9C271FF10400A0BD28 /* StringExtension.swift in Sources */,
+				2746558B27B90A6400DC2F91 /* SupportWindow.swift in Sources */,
 				27952041268B5F0700492ABF /* FolderSettingTab.swift in Sources */,
 				27F15ED5271298690042944A /* FolderItemStore.swift in Sources */,
+				2746558F27B90E2F00DC2F91 /* CoffieView.swift in Sources */,
 				2781A62B2688A0260042B453 /* ContentView.swift in Sources */,
 				279C37892711C9CD00436979 /* MenuItem.swift in Sources */,
 				279C37832711BDBF00436979 /* ActionMenuItem.swift in Sources */,
 				27F15ED9271299E50042944A /* BookmarkFolderItem.swift in Sources */,
 				27CC3F3227203924000A6005 /* FolderItem.swift in Sources */,
+				2746559127B90E8C00DC2F91 /* CoffieStoreView.swift in Sources */,
 				27952049268B6A2D00492ABF /* MenuItemStore.swift in Sources */,
+				2746558827B903E100DC2F91 /* Store.swift in Sources */,
 				2795203B268B5B7E00492ABF /* SettingView.swift in Sources */,
 				2781A6292688A0260042B453 /* MenuHelperApp.swift in Sources */,
 				27AC028726896D31000CCE63 /* AppMenuItem.swift in Sources */,

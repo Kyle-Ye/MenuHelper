@@ -1,0 +1,78 @@
+{
+  "identifier" : "46F012FD",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "B8C5181A",
+      "localizations" : [
+        {
+          "description" : "Buy me a lollipop",
+          "displayName" : "Buy me a lollipop",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "打赏一包辣条",
+          "displayName" : "打赏一包辣条",
+          "locale" : "zh_CN"
+        }
+      ],
+      "productID" : "consumable.coffie.price1",
+      "referenceName" : "price1",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "AE0C9815",
+      "localizations" : [
+        {
+          "description" : "Buy me a cup of milk",
+          "displayName" : "Buy me a cup of milk",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "打赏一杯牛奶",
+          "displayName" : "打赏一杯牛奶",
+          "locale" : "zh_CN"
+        }
+      ],
+      "productID" : "consumable.coffie.price2",
+      "referenceName" : "price2",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "566F2973",
+      "localizations" : [
+        {
+          "description" : "Buy me a cup of beer",
+          "displayName" : "Buy me a cup of beer",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "打赏一碗面条",
+          "displayName" : "打赏一碗面条",
+          "locale" : "zh_CN"
+        }
+      ],
+      "productID" : "consumable.coffie.price3",
+      "referenceName" : "price3",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 1
+  }
+}

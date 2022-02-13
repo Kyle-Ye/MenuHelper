@@ -4,3 +4,6 @@
 /* Bundle name */
 "CFBundleName" = "速达-访达扩展";
 
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "Copyright ©️ 2022 YEXULEI. All rights reserved 叶絮雷 版权所有";
+

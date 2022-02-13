@@ -13,6 +13,9 @@ struct MenuHelperApp: App {
         WindowGroup {
             ContentView()
         }
+        .commands {
+            CommandGroup(replacing: .newItem) {}
+        }
         WindowGroup("Acknowledgements") {
             AcknowledgementsWindow()
         }
@@ -24,7 +27,18 @@ struct MenuHelperApp: App {
                     NSWorkspace.shared.open(url)
                 }
             }
-            CommandGroup(replacing: .newItem) {}
+        }
+        WindowGroup("Support") {
+            SupportWindow()
+        }
+        .handlesExternalEvents(matching: Set(arrayLiteral: "support"))
+        .commands {
+            CommandGroup(after: .appSettings) {
+                Button("Support Author...") {
+                    guard let url = URL(string: "menu-helper://support") else { return }
+                    NSWorkspace.shared.open(url)
+                }
+            }
         }
         Settings {
             SettingView()

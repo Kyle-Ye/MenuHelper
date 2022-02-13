@@ -62,6 +62,9 @@
 "Go Parent Directory" = "前往上层文件夹";
 
 /* No comment provided by engineer. */
+"If you feel this app is useful for you, please consider supporting me" = "如果本App对你有帮助，请考虑支持作者";
+
+/* No comment provided by engineer. */
 "Inspired by [SwiftyMenu](https://apps.apple.com/cn/app/swiftymenu/id1567748223?l=en&mt=12) [Lex Tang](https://twitter.com/lexrus)" = "灵感来源 [SwiftyMenu](https://apps.apple.com/cn/app/swiftymenu/id1567748223?l=en&mt=12) [Lex Tang](https://twitter.com/lexrus)";
 
 /* No comment provided by engineer. */
@@ -75,6 +78,9 @@
 
 /* No comment provided by engineer. */
 "Menu Settings (When to show related menus)" = "菜单设置（以下情况时展示相关菜单）";
+
+/* No comment provided by engineer. */
+"Okay" = "好";
 
 /* No comment provided by engineer. */
 "Open Permission Directories" = "拥有“打开”权限的文件夹";
@@ -92,7 +98,16 @@
 "Right-click is the same as control-click" = "右击和Control点击等价";
 
 /* No comment provided by engineer. */
+"Support" = "支持";
+
+/* No comment provided by engineer. */
+"Support Author..." = "支持作者...";
+
+/* No comment provided by engineer. */
 "Sync Permission Directories" = "拥有“同步”权限的文件夹";
+
+/* No comment provided by engineer. */
+"Thanks for your supporting" = "感谢您的支持";
 
 /* No comment provided by engineer. */
 "Toolbar item menu will show in every directory" = "工具栏菜单会出现在所有文件夹中";

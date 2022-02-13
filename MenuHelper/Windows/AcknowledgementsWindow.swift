@@ -23,6 +23,7 @@ struct AcknowledgementsWindow: View {
         } header: {
             Text("Menu Helper is made possible with following projects:")
         } footer: {
+            
             Text("Copyright ©️ 2022 YEXULEI. All rights reserved")
                 .font(.footnote)
         }
@@ -33,6 +34,7 @@ private struct License {
     init(name: String, link: URL) {
         self.name = name
         self.link = link
+        
     }
 
     let name: String
