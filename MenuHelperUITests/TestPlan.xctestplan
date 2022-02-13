@@ -1,0 +1,20 @@
+{
+  "configurations" : [
+
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true,
+    "uiTestingScreenshotsLifetime" : "keepNever",
+    "userAttachmentLifetime" : "keepAlways"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:MenuHelper.xcodeproj",
+        "identifier" : "2732A5AE27B9558D005DB4A0",
+        "name" : "MenuHelperUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
