@@ -36,7 +36,9 @@ extension AppMenuItem: MenuItemClickable {
                         let alert = NSAlert(error: error)
                         alert.addButton(withTitle: NSLocalizedString("OK", comment: "OK button"))
                         alert.addButton(withTitle: NSLocalizedString("Remove", comment: "Remove app button"))
-                        switch await alert.run() {
+                        let response = await alert.run()
+                        logger.notice("NSAlert response result \(response.rawValue)")
+                        switch response {
                         case .alertFirstButtonReturn:
                             logger.notice("Dismiss error with OK")
                         case .alertSecondButtonReturn:
@@ -53,7 +55,9 @@ extension AppMenuItem: MenuItemClickable {
                         panel.allowedContentTypes = [.folder]
                         panel.canChooseDirectories = true
                         panel.directoryURL = URL(fileURLWithPath: urls[0].path)
-                        if await panel.run() == .OK {
+                        let response = await panel.begin()
+                        logger.notice("NSOpenPanel response result \(response.rawValue)")
+                        if response == .OK {
                             folderStore.appendItems(panel.urls.map { BookmarkFolderItem($0) })
                         }
                     }
@@ -75,23 +79,6 @@ extension NSAlert {
 
      [FB9857161](https://github.com/feedback-assistant/reports/issues/288)
      */
-    @MainActor
-    @discardableResult
-    func run() async -> NSApplication.ModalResponse {
-        await withCheckedContinuation { continuation in
-            DispatchQueue.main.async { [self] in
-                continuation.resume(returning: runModal())
-            }
-        }
-    }
-}
-
-extension NSOpenPanel {
-    /**
-    Workaround to allow using `NSOpenPanel` in a `Task`.
-
-    [FB9857161](https://github.com/feedback-assistant/reports/issues/288)
-    */
     @MainActor
     @discardableResult
     func run() async -> NSApplication.ModalResponse {
