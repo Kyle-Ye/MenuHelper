@@ -87,7 +87,7 @@ class FinderSync: FIFinderSync {
         return menu
     }
 
-    @MainActor @objc func menuAction(_ menuItem: NSMenuItem) {
+    @objc func menuAction(_ menuItem: NSMenuItem) {
         guard let targetURL = FIFinderSyncController.default().targetedURL(),
               let itemURLs = FIFinderSyncController.default().selectedItemURLs() else { return }
         logger.notice("Click menu \"\(menuItem.title, privacy: .public)\", index = \(menuItem.tag, privacy: .public), target = \(targetURL, privacy: .public), items = \(itemURLs, privacy: .public)]")

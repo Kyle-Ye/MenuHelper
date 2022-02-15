@@ -19,16 +19,24 @@ extension AppMenuItem: MenuItemClickable {
     func menuClick(with urls: [URL]) {
         let config = NSWorkspace.OpenConfiguration()
         config.promptsUserIfNeeded = true
-        NSWorkspace.shared.open(urls, withApplicationAt: url, configuration: config) { application, error in
-            if let error = error as? CocoaError,
-               let underlyingError = error.userInfo["NSUnderlyingError"] as? NSError {
+        Task {
+            do {
+                let application = try await NSWorkspace.shared.open(urls, withApplicationAt: url, configuration: config)
+                if let path = application.bundleURL?.path,
+                   let identifier = application.bundleIdentifier,
+                   let date = application.launchDate {
+                    logger.notice("Success: open \(identifier, privacy: .public) app at \(path, privacy: .public) in \(date, privacy: .public)")
+                }
+            } catch {
+                guard let error = error as? CocoaError,
+                      let underlyingError = error.userInfo["NSUnderlyingError"] as? NSError else { return }
                 logger.error("Error: \(error.localizedDescription)")
-                DispatchQueue.main.async {
-                    if underlyingError._code == -10820 {
+                Task { @MainActor in
+                    if underlyingError.code == -10820 {
                         let alert = NSAlert(error: error)
                         alert.addButton(withTitle: NSLocalizedString("OK", comment: "OK button"))
                         alert.addButton(withTitle: NSLocalizedString("Remove", comment: "Remove app button"))
-                        switch alert.runModal() {
+                        switch await alert.run() {
                         case .alertFirstButtonReturn:
                             logger.notice("Dismiss error with OK")
                         case .alertSecondButtonReturn:
@@ -45,18 +53,10 @@ extension AppMenuItem: MenuItemClickable {
                         panel.allowedContentTypes = [.folder]
                         panel.canChooseDirectories = true
                         panel.directoryURL = URL(fileURLWithPath: urls[0].path)
-                        if panel.runModal() == .OK {
+                        if await panel.run() == .OK {
                             folderStore.appendItems(panel.urls.map { BookmarkFolderItem($0) })
                         }
                     }
-                }
-                return
-            }
-            if let application = application {
-                if let path = application.bundleURL?.path,
-                   let identifier = application.bundleIdentifier,
-                   let date = application.launchDate {
-                    logger.notice("Success: open \(identifier, privacy: .public) app at \(path, privacy: .public) in \(date, privacy: .public)")
                 }
             }
         }
@@ -66,5 +66,39 @@ extension AppMenuItem: MenuItemClickable {
 extension ActionMenuItem: MenuItemClickable {
     func menuClick(with urls: [URL]) {
         ActionMenuItem.actions[actionIndex](urls)
+    }
+}
+
+extension NSAlert {
+    /**
+     Workaround to allow using `NSAlert` in a `Task`.
+
+     [FB9857161](https://github.com/feedback-assistant/reports/issues/288)
+     */
+    @MainActor
+    @discardableResult
+    func run() async -> NSApplication.ModalResponse {
+        await withCheckedContinuation { continuation in
+            DispatchQueue.main.async { [self] in
+                continuation.resume(returning: runModal())
+            }
+        }
+    }
+}
+
+extension NSOpenPanel {
+    /**
+    Workaround to allow using `NSOpenPanel` in a `Task`.
+
+    [FB9857161](https://github.com/feedback-assistant/reports/issues/288)
+    */
+    @MainActor
+    @discardableResult
+    func run() async -> NSApplication.ModalResponse {
+        await withCheckedContinuation { continuation in
+            DispatchQueue.main.async { [self] in
+                continuation.resume(returning: runModal())
+            }
+        }
     }
 }
