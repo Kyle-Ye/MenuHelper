@@ -61,7 +61,7 @@ class Store: ObservableObject {
     @MainActor func requestProducts() async {
         do {
             let storeProducts = try await Product.products(for: productIdentifiers)
-            coffies = storeProducts.filter { $0.type == .consumable }
+            coffies = storeProducts.filter { $0.type == .consumable }.sorted(by: \.price)
         } catch {
             print("Failed product request: \(error)")
         }
@@ -110,5 +110,11 @@ class Store: ObservableObject {
 
     @MainActor func refreshPurchased() async {
         purchased = storage.bool(forKey: Store.purchasedKey)
+    }
+}
+
+extension Sequence {
+    func sorted<T: Comparable>(by keyPath: KeyPath<Element, T>) -> [Element] {
+        sorted { $0[keyPath: keyPath] < $1[keyPath: keyPath] }
     }
 }
