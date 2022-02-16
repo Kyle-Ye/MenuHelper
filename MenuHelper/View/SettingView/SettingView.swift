@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct SettingView: View {
+    @StateObject var menuItemStore = MenuItemStore()
+    @StateObject var folderItemStore = FolderItemStore()
+    
     var body: some View {
         TabView {
-            GeneralSettingTab()
+            GeneralSettingTab(menuItemStore: menuItemStore)
                 .tabItem { Label("General", systemImage: "wand.and.stars") }
-            MenuSettingTab(store: MenuItemStore())
+            MenuSettingTab(store: menuItemStore)
                 .tabItem { Label("Menu", systemImage: "terminal") }
                 .frame(height: 400)
-            FolderSettingTab(store: FolderItemStore())
+            FolderSettingTab(store: folderItemStore)
                 .tabItem { Label("Folder", systemImage: "folder.badge.plus") }
                 .frame(height: 400)
             AboutSettingTab()

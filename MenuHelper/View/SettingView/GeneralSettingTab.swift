@@ -27,9 +27,14 @@ struct GeneralSettingTab: View {
     @AppStorage(Key.newFileExtension, store: .group)
     private var newFileExtension = NewFileExtension.none
 
+    @ObservedObject var menuItemStore: MenuItemStore
+
+    private var hasCopyPath: Bool { menuItemStore.actionItems.contains(ActionMenuItem.copyPath) }
+    private var hasNewFile: Bool { menuItemStore.actionItems.contains(ActionMenuItem.newFile) }
+
     var body: some View {
         Preferences.Container(contentWidth: 600) {
-            Preferences.Section(bottomDivider: true, verticalAlignment: .top) {
+            Preferences.Section(bottomDivider: hasCopyPath, verticalAlignment: .top) {
                 EmptyView()
             } content: {
                 Section {
@@ -51,43 +56,47 @@ struct GeneralSettingTab: View {
                         .bold()
                 }
             }
-            Preferences.Section(bottomDivider: true, verticalAlignment: .top) {
+            Preferences.Section(bottomDivider: hasNewFile, verticalAlignment: .top) {
                 EmptyView()
             } content: {
-                Section {
-                    HStack {
+                if hasCopyPath {
+                    Section {
                         HStack {
-                            Text("Join-separator when multi items are seleted")
-                            TextField(#"Default is " ""#, text: $copyPathSeparator)
-                        }
-                        Picker(selection: $copyPathOption, label: Text("Copy Style")) {
-                            ForEach(CopyPathOption.allCases) { option in
-                                Text(option.description).tag(option)
+                            HStack {
+                                Text("Join-separator when multi items are seleted")
+                                TextField(#"Default is " ""#, text: $copyPathSeparator)
+                            }
+                            Picker(selection: $copyPathOption, label: Text("Copy Style")) {
+                                ForEach(CopyPathOption.allCases) { option in
+                                    Text(option.description).tag(option)
+                                }
                             }
                         }
-                    }
 
-                } header: {
-                    Text("Copy Path Settings:")
+                    } header: {
+                        Text("Copy Path Settings:")
+                    }
                 }
             }
             Preferences.Section(bottomDivider: true, verticalAlignment: .top) {
                 EmptyView()
             } content: {
-                Section {
-                    HStack {
+                if hasNewFile {
+                    Section {
                         HStack {
-                            Text("File Name")
-                            TextField("Untitled", text: $newFileName)
-                        }
-                        Picker(selection: $newFileExtension, label: Text("File Extension")) {
-                            ForEach(NewFileExtension.allCases) { fileExtension in
-                                Text(fileExtension.rawValue).tag(fileExtension)
+                            HStack {
+                                Text("File Name")
+                                TextField("Untitled", text: $newFileName)
+                            }
+                            Picker(selection: $newFileExtension, label: Text("File Extension")) {
+                                ForEach(NewFileExtension.allCases) { fileExtension in
+                                    Text(fileExtension.rawValue).tag(fileExtension)
+                                }
                             }
                         }
+                    } header: {
+                        Text("New File Settings:")
                     }
-                } header: {
-                    Text("New File Settings:")
                 }
             }
         }
@@ -96,6 +105,6 @@ struct GeneralSettingTab: View {
 
 struct GeneralSettingTab_Previews: PreviewProvider {
     static var previews: some View {
-        GeneralSettingTab()
+        GeneralSettingTab(menuItemStore: MenuItemStore())
     }
 }
