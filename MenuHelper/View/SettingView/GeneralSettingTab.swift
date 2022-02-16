@@ -9,14 +9,23 @@ import Preferences
 import SwiftUI
 
 struct GeneralSettingTab: View {
-    @AppStorage("SHOW_CONTEXTUAL_MENU_FOR_ITEM", store: .group)
+    @AppStorage(Key.showContextualMenuForItem, store: .group)
     private var showContextualMenuForItem = true
-    @AppStorage("SHOW_CONTEXTUAL_MENU_FOR_CONTAINER", store: .group)
+    @AppStorage(Key.showContextualMenuForContainer, store: .group)
     private var showContextualMenuForContainer = true
-    @AppStorage("SHOW_CONTEXTUAL_MENU_FOR_SIDEBAR", store: .group)
+    @AppStorage(Key.showContextualMenuForSidebar, store: .group)
     private var showContextualMenuForSidebar = true
-    @AppStorage("SHOW_TOOLBAR_ITEM_MENU", store: .group)
+    @AppStorage(Key.showToolbarItemMenu, store: .group)
     private var showToolbarItemMenu = true
+
+    @AppStorage(Key.copyPathSeparator, store: .group)
+    private var copyPathSeparator = ""
+    @AppStorage(Key.copyPathOption, store: .group)
+    private var copyPathOption = CopyPathOption.escape
+    @AppStorage(Key.newFileName, store: .group)
+    private var newFileName = ""
+    @AppStorage(Key.newFileExtension, store: .group)
+    private var newFileExtension = NewFileExtension.none
 
     var body: some View {
         Preferences.Container(contentWidth: 600) {
@@ -35,11 +44,50 @@ struct GeneralSettingTab: View {
                         Text("*(Unavailable since macOS Big Sur)*").font(.footnote)
                     }
                 } header: {
-                    Text("Menu Settings (When to show related menus)")
+                    Text("Display Settings:") + Text("(When to show related menus)").font(.footnote)
                 } footer: {
                     Text("Right-click is the same as control-click")
                         .font(.footnote)
                         .bold()
+                }
+            }
+            Preferences.Section(bottomDivider: true, verticalAlignment: .top) {
+                EmptyView()
+            } content: {
+                Section {
+                    HStack {
+                        HStack {
+                            Text("Join-separator when multi items are seleted")
+                            TextField(#"Default is " ""#, text: $copyPathSeparator)
+                        }
+                        Picker(selection: $copyPathOption, label: Text("Copy Style")) {
+                            ForEach(CopyPathOption.allCases) { option in
+                                Text(option.description).tag(option)
+                            }
+                        }
+                    }
+
+                } header: {
+                    Text("Copy Path Settings:")
+                }
+            }
+            Preferences.Section(bottomDivider: true, verticalAlignment: .top) {
+                EmptyView()
+            } content: {
+                Section {
+                    HStack {
+                        HStack {
+                            Text("File Name")
+                            TextField("Untitled", text: $newFileName)
+                        }
+                        Picker(selection: $newFileExtension, label: Text("File Extension")) {
+                            ForEach(NewFileExtension.allCases) { fileExtension in
+                                Text(fileExtension.rawValue).tag(fileExtension)
+                            }
+                        }
+                    }
+                } header: {
+                    Text("New File Settings:")
                 }
             }
         }

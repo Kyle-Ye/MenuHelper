@@ -10,29 +10,47 @@ import os.log
 
 private let logger = Logger(subsystem: subsystem, category: "user_defaults")
 
-extension FinderSync {
+extension UserDefaults {
     var showContextualMenuForItem: Bool {
-        defaults(for: "SHOW_CONTEXTUAL_MENU_FOR_ITEM")
+        defaults(for: Key.showContextualMenuForItem) ?? true
     }
 
     var showContextualMenuForContainer: Bool {
-        defaults(for: "SHOW_CONTEXTUAL_MENU_FOR_CONTAINER")
+        defaults(for: Key.showContextualMenuForContainer) ?? true
     }
 
     var showContextualMenuForSidebar: Bool {
-        defaults(for: "SHOW_CONTEXTUAL_MENU_FOR_SIDEBAR")
+        defaults(for: Key.showContextualMenuForSidebar) ?? true
     }
 
     var showToolbarItemMenu: Bool {
-        defaults(for: "SHOW_TOOLBAR_ITEM_MENU")
+        defaults(for: Key.showToolbarItemMenu) ?? true
     }
 
-    private func defaults(for key: String) -> Bool {
-        if let value = UserDefaults.group.object(forKey: key) as? Bool {
+    var copyPathSeparator: String {
+        defaults(for: Key.copyPathSeparator) ?? " "
+    }
+
+    var copyPathOption: CopyPathOption {
+        let optionRaw = defaults(for: Key.copyPathOption) ?? 0
+        return CopyPathOption(rawValue: optionRaw) ?? .origin        
+    }
+
+    var newFileName: String {
+        defaults(for: Key.newFileName) ?? "Untitled"
+    }
+
+    var newFileExtension: NewFileExtension {
+        let fileExtensionRaw = defaults(for: Key.newFileExtension) ?? ""
+        return NewFileExtension(rawValue: fileExtensionRaw) ?? .none
+    }
+
+    private func defaults<T>(for key: String) -> T? {
+        if let value = object(forKey: key) as? T {
             return value
         } else {
             logger.info("Missing key for \(key, privacy: .public), using default true value")
-            return true
+            return nil
         }
     }
 }

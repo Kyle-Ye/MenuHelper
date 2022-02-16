@@ -26,16 +26,16 @@ class FinderSync: FIFinderSync {
 
     // MARK: - Menu and toolbar item support
 
-    override var toolbarItemName: String { showToolbarItemMenu ? "MenuHelper" : "" }
+    override var toolbarItemName: String { UserDefaults.group.showToolbarItemMenu ? "MenuHelper" : "" }
 
-    override var toolbarItemToolTip: String { showToolbarItemMenu ? "MenuHelper Menu" : "" }
+    override var toolbarItemToolTip: String { UserDefaults.group.showToolbarItemMenu ? "MenuHelper Menu" : "" }
 
     override var toolbarItemImage: NSImage {
         func defaultImage() -> NSImage {
-            logger.info("showToolbarItemMenu: \(self.showToolbarItemMenu, privacy: .public)")
+            logger.info("showToolbarItemMenu: \(UserDefaults.group.showToolbarItemMenu, privacy: .public)")
             return NSImage()
         }
-        if showToolbarItemMenu {
+        if UserDefaults.group.showToolbarItemMenu {
             return NSImage(systemSymbolName: "terminal", accessibilityDescription: "MenuHelper Menu") ?? defaultImage()
         } else {
             return defaultImage()
@@ -45,14 +45,14 @@ class FinderSync: FIFinderSync {
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
         switch menuKind {
         case .contextualMenuForItems:
-            if !showContextualMenuForItem { return NSMenu() }
+            if !UserDefaults.group.showContextualMenuForItem { return NSMenu() }
         case .contextualMenuForContainer:
-            if !showContextualMenuForContainer { return NSMenu() }
+            if !UserDefaults.group.showContextualMenuForContainer { return NSMenu() }
         // NOTE: contextualMenuForSidebar will not called since macOS Big Sur
         case .contextualMenuForSidebar:
-            if !showContextualMenuForSidebar { return NSMenu() }
+            if !UserDefaults.group.showContextualMenuForSidebar { return NSMenu() }
         case .toolbarItemMenu:
-            if !showToolbarItemMenu { return NSMenu() }
+            if !UserDefaults.group.showToolbarItemMenu { return NSMenu() }
         @unknown default:
             break
         }

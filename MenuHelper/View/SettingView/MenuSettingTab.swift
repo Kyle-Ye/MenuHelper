@@ -79,18 +79,15 @@ struct MenuSettingTab: View {
             EmptyView()
         } content: {
             VStack(alignment: .leading) {
-                HStack {
-                    Text("Action Menu Items")
-                    Spacer()
-                    ForEach(ActionMenuItem.all) { item in
+                Text("Action Menu Items")
+                List {
+                    ForEach(ActionMenuItem.all.filter{ !store.actionItems.contains($0) }) { item in
                         Button {
                             store.appendItem(item)
                         } label: {
                             Label("Add \(item.name)", systemImage: "plus.app")
                         }
                     }
-                }
-                List {
                     ForEach(store.actionItems) { item in
                         HStack {
                             Checkmark(isOn: item.enabled)

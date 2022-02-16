@@ -68,12 +68,63 @@ extension AppMenuItem: MenuItemClickable {
 }
 
 extension ActionMenuItem: MenuItemClickable {
+    static let actions: [([URL]) -> [Bool]] = [
+        { urls in
+            let board = NSPasteboard.general
+            board.clearContents()
+
+            return [board.setString(urls.map(\.path).joined(separator: " "), forType: .string)]
+        },
+        { urls in
+            urls.map { url in
+                NSWorkspace.shared.selectFile(url.deletingLastPathComponent().path, inFileViewerRootedAtPath: "")
+            }
+        },
+        { urls in
+            urls.map { url in
+                // TODO: Configurable default name
+                let name = UserDefaults.group.newFileName
+                let fileExtension = UserDefaults.group.newFileExtension.rawValue
+                let manager = FileManager.default
+                let target: URL
+                if manager.directoryExists(atPath: url.path) {
+                    target = url
+                        .appendingPathComponent(name)
+                        .appendingPathExtension(fileExtension)
+                } else {
+                    target = url
+                        .deletingLastPathComponent()
+                        .appendingPathComponent(name)
+                        .appendingPathExtension(fileExtension)
+                }
+                logger.notice("Trying to create empty file at \(target.path, privacy: .public)")
+                let success = FileManager.default.createFile(atPath: target.path, contents: Data(), attributes: nil)
+                return success
+            }
+
+        },
+    ]
+
     func menuClick(with urls: [URL]) {
-        ActionMenuItem.actions[actionIndex](urls)
+        for (index, result) in ActionMenuItem.actions[actionIndex](urls).enumerated() {
+            logger.notice("Result of \(name) in \(urls[index], privacy: .public) is \(result)")
+        }
     }
 }
 
-extension NSAlert {
+private extension FileManager {
+    func directoryExists(atPath path: String) -> Bool {
+        fileExists(atPath: path, isDirectory: true)
+    }
+
+    func fileExists(atPath path: String, isDirectory: Bool) -> Bool {
+        var isDirectoryBool = ObjCBool(isDirectory)
+        let exists = fileExists(atPath: path, isDirectory: &isDirectoryBool)
+        return exists && (isDirectoryBool.boolValue == isDirectory)
+    }
+}
+
+private extension NSAlert {
     /**
      Workaround to allow using `NSAlert` in a `Task`.
 
