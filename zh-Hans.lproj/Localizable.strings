@@ -1,4 +1,10 @@
 /* No comment provided by engineer. */
+"- Read permission: Open with custom application" = "- 可读：使用自定义应用程序打开";
+
+/* No comment provided by engineer. */
+"- Write permission: New file in folder" = "- 可写：在文件夹中新建文件";
+
+/* No comment provided by engineer. */
 "(When to show related menus)" = "(以下情况时展示相关菜单)";
 
 /* No comment provided by engineer. */
@@ -17,10 +23,10 @@
 "Acknowledgements..." = "致谢...";
 
 /* No comment provided by engineer. */
-"Action Menu Items" = "“动作”菜单项";
+"Action Menu Items" = "动作菜单项";
 
 /* No comment provided by engineer. */
-"Add %@" = "添加 %@ “动作”";
+"Add %@" = "添加 %@ 动作";
 
 /* No comment provided by engineer. */
 "Add Application(s)" = "添加应用程序";
@@ -29,10 +35,16 @@
 "Add Folder(s)" = "添加文件夹";
 
 /* No comment provided by engineer. */
-"Application Menu Items" = "“应用程序”菜单项";
+"All permission are only valid in the Finder Sync extension which runs on Finder.app" = "所有权限仅在运行在访达程序的访达扩展有效";
+
+/* No comment provided by engineer. */
+"Application Menu Items" = "应用程序菜单项";
 
 /* No comment provided by engineer. */
 "But *contextual menu* will only show in Finder Sync directories" = "但是*上下文*菜单只会出现在“访达同步”文件夹中";
+
+/* No comment provided by engineer. */
+"but the FinderSync extension need it for the following reason:" = "但是访达同步扩展因为下列原因需要：";
 
 /* No comment provided by engineer. */
 "Clicks on the extension’s toolbar button." = "点击该扩展的访达工具栏按钮";
@@ -50,7 +62,7 @@
 "Copy Path" = "拷贝路径";
 
 /* No comment provided by engineer. */
-"Copy Path Settings:" = "“拷贝路径”菜单项设置";
+"Copy Path Settings:" = "拷贝路径菜单项设置";
 
 /* No comment provided by engineer. */
 "Copy Style" = "拷贝风格";
@@ -62,7 +74,7 @@
 "Default is \" \"" = "默认为\" \"";
 
 /* No comment provided by engineer. */
-"Directories where you have permission for *application menu items* to open apps and *new file action menu* to create file" = "可以使用“应用程序”菜单项打开和“新建文件”菜单项新建文件的文件夹";
+"Directories where you have permission for *application menu items* to open apps and *new file action menu* to create file" = "可以使用应用程序菜单项打开和新建文件菜单项新建文件的文件夹";
 
 /* No comment provided by engineer. */
 "Display Settings:" = "显示设置：";
@@ -104,25 +116,25 @@
 "Menu" = "菜单";
 
 /* No comment provided by engineer. */
-"Menu Helper is made possible with following projects:" = "“速达”的产生离不开以下开源项目：";
+"Menu Helper is made possible with following projects:" = "速达的产生离不开以下开源项目：";
 
 /* New File */
 "New File" = "新建文件";
 
 /* No comment provided by engineer. */
-"New File Settings:" = "“新建文件”菜单项设置";
+"New File Settings:" = "新建文件菜单项设置";
 
 /* No comment provided by engineer. */
 "Okay" = "好";
 
 /* No comment provided by engineer. */
-"Open Permission Directories" = "拥有“打开”权限的文件夹";
-
-/* No comment provided by engineer. */
 "Open Preferences Panel..." = "打开偏好设置...";
 
 /* No comment provided by engineer. */
-"Quit and Open Finder Extensinos Preferences..." = "退出并打开“访达”扩展设置...";
+"Permission description" = "权限说明";
+
+/* No comment provided by engineer. */
+"Quit and Open Finder Extensinos Preferences..." = "退出并打开访达扩展设置...";
 
 /* No comment provided by engineer. */
 "Recommended folder is %@ (current user's 🏠 directory)" = "建议文件夹为 %@ （当前用户的🏠目录）";
@@ -143,6 +155,12 @@
 "Thanks for your supporting" = "感谢您的支持";
 
 /* No comment provided by engineer. */
+"The application itself does not require user seleted folder permission" = "该应用程序本身不会要求用户选择的文件夹权限";
+
+/* No comment provided by engineer. */
+"The persmission will not be shared to the main app" = "这些权限不会分享给主应用";
+
+/* No comment provided by engineer. */
 "Toolbar item menu will show in every directory" = "工具栏菜单会出现在所有文件夹中";
 
 /* No comment provided by engineer. */
@@ -150,6 +168,9 @@
 
 /* No comment provided by engineer. */
 "Use origin path" = "使用原路径";
+
+/* No comment provided by engineer. */
+"User Seleted Directories" = "用户选择的文件夹";
 
 /* No comment provided by engineer. */
 "with 🥰" = "用 🥰 编写";
