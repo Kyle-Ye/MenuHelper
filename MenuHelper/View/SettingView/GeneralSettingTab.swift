@@ -9,22 +9,22 @@ import Preferences
 import SwiftUI
 
 struct GeneralSettingTab: View {
-    @AppStorage(Key.showContextualMenuForItem, store: .group)
+    @AppStorage(Key.showContextualMenuForItem)
     private var showContextualMenuForItem = true
-    @AppStorage(Key.showContextualMenuForContainer, store: .group)
+    @AppStorage(Key.showContextualMenuForContainer)
     private var showContextualMenuForContainer = true
-    @AppStorage(Key.showContextualMenuForSidebar, store: .group)
+    @AppStorage(Key.showContextualMenuForSidebar)
     private var showContextualMenuForSidebar = true
-    @AppStorage(Key.showToolbarItemMenu, store: .group)
+    @AppStorage(Key.showToolbarItemMenu)
     private var showToolbarItemMenu = true
 
-    @AppStorage(Key.copyPathSeparator, store: .group)
+    @AppStorage(Key.copyPathSeparator)
     private var copyPathSeparator = ""
-    @AppStorage(Key.copyPathOption, store: .group)
+    @AppStorage(Key.copyPathOption)
     private var copyPathOption = CopyPathOption.escape
-    @AppStorage(Key.newFileName, store: .group)
+    @AppStorage(Key.newFileName)
     private var newFileName = ""
-    @AppStorage(Key.newFileExtension, store: .group)
+    @AppStorage(Key.newFileExtension)
     private var newFileExtension = NewFileExtension.none
 
     @ObservedObject var menuItemStore: MenuItemStore

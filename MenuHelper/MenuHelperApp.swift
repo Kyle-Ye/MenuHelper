@@ -43,6 +43,7 @@ struct MenuHelperApp: App {
         Settings {
             SettingView()
         }
+        .defaultAppStorage(.group)
     }
 }
 
