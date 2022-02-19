@@ -72,8 +72,22 @@ extension ActionMenuItem: MenuItemClickable {
         { urls in
             let board = NSPasteboard.general
             board.clearContents()
-
-            return [board.setString(urls.map(\.path).joined(separator: " "), forType: .string)]
+            return [
+                board.setString(
+                    urls.map(\.path)
+                        .map {
+                            let option = UserDefaults.group.copyPathOption
+                            switch option {
+                            case .origin:
+                                return $0
+                            case .escape:
+                                return $0.replacingOccurrences(of: " ", with: #"\ "#)
+                            case .quoto:
+                                return "\"\($0)\""
+                            }
+                        }
+                        .joined(separator: UserDefaults.group.copyPathSeparator), forType: .string)
+            ]
         },
         { urls in
             urls.map { url in
@@ -82,7 +96,6 @@ extension ActionMenuItem: MenuItemClickable {
         },
         { urls in
             urls.map { url in
-                // TODO: Configurable default name
                 let name = UserDefaults.group.newFileName
                 let fileExtension = UserDefaults.group.newFileExtension.rawValue
                 let manager = FileManager.default
