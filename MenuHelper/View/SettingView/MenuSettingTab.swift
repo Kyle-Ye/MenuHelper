@@ -117,6 +117,8 @@ struct MenuSettingTab: View {
                     .onDelete { store.deleteActionItems(offsets: $0) }
                     .onMove { store.moveActionItems(from: $0, to: $1) }
                 }
+                Link("Suggest more action menus here", destination: URL(string: "https://github.com/Kyle-Ye/MenuHelperApp/issues/new/choose")!)
+
             }
         }
     }
