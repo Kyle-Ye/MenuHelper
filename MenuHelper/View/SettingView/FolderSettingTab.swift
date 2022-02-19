@@ -37,7 +37,7 @@ struct FolderSettingTab: View {
                     } label: { Label("Add Folder(s)", systemImage: "folder.badge.plus") }
                 }
                 VStack(alignment: .leading) {
-                    Text("Directories where you have permission to open apps using this app")
+                    Text("Directories where you have permission for *application menu items* to open apps and *new file action menu* to create file")
                     Text("Recommended folder is \("/Users/\(NSUserName())") (current user's 🏠 directory)")
                 }
                 .foregroundColor(.secondary)
@@ -61,7 +61,7 @@ struct FolderSettingTab: View {
         } content: {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("Sync Permission Directories")
+                    Text("Sync Directories")
                     Spacer()
                     Button {
                         let panel = NSOpenPanel()
@@ -81,7 +81,7 @@ struct FolderSettingTab: View {
                 }
                 VStack(alignment: .leading) {
                     Text("Toolbar item menu will show in every directory")
-                    Text("But *contextual menu* will only show in sync permission directories")
+                    Text("But *contextual menu* will only show in sync directories")
                 }
                 .foregroundColor(.secondary)
                 .font(.caption)
