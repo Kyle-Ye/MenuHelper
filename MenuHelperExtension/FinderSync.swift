@@ -64,7 +64,7 @@ class FinderSync: FIFinderSync {
         let applicationMenu: NSMenu
         if UserDefaults.group.showSubMenuForApplication {
             applicationMenu = NSMenu()
-            let applicationSubMenuItem = NSMenuItem(title: NSLocalizedString("Application Menus", comment: ""), action: nil, keyEquivalent: "")
+            let applicationSubMenuItem = NSMenuItem(title: String(localized: "Application Menus"), action: nil, keyEquivalent: "")
             menu.addItem(applicationSubMenuItem)
             menu.setSubmenu(applicationMenu, for: applicationSubMenuItem)
         } else {
@@ -73,7 +73,7 @@ class FinderSync: FIFinderSync {
         for item in menuStore.appItems.filter(\.enabled) {
             let menuItem = NSMenuItem()
             menuItem.target = self
-            menuItem.title = String(format: NSLocalizedString("Open in %@", comment: "Open in the given application"), item.name)
+            menuItem.title = String(format: String(localized: "Open in %@", comment: "Open in the given application"), item.name)
             menuItem.action = #selector(menuAction(_:))
             menuItem.toolTip = "\(item.name)"
             menuItem.tag = 0
@@ -86,7 +86,7 @@ class FinderSync: FIFinderSync {
         let actionMenu: NSMenu
         if UserDefaults.group.showSubMenuForAction {
             actionMenu = NSMenu()
-            let actionSubMenuItem = NSMenuItem(title: NSLocalizedString("Action Menus", comment: ""), action: nil, keyEquivalent: "")
+            let actionSubMenuItem = NSMenuItem(title: String(localized: "Action Menus"), action: nil, keyEquivalent: "")
             menu.addItem(actionSubMenuItem)
             menu.setSubmenu(actionMenu, for: actionSubMenuItem)
         } else {

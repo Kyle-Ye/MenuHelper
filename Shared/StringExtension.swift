@@ -32,9 +32,9 @@ enum CopyPathOption: Int, CustomStringConvertible, CaseIterable, Identifiable {
 
     var description: String {
         switch self {
-        case .origin: return NSLocalizedString("Use origin path", comment: "")
-        case .escape: return NSLocalizedString("Escape \" \" with \"\\ \" ", comment: "")
-        case .quoto: return NSLocalizedString("Wrap entire path with \"\"", comment: "")
+        case .origin: return String(localized: "Use origin path")
+        case .escape: return String(localized: "Escape \" \" with \"\\ \" ")
+        case .quoto: return String(localized: "Wrap entire path with \"\"")
         }
     }
 }

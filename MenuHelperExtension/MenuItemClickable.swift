@@ -34,8 +34,8 @@ extension AppMenuItem: MenuItemClickable {
                 Task { @MainActor in
                     if underlyingError.code == -10820 {
                         let alert = NSAlert(error: error)
-                        alert.addButton(withTitle: NSLocalizedString("OK", comment: "OK button"))
-                        alert.addButton(withTitle: NSLocalizedString("Remove", comment: "Remove app button"))
+                        alert.addButton(withTitle: String(localized: "OK", comment: "OK button"))
+                        alert.addButton(withTitle: String(localized: "Remove", comment: "Remove app button"))
                         let response = await alert.run()
                         logger.notice("NSAlert response result \(response.rawValue)")
                         switch response {

@@ -15,7 +15,7 @@ struct ActionMenuItem: MenuItem {
 
     var key: String
     var comment: String = ""
-    var name: String { NSLocalizedString(key, comment: comment) }
+    var name: String { NSLocalizedString(key, comment: "") }
     var enabled: Bool = true
     var actionIndex: Int
 
