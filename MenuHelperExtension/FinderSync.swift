@@ -84,7 +84,7 @@ class FinderSync: FIFinderSync {
         }
 
         let actionMenu: NSMenu
-        if UserDefaults.group.showSubMenuForApplication {
+        if UserDefaults.group.showSubMenuForAction {
             actionMenu = NSMenu()
             let actionSubMenuItem = NSMenuItem(title: NSLocalizedString("Action Menus", comment: ""), action: nil, keyEquivalent: "")
             menu.addItem(actionSubMenuItem)
