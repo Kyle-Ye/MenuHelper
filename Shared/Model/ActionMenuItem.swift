@@ -14,8 +14,7 @@ struct ActionMenuItem: MenuItem {
     }
 
     var key: String
-    var comment: String = ""
-    var name: String { NSLocalizedString(key, comment: "") }
+    var name: String { String(localized: String.LocalizationValue(key)) }
     var enabled: Bool = true
     var actionIndex: Int
 
@@ -36,4 +35,3 @@ extension ActionMenuItem {
     private static let newFileString = NSLocalizedString("New File", comment: "New File")
     #endif
 }
-

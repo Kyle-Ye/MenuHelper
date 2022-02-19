@@ -41,6 +41,7 @@ struct ContentView: View {
                 NSApplication.shared.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
             } label: {
                 Text("Open Preferences Panel...")
+                    .accessibilityIdentifier("Open Preferences Panel...")
             }
         }.frame(width: 425, height: 325)
     }

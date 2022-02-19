@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingView: View {
     @StateObject var menuItemStore = MenuItemStore()
     @StateObject var folderItemStore = FolderItemStore()
-    
+
     var body: some View {
         TabView {
             GeneralSettingTab(menuItemStore: menuItemStore)

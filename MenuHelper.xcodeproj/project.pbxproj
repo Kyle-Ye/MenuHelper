@@ -10,7 +10,6 @@
 		270857DE269449E800EB636C /* MenuItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952048268B6A2D00492ABF /* MenuItemStore.swift */; };
 		272986B92711FDAF00EBCCBF /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 272986B82711FDAF00EBCCBF /* OrderedCollections */; };
 		272986BB2711FDCD00EBCCBF /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 272986BA2711FDCD00EBCCBF /* OrderedCollections */; };
-		2732A5B227B9558D005DB4A0 /* MenuHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732A5B127B9558D005DB4A0 /* MenuHelperUITests.swift */; };
 		2732A5B427B9558D005DB4A0 /* MenuHelperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732A5B327B9558D005DB4A0 /* MenuHelperUITestsLaunchTests.swift */; };
 		27421A97271FCB0E00A0BD28 /* AppCommChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27421A96271FCB0E00A0BD28 /* AppCommChannel.swift */; };
 		27421A9A271FCB1A00A0BD28 /* FinderCommChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27421A98271FCB1600A0BD28 /* FinderCommChannel.swift */; };
@@ -102,7 +101,6 @@
 
 /* Begin PBXFileReference section */
 		2732A5AF27B9558D005DB4A0 /* MenuHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2732A5B127B9558D005DB4A0 /* MenuHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHelperUITests.swift; sourceTree = "<group>"; };
 		2732A5B327B9558D005DB4A0 /* MenuHelperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHelperUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2732A5BA27B955B9005DB4A0 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		2732A5BB27B95B37005DB4A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 		2732A5B027B9558D005DB4A0 /* MenuHelperUITests */ = {
 			isa = PBXGroup;
 			children = (
-				2732A5B127B9558D005DB4A0 /* MenuHelperUITests.swift */,
 				2732A5B327B9558D005DB4A0 /* MenuHelperUITestsLaunchTests.swift */,
 				2732A5BA27B955B9005DB4A0 /* TestPlan.xctestplan */,
 			);
@@ -494,7 +491,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2732A5B227B9558D005DB4A0 /* MenuHelperUITests.swift in Sources */,
 				2732A5B427B9558D005DB4A0 /* MenuHelperUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

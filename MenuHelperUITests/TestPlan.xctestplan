@@ -1,14 +1,19 @@
 {
   "configurations" : [
+    {
+      "id" : "51181BC1-0D1D-4DC0-8EE1-9ACA0321EE4B",
+      "name" : "Configuration 1",
+      "options" : {
 
+      }
+    }
   ],
   "defaultOptions" : {
-    "testTimeoutsEnabled" : true,
-    "uiTestingScreenshotsLifetime" : "keepNever",
-    "userAttachmentLifetime" : "keepAlways"
+
   },
   "testTargets" : [
     {
+      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:MenuHelper.xcodeproj",
         "identifier" : "2732A5AE27B9558D005DB4A0",
