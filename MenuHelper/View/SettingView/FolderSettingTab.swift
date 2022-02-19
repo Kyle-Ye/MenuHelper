@@ -61,7 +61,7 @@ struct FolderSettingTab: View {
         } content: {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("Sync Directories")
+                    Text("Finder Sync Directories")
                     Spacer()
                     Button {
                         let panel = NSOpenPanel()
@@ -81,7 +81,7 @@ struct FolderSettingTab: View {
                 }
                 VStack(alignment: .leading) {
                     Text("Toolbar item menu will show in every directory")
-                    Text("But *contextual menu* will only show in sync directories")
+                    Text("But *contextual menu* will only show in Finder Sync directories")
                 }
                 .foregroundColor(.secondary)
                 .font(.caption)

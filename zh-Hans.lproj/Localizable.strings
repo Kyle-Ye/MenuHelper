@@ -1,4 +1,7 @@
 /* No comment provided by engineer. */
+"(When to show related menus)" = "(以下情况时展示相关菜单)";
+
+/* No comment provided by engineer. */
 "*(Custom toolbar in Finder to show/hide this app in Finder toolbar)*" = "*(在访达中自定义工具栏来添加/移除本App)*";
 
 /* No comment provided by engineer. */
@@ -29,7 +32,7 @@
 "Application Menu Items" = "“应用程序”菜单项";
 
 /* No comment provided by engineer. */
-"But *contextual menu* will only show in sync permission directories" = "但是*上下文菜单*只会出现在拥有“同步”权限的文件夹中";
+"But *contextual menu* will only show in Finder Sync directories" = "但是*上下文*菜单只会出现在“访达同步”文件夹中";
 
 /* No comment provided by engineer. */
 "Clicks on the extension’s toolbar button." = "点击该扩展的访达工具栏按钮";
@@ -47,10 +50,34 @@
 "Copy Path" = "拷贝路径";
 
 /* No comment provided by engineer. */
+"Copy Path Settings:" = "“拷贝路径”菜单项设置";
+
+/* No comment provided by engineer. */
+"Copy Style" = "拷贝风格";
+
+/* No comment provided by engineer. */
 "Copyright ©️ 2022 YEXULEI. All rights reserved" = "Copyright ©️ 2022 YEXULEI. All rights reserved 叶絮雷 版权所有";
 
 /* No comment provided by engineer. */
-"Directories where you have permission to open apps using this app" = "可以使用“应用程序”菜单项打开的文件夹";
+"Default is \" \"" = "默认为\" \"";
+
+/* No comment provided by engineer. */
+"Directories where you have permission for *application menu items* to open apps and *new file action menu* to create file" = "可以使用“应用程序”菜单项打开和“新建文件”菜单项新建文件的文件夹";
+
+/* No comment provided by engineer. */
+"Display Settings:" = "显示设置：";
+
+/* No comment provided by engineer. */
+"Escape \" \" with \"\\ \" " = "用\"\\ \"转义\" \"";
+
+/* No comment provided by engineer. */
+"File Extension" = "文件扩展";
+
+/* No comment provided by engineer. */
+"File Name" = "文件名";
+
+/* No comment provided by engineer. */
+"Finder Sync Directories" = "访达同步文件夹";
 
 /* No comment provided by engineer. */
 "Folder" = "文件夹";
@@ -68,6 +95,9 @@
 "Inspired by [SwiftyMenu](https://apps.apple.com/cn/app/swiftymenu/id1567748223?l=en&mt=12) [Lex Tang](https://twitter.com/lexrus)" = "灵感来源 [SwiftyMenu](https://apps.apple.com/cn/app/swiftymenu/id1567748223?l=en&mt=12) [Lex Tang](https://twitter.com/lexrus)";
 
 /* No comment provided by engineer. */
+"Join-separator when multi items are seleted" = "当多个项目被选中时的连接字符串";
+
+/* No comment provided by engineer. */
 "Made by" = "由";
 
 /* No comment provided by engineer. */
@@ -76,8 +106,11 @@
 /* No comment provided by engineer. */
 "Menu Helper is made possible with following projects:" = "“速达”的产生离不开以下开源项目：";
 
+/* New File */
+"New File" = "新建文件";
+
 /* No comment provided by engineer. */
-"Menu Settings (When to show related menus)" = "菜单设置（以下情况时展示相关菜单）";
+"New File Settings:" = "“新建文件”菜单项设置";
 
 /* No comment provided by engineer. */
 "Okay" = "好";
@@ -98,13 +131,13 @@
 "Right-click is the same as control-click" = "右击和Control点击等价";
 
 /* No comment provided by engineer. */
+"Show as submenu" = "展示为子菜单";
+
+/* No comment provided by engineer. */
 "Support" = "支持";
 
 /* No comment provided by engineer. */
 "Support Author..." = "支持作者...";
-
-/* No comment provided by engineer. */
-"Sync Permission Directories" = "拥有“同步”权限的文件夹";
 
 /* No comment provided by engineer. */
 "Thanks for your supporting" = "感谢您的支持";
@@ -113,7 +146,16 @@
 "Toolbar item menu will show in every directory" = "工具栏菜单会出现在所有文件夹中";
 
 /* No comment provided by engineer. */
+"Untitled" = "未命名文件";
+
+/* No comment provided by engineer. */
+"Use origin path" = "使用原路径";
+
+/* No comment provided by engineer. */
 "with 🥰" = "用 🥰 编写";
+
+/* No comment provided by engineer. */
+"Wrap entire path with \"\"" = "用\"\"包裹整个路径";
 
 /* No comment provided by engineer. */
 "You can turn on MenuHelper's extension in **Finder Extensions prefrences**" = "您可以在 **系统偏好设置-扩展-“访达”扩展** 中启用“速达-访达扩展”";

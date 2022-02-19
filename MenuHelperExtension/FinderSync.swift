@@ -64,7 +64,7 @@ class FinderSync: FIFinderSync {
         let applicationMenu: NSMenu
         if UserDefaults.group.showSubMenuForApplication {
             applicationMenu = NSMenu()
-            let applicationSubMenuItem = NSMenuItem(title: "Application Menus", action: nil, keyEquivalent: "")
+            let applicationSubMenuItem = NSMenuItem(title: NSLocalizedString("Application Menus", comment: ""), action: nil, keyEquivalent: "")
             menu.addItem(applicationSubMenuItem)
             menu.setSubmenu(applicationMenu, for: applicationSubMenuItem)
         } else {
@@ -82,11 +82,11 @@ class FinderSync: FIFinderSync {
             }
             applicationMenu.addItem(menuItem)
         }
-        
+
         let actionMenu: NSMenu
         if UserDefaults.group.showSubMenuForApplication {
             actionMenu = NSMenu()
-            let actionSubMenuItem = NSMenuItem(title: "Action Menus", action: nil, keyEquivalent: "")
+            let actionSubMenuItem = NSMenuItem(title: NSLocalizedString("Action Menus", comment: ""), action: nil, keyEquivalent: "")
             menu.addItem(actionSubMenuItem)
             menu.setSubmenu(actionMenu, for: actionSubMenuItem)
         } else {

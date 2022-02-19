@@ -1,8 +1,20 @@
+/* No comment provided by engineer. */
+"Action Menus" = "动作菜单";
+
+/* No comment provided by engineer. */
+"Application Menus" = "应用程序菜单";
+
 /* Copy Path */
 "Copy Path" = "拷贝路径";
 
+/* No comment provided by engineer. */
+"Escape \" \" with \"\\ \" " = "用\"\\ \"转义\" \"";
+
 /* Go Parent Directory */
 "Go Parent Directory" = "前往上层文件夹";
+
+/* New File */
+"New File" = "新建文件";
 
 /* OK button */
 "OK" = "好";
@@ -12,4 +24,10 @@
 
 /* Remove app button */
 "Remove" = "移除";
+
+/* No comment provided by engineer. */
+"Use origin path" = "使用原路径";
+
+/* No comment provided by engineer. */
+"Wrap entire path with \"\"" = "用\"\"包裹整个路径";
 
