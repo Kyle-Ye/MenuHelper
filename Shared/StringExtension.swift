@@ -20,6 +20,9 @@ struct Key {
     static let copyPathOption = "COPY_PATH_OPTION"
     static let newFileName = "NEW_FILE_NAME"
     static let newFileExtension = "NEW_FILE_EXTENSION"
+    
+    static let showSubMenuForApplication = "SHOW_SUB_MENU_FOR_APPLICATION"
+    static let showSubMenuForAction = "SHOW_SUB_MENU_FOR_ACTION"
 }
 
 enum CopyPathOption: Int, CustomStringConvertible, CaseIterable, Identifiable {

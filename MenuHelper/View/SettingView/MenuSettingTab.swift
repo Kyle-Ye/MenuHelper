@@ -12,6 +12,11 @@ struct MenuSettingTab: View {
     @ObservedObject var store: MenuItemStore
     @State private var isDrogTargeted = false
 
+    @AppStorage(Key.showSubMenuForApplication)
+    private var showSubMenuForApplication = false
+    @AppStorage(Key.showSubMenuForAction)
+    private var showSubMenuForAction = false
+
     var body: some View {
         Preferences.Container(contentWidth: 520) {
             appItemSection
@@ -27,6 +32,11 @@ struct MenuSettingTab: View {
                 HStack {
                     Text("Application Menu Items")
                     Spacer()
+                    Toggle(isOn: $showSubMenuForApplication) {
+                        Text("Show as submenu")
+                    }
+                }
+                List {
                     Button {
                         let panel = NSOpenPanel()
                         panel.allowsMultipleSelection = true
@@ -40,8 +50,6 @@ struct MenuSettingTab: View {
                     } label: {
                         Label("Add Application(s)", systemImage: "plus.app")
                     }
-                }
-                List {
                     ForEach(store.appItems) { item in
                         HStack {
                             Checkmark(isOn: item.enabled)
@@ -79,9 +87,15 @@ struct MenuSettingTab: View {
             EmptyView()
         } content: {
             VStack(alignment: .leading) {
-                Text("Action Menu Items")
+                HStack {
+                    Text("Action Menu Items")
+                    Spacer()
+                    Toggle(isOn: $showSubMenuForAction) {
+                        Text("Show as submenu")
+                    }
+                }
                 List {
-                    ForEach(ActionMenuItem.all.filter{ !store.actionItems.contains($0) }) { item in
+                    ForEach(ActionMenuItem.all.filter { !store.actionItems.contains($0) }) { item in
                         Button {
                             store.appendItem(item)
                         } label: {

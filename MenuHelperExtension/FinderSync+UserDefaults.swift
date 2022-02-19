@@ -28,12 +28,13 @@ extension UserDefaults {
     }
 
     var copyPathSeparator: String {
-        defaults(for: Key.copyPathSeparator) ?? " "
+        let spparator = defaults(for: Key.copyPathSeparator) ?? ""
+        return spparator.isEmpty ? " " : spparator
     }
 
     var copyPathOption: CopyPathOption {
         let optionRaw = defaults(for: Key.copyPathOption) ?? 0
-        return CopyPathOption(rawValue: optionRaw) ?? .origin        
+        return CopyPathOption(rawValue: optionRaw) ?? .origin
     }
 
     var newFileName: String {
@@ -43,6 +44,14 @@ extension UserDefaults {
     var newFileExtension: NewFileExtension {
         let fileExtensionRaw = defaults(for: Key.newFileExtension) ?? ""
         return NewFileExtension(rawValue: fileExtensionRaw) ?? .none
+    }
+
+    var showSubMenuForApplication: Bool {
+        defaults(for: Key.showSubMenuForApplication) ?? false
+    }
+
+    var showSubMenuForAction: Bool {
+        defaults(for: Key.showSubMenuForAction) ?? false
     }
 
     private func defaults<T>(for key: String) -> T? {

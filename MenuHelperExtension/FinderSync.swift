@@ -60,6 +60,16 @@ class FinderSync: FIFinderSync {
         logger.notice("Create menu for \(menuKind.rawValue)")
         let menu = NSMenu(title: "MenuHelper")
         menu.showsStateColumn = true
+
+        let applicationMenu: NSMenu
+        if UserDefaults.group.showSubMenuForApplication {
+            applicationMenu = NSMenu()
+            let applicationSubMenuItem = NSMenuItem(title: "Application Menus", action: nil, keyEquivalent: "")
+            menu.addItem(applicationSubMenuItem)
+            menu.setSubmenu(applicationMenu, for: applicationSubMenuItem)
+        } else {
+            applicationMenu = menu
+        }
         for item in menuStore.appItems.filter(\.enabled) {
             let menuItem = NSMenuItem()
             menuItem.target = self
@@ -70,7 +80,17 @@ class FinderSync: FIFinderSync {
             if menuKind == .toolbarItemMenu {
                 menuItem.image = item.icon
             }
-            menu.addItem(menuItem)
+            applicationMenu.addItem(menuItem)
+        }
+        
+        let actionMenu: NSMenu
+        if UserDefaults.group.showSubMenuForApplication {
+            actionMenu = NSMenu()
+            let actionSubMenuItem = NSMenuItem(title: "Action Menus", action: nil, keyEquivalent: "")
+            menu.addItem(actionSubMenuItem)
+            menu.setSubmenu(actionMenu, for: actionSubMenuItem)
+        } else {
+            actionMenu = menu
         }
         for item in menuStore.actionItems.filter(\.enabled) {
             let menuItem = NSMenuItem()
@@ -82,7 +102,7 @@ class FinderSync: FIFinderSync {
             if menuKind == .toolbarItemMenu {
                 menuItem.image = item.icon
             }
-            menu.addItem(menuItem)
+            actionMenu.addItem(menuItem)
         }
         return menu
     }
