@@ -26,9 +26,9 @@ class FinderSync: FIFinderSync {
 
     // MARK: - Menu and toolbar item support
 
-    override var toolbarItemName: String { UserDefaults.group.showToolbarItemMenu ? "MenuHelper" : "" }
+    override var toolbarItemName: String { UserDefaults.group.showToolbarItemMenu ? String(localized: "MenuHelper") : "" }
 
-    override var toolbarItemToolTip: String { UserDefaults.group.showToolbarItemMenu ? "MenuHelper Menu" : "" }
+    override var toolbarItemToolTip: String { UserDefaults.group.showToolbarItemMenu ? String(localized: "MenuHelper Menu") : "" }
 
     override var toolbarItemImage: NSImage {
         func defaultImage() -> NSImage {

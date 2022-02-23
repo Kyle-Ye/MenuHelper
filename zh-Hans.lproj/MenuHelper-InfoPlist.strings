@@ -1,3 +1,6 @@
+/* Bundle display name */
+"CFBundleDisplayName" = "速达";
+
 /* Bundle name */
 "CFBundleName" = "速达";
 

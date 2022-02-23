@@ -13,6 +13,12 @@
 /* Go Parent Directory */
 "Go Parent Directory" = "前往上层文件夹";
 
+/* No comment provided by engineer. */
+"MenuHelper" = "速达";
+
+/* No comment provided by engineer. */
+"MenuHelper Menu" = "速达菜单";
+
 /* New File */
 "New File" = "新建文件";
 
