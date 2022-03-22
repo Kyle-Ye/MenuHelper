@@ -12,6 +12,8 @@ struct AppMenuItemEditor: View {
     @EnvironmentObject var store: MenuItemStore
 
     @State var item: AppMenuItem
+    @State private var argumentString: String = ""
+    @State private var environmentString: String = ""
     var index: Int?
 
     var body: some View {
@@ -37,19 +39,15 @@ struct AppMenuItemEditor: View {
             }
             HStack {
                 Text("Display Name:")
-                TextField("Display Name:", text: $item.itemName)
+                TextField("Display Name", text: $item.itemName)
             }
-            Text("Arguments:")
-            List {
-                Button {
-                    item.arguments.append("")
-                } label: {
-                    Text("Add argument")
-                }
-
-                ForEach($item.arguments, id: \.self) { $argument in
-                    TextField("argument", text: $argument)
-                }
+            HStack {
+                Text("Arguments:")
+                TextField("Arguments", text: $argumentString)
+            }
+            HStack {
+                Text("Environment:")
+                TextField("Environment", text: $environmentString)
             }
             Spacer()
         }
@@ -64,6 +62,15 @@ struct AppMenuItemEditor: View {
             Spacer()
             Button {
                 Task {
+                    item.arguments = argumentString.split(separator: " ").map { String($0) }
+                    item.environment = environmentString.split(separator: " ")
+                        .map { $0.split(separator: "=") }
+                        .filter { $0.count == 2 }
+                        .reduce(into: [String: String]()) { result, pair in
+                            let key = String(pair[0])
+                            let value = String(pair[1])
+                            result[key] = value
+                        }
                     store.updateAppItem(item: item, index: index)
                     dismiss()
                 }
@@ -71,12 +78,16 @@ struct AppMenuItemEditor: View {
                 Image(systemName: "checkmark.circle")
             }
         }
+        .onAppear {
+            argumentString = item.arguments.joined(separator: " ")
+            environmentString = item.environment.compactMap { "\($0)=\($1)" }.joined(separator: " ")
+        }
     }
 }
 
-// struct AppMenuItemEditor_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AppMenuItemEditor(item: AppMenuItem(bundleIdentifier: "com.apple.dt.Xcode")!)
-//            .environmentObject(MenuItemStore())
-//    }
-// }
+struct AppMenuItemEditor_Previews: PreviewProvider {
+    static var previews: some View {
+        AppMenuItemEditor(item: AppMenuItem(bundleIdentifier: "com.apple.dt.Xcode")!)
+            .environmentObject(MenuItemStore())
+    }
+}

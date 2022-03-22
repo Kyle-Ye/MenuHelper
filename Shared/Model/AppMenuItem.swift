@@ -7,6 +7,7 @@
 
 import AppKit
 import Foundation
+import OrderedCollections
 
 struct AppMenuItem: MenuItem {
     init(appURL url: URL) {
