@@ -16,6 +16,9 @@ enum Key {
     static let showContextualMenuForSidebar = "SHOW_CONTEXTUAL_MENU_FOR_SIDEBAR"
     static let showToolbarItemMenu = "SHOW_TOOLBAR_ITEM_MENU"
 
+    static let globalApplicationArgumentsString = "GLOBAL_APPLICATION_ARGUMENTS_STRING"
+    static let globalApplicationEnvironmentString = "GLOBAL_APPLICATION_ENVIRONMENT_STRING"
+
     static let copyPathSeparator = "COPY_PATH_SEPARATOR"
     static let copyPathOption = "COPY_PATH_OPTION"
     static let newFileName = "NEW_FILE_NAME"
@@ -44,4 +47,23 @@ enum NewFileExtension: String, CaseIterable, Identifiable {
     case none = ""
     case swift
     case txt
+}
+
+extension String {
+    func toDictionary(separator: Character = " ") -> [String: String] {
+        split(separator: separator)
+            .map { $0.split(separator: "=") }
+            .filter { $0.count == 2 }
+            .reduce(into: [String: String]()) { result, pair in
+                let key = String(pair[0])
+                let value = String(pair[1])
+                result[key] = value
+            }
+    }
+}
+
+extension Dictionary {
+    func toString(separator: String = " ") -> String {
+        compactMap { "\($0)=\($1)" }.joined(separator: separator)
+    }
 }

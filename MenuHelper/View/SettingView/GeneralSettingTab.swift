@@ -18,6 +18,11 @@ struct GeneralSettingTab: View {
     @AppStorage(Key.showToolbarItemMenu)
     private var showToolbarItemMenu = true
 
+    @AppStorage(Key.globalApplicationArgumentsString)
+    private var globalApplicationArgumentsString = ""
+    @AppStorage(Key.globalApplicationEnvironmentString)
+    private var globalApplicationEnvironmentString = ""
+
     @AppStorage(Key.copyPathSeparator)
     private var copyPathSeparator = ""
     @AppStorage(Key.copyPathOption)
@@ -34,7 +39,7 @@ struct GeneralSettingTab: View {
 
     var body: some View {
         Preferences.Container(contentWidth: 600) {
-            Preferences.Section(bottomDivider: hasCopyPath, verticalAlignment: .top) {
+            Preferences.Section(bottomDivider: true, verticalAlignment: .top) {
                 EmptyView()
             } content: {
                 Section {
@@ -56,6 +61,33 @@ struct GeneralSettingTab: View {
                         .bold()
                 }
             }
+            Preferences.Section(bottomDivider: hasCopyPath, verticalAlignment: .top) {
+                EmptyView()
+            } content: {
+                Section {
+                    VStack {
+                        HStack {
+                            Text("Arguments:")
+                            TextField("Arguments", text: $globalApplicationArgumentsString)
+                        }
+                        Text("Format: \("-a -b --help")").font(.footnote).foregroundColor(.secondary)
+                    }
+                    VStack {
+                        HStack {
+                            Text("Environment:")
+                            TextField("Environment", text: $globalApplicationEnvironmentString)
+                                .onSubmit {
+                                    let environment = globalApplicationEnvironmentString.toDictionary()
+                                    globalApplicationEnvironmentString = environment.toString()
+                                }
+                        }
+                        Text("Format: \("KEY_A=0 KEY_B=1")").font(.footnote).foregroundColor(.secondary)
+                    }
+                } header: {
+                    Text("Global Application Settings:")
+                }
+            }
+
             Preferences.Section(bottomDivider: hasNewFile, verticalAlignment: .top) {
                 EmptyView()
             } content: {

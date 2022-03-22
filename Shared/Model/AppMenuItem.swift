@@ -18,7 +18,8 @@ struct AppMenuItem: MenuItem {
     var url: URL
     var itemName: String
     var enabled = true
-    var inheritFromSharedEnvironment = true
+    var inheritFromGlobalArguments = true
+    var inheritFromGlobalEnvironment = true
     var arguments: [String] = []
     var environment: [String: String] = [:]
 

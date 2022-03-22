@@ -33,13 +33,13 @@ struct AppMenuItemEditor: View {
                 Spacer()
             }
             HStack {
-                Toggle("Inherit from shared environment:", isOn: $item.inheritFromSharedEnvironment)
-                    .toggleStyle(.switch)
-                Spacer()
-            }
-            HStack {
                 Text("Display Name:")
                 TextField("Display Name", text: $item.itemName)
+            }
+            HStack {
+                Toggle("Inherit from globel arguments:", isOn: $item.inheritFromGlobalArguments)
+                    .toggleStyle(.switch)
+                Spacer()
             }
             VStack {
                 HStack {
@@ -48,10 +48,19 @@ struct AppMenuItemEditor: View {
                 }
                 Text("Format: \("-a -b --help")").font(.footnote).foregroundColor(.secondary)
             }
+            HStack {
+                Toggle("Inherit from globel environment:", isOn: $item.inheritFromGlobalEnvironment)
+                    .toggleStyle(.switch)
+                Spacer()
+            }
             VStack {
                 HStack {
                     Text("Environment:")
                     TextField("Environment", text: $environmentString)
+                        .onSubmit {
+                            let environment = environmentString.toDictionary()
+                            environmentString = environment.toString()
+                        }
                 }
                 Text("Format: \("KEY_A=0 KEY_B=1")").font(.footnote).foregroundColor(.secondary)
             }
@@ -70,14 +79,7 @@ struct AppMenuItemEditor: View {
                 Button {
                     Task {
                         item.arguments = argumentString.split(separator: " ").map { String($0) }
-                        item.environment = environmentString.split(separator: " ")
-                            .map { $0.split(separator: "=") }
-                            .filter { $0.count == 2 }
-                            .reduce(into: [String: String]()) { result, pair in
-                                let key = String(pair[0])
-                                let value = String(pair[1])
-                                result[key] = value
-                            }
+                        item.environment = environmentString.toDictionary()
                         store.updateAppItem(item: item, index: index)
                         dismiss()
                     }
@@ -88,7 +90,7 @@ struct AppMenuItemEditor: View {
         }
         .onAppear {
             argumentString = item.arguments.joined(separator: " ")
-            environmentString = item.environment.compactMap { "\($0)=\($1)" }.joined(separator: " ")
+            environmentString = item.environment.toString()
         }
     }
 }
