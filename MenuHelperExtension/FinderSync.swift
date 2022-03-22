@@ -42,7 +42,7 @@ class FinderSync: FIFinderSync {
         }
     }
 
-    override func menu(for menuKind: FIMenuKind) -> NSMenu {
+    @MainActor override func menu(for menuKind: FIMenuKind) -> NSMenu {
         switch menuKind {
         case .contextualMenuForItems:
             if !UserDefaults.group.showContextualMenuForItem { return NSMenu() }
@@ -107,7 +107,7 @@ class FinderSync: FIFinderSync {
         return menu
     }
 
-    @objc func menuAction(_ menuItem: NSMenuItem) {
+    @MainActor @objc func menuAction(_ menuItem: NSMenuItem) {
         guard let targetURL = FIFinderSyncController.default().targetedURL(),
               let itemURLs = FIFinderSyncController.default().selectedItemURLs() else { return }
         logger.notice("Click menu \"\(menuItem.title, privacy: .public)\", index = \(menuItem.tag, privacy: .public), target = \(targetURL, privacy: .public), items = \(itemURLs, privacy: .public)]")

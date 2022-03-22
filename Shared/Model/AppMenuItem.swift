@@ -30,8 +30,7 @@ struct AppMenuItem: MenuItem {
     var icon: NSImage { NSWorkspace.shared.icon(forFile: url.path) }
 
     static func == (lhs: AppMenuItem, rhs: AppMenuItem) -> Bool {
-        lhs.url == rhs.url &&
-            lhs.itemName == rhs.itemName
+        lhs.url == rhs.url
     }
 }
 

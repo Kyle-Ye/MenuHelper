@@ -56,6 +56,7 @@
 		AE45812727B7FBD40096404C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE45812527B7FBD40096404C /* InfoPlist.strings */; };
 		AE45812C27B811BA0096404C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE45812A27B811BA0096404C /* Localizable.strings */; };
 		AE92166727B4EA1800471742 /* AcknowledgementsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92166627B4EA1800471742 /* AcknowledgementsWindow.swift */; };
+		AE94CFBB27EA06C300A5B87D /* AppMenuItemEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94CFBA27EA06C300A5B87D /* AppMenuItemEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		AE45812927B80F7C0096404C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AE45812B27B811BA0096404C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		AE92166627B4EA1800471742 /* AcknowledgementsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcknowledgementsWindow.swift; sourceTree = "<group>"; };
+		AE94CFBA27EA06C300A5B87D /* AppMenuItemEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuItemEditor.swift; sourceTree = "<group>"; };
 		AEA24CF127B4F8F700F155DA /* MenuHelperExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MenuHelperExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -315,6 +317,7 @@
 		2795203D268B5C2A00492ABF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AE94CFB927EA06B500A5B87D /* Editor */,
 				2795203C268B5C1D00492ABF /* SettingView */,
 				27AEF643270FEC8B0014739C /* CheckmarkStyle.swift */,
 			);
@@ -341,6 +344,14 @@
 				27F15ED3271298650042944A /* FolderItemStore.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AE94CFB927EA06B500A5B87D /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				AE94CFBA27EA06C300A5B87D /* AppMenuItemEditor.swift */,
+			);
+			path = Editor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,6 +524,7 @@
 				2781A62B2688A0260042B453 /* ContentView.swift in Sources */,
 				279C37892711C9CD00436979 /* MenuItem.swift in Sources */,
 				279C37832711BDBF00436979 /* ActionMenuItem.swift in Sources */,
+				AE94CFBB27EA06C300A5B87D /* AppMenuItemEditor.swift in Sources */,
 				27F15ED9271299E50042944A /* BookmarkFolderItem.swift in Sources */,
 				27CC3F3227203924000A6005 /* FolderItem.swift in Sources */,
 				2746559127B90E8C00DC2F91 /* CoffieStoreView.swift in Sources */,

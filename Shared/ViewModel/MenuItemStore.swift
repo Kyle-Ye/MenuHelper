@@ -8,13 +8,13 @@
 import OrderedCollections
 import SwiftUI
 
-class MenuItemStore: ObservableObject {
+@MainActor class MenuItemStore: ObservableObject {
     @Published private(set) var appItems: [AppMenuItem] = []
     @Published private(set) var actionItems: [ActionMenuItem] = []
 
     // MARK: - Init
 
-    init() {
+    nonisolated init() {
         Task {
             await MainActor.run {
                 try? load()
@@ -22,20 +22,20 @@ class MenuItemStore: ObservableObject {
         }
     }
 
-    @MainActor func refresh() {
+    func refresh() {
         try? load()
     }
 
     // MARK: - Toggle Item
 
-    @MainActor func toggleItem(_ item: AppMenuItem) {
+    func toggleItem(_ item: AppMenuItem) {
         if let index = appItems.firstIndex(of: item) {
             appItems[index].enabled.toggle()
             try? save()
         }
     }
 
-    @MainActor func toggleItem(_ item: ActionMenuItem) {
+    func toggleItem(_ item: ActionMenuItem) {
         if let index = actionItems.firstIndex(of: item) {
             actionItems[index].enabled.toggle()
             try? save()
@@ -44,34 +44,34 @@ class MenuItemStore: ObservableObject {
 
     // MARK: - Append Item
 
-    @MainActor func appendItems(_ items: [AppMenuItem]) {
+    func appendItems(_ items: [AppMenuItem]) {
         appItems.append(contentsOf: items.filter { !appItems.contains($0) })
         try? save()
     }
 
-    @MainActor func appendItems(_ items: [ActionMenuItem]) {
+    func appendItems(_ items: [ActionMenuItem]) {
         actionItems.append(contentsOf: items.filter { !actionItems.contains($0) })
         try? save()
     }
 
-    @MainActor func insertItems(_ items: [AppMenuItem], at index: Int) {
+    func insertItems(_ items: [AppMenuItem], at index: Int) {
         appItems.insert(contentsOf: items.filter { !appItems.contains($0) }, at: index)
         try? save()
     }
 
-    @MainActor func insertItems(_ items: [ActionMenuItem], at index: Int) {
+    func insertItems(_ items: [ActionMenuItem], at index: Int) {
         actionItems.insert(contentsOf: items.filter { !actionItems.contains($0) }, at: index)
         try? save()
     }
 
-    @MainActor func appendItem(_ item: AppMenuItem) {
+    func appendItem(_ item: AppMenuItem) {
         if !appItems.contains(item) {
             appItems.append(item)
             try? save()
         }
     }
 
-    @MainActor func appendItem(_ item: ActionMenuItem) {
+    func appendItem(_ item: ActionMenuItem) {
         if !actionItems.contains(item) {
             actionItems.append(item)
             try? save()
@@ -80,14 +80,14 @@ class MenuItemStore: ObservableObject {
 
     // MARK: - Delete Items
 
-    @MainActor func deleteAppItems(offsets: IndexSet) {
+    func deleteAppItems(offsets: IndexSet) {
         withAnimation {
             appItems.remove(atOffsets: offsets)
         }
         try? save()
     }
 
-    @MainActor func deleteActionItems(offsets: IndexSet) {
+    func deleteActionItems(offsets: IndexSet) {
         withAnimation {
             actionItems.remove(atOffsets: offsets)
         }
@@ -96,14 +96,14 @@ class MenuItemStore: ObservableObject {
 
     // MARK: - Move Items
 
-    @MainActor func moveAppItems(from source: IndexSet, to destination: Int) {
+    func moveAppItems(from source: IndexSet, to destination: Int) {
         withAnimation {
             appItems.move(fromOffsets: source, toOffset: destination)
         }
         try? save()
     }
 
-    @MainActor func moveActionItems(from source: IndexSet, to destination: Int) {
+    func moveActionItems(from source: IndexSet, to destination: Int) {
         withAnimation {
             actionItems.move(fromOffsets: source, toOffset: destination)
         }
@@ -120,9 +120,20 @@ class MenuItemStore: ObservableObject {
         actionItems.first { $0.name == name }
     }
 
+    // MARK: - Update Item
+
+    func updateAppItem(item: AppMenuItem) {
+        if let index = appItems.firstIndex(of: item) {
+            appItems[index] = item
+        } else {
+            appItems.append(item)
+        }
+        try? save()
+    }
+
     // MARK: - UserDefaults
 
-    @MainActor private func load() throws {
+    private func load() throws {
         if let appItemData = UserDefaults.group.data(forKey: "APP_ITEMS"),
            let actionItemData = UserDefaults.group.data(forKey: "ACTION_ITEMS") {
             let decoder = PropertyListDecoder()

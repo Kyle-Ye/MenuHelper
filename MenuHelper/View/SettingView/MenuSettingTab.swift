@@ -11,6 +11,7 @@ import SwiftUI
 struct MenuSettingTab: View {
     @ObservedObject var store: MenuItemStore
     @State private var isDrogTargeted = false
+    @State private var editedAppMenuItem: AppMenuItem?
 
     @AppStorage(Key.showSubMenuForApplication)
     private var showSubMenuForApplication = false
@@ -52,11 +53,18 @@ struct MenuSettingTab: View {
                     }
                     ForEach(store.appItems) { item in
                         HStack {
-                            Checkmark(isOn: item.enabled)
-                            Image(nsImage: item.icon)
-                            Text(item.name)
-                        }.onTapGesture {
-                            store.toggleItem(item)
+                            HStack {
+                                Checkmark(isOn: item.enabled)
+                                Image(nsImage: item.icon)
+                                Text(item.name)
+                            }.onTapGesture {
+                                store.toggleItem(item)
+                            }
+                            Button {
+                                editedAppMenuItem = item
+                            } label: {
+                                Image(systemName: "pencil").foregroundColor(.accentColor)
+                            }
                         }
                     }
                     .onDelete { store.deleteAppItems(offsets: $0) }
@@ -78,6 +86,10 @@ struct MenuSettingTab: View {
                     }
                 }
                 .background(.background)
+                .sheet(item: $editedAppMenuItem) { item in
+                    AppMenuItemEditor(item: item)
+                        .environmentObject(store)
+                }
             }
         }
     }
@@ -118,7 +130,6 @@ struct MenuSettingTab: View {
                     .onMove { store.moveActionItems(from: $0, to: $1) }
                 }
                 Link("Suggest more action menus here", destination: URL(string: "https://github.com/Kyle-Ye/MenuHelperApp/issues/new/choose")!)
-
             }
         }
     }
