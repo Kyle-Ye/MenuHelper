@@ -41,6 +41,12 @@
 "Application Menu Items" = "应用程序菜单项";
 
 /* No comment provided by engineer. */
+"Arguments" = "启动参数";
+
+/* No comment provided by engineer. */
+"Arguments:" = "启动参数：";
+
+/* No comment provided by engineer. */
 "But *contextual menu* will only show in Finder Sync directories" = "但是*上下文*菜单只会出现在“访达同步”文件夹中";
 
 /* No comment provided by engineer. */
@@ -77,7 +83,22 @@
 "Directories where you have permission for *application menu items* to open apps and *new file action menu* to create file" = "可以使用应用程序菜单项打开和新建文件菜单项新建文件的文件夹";
 
 /* No comment provided by engineer. */
+"Display Name" = "显示名称";
+
+/* No comment provided by engineer. */
+"Display Name:" = "显示名称：";
+
+/* No comment provided by engineer. */
 "Display Settings:" = "显示设置：";
+
+/* No comment provided by engineer. */
+"Enable:" = "启用：";
+
+/* No comment provided by engineer. */
+"Environment" = "环境变量";
+
+/* No comment provided by engineer. */
+"Environment:" = "环境变量：";
 
 /* No comment provided by engineer. */
 "Escape \" \" with \"\\ \" " = "用\"\\ \"转义\" \"";
@@ -95,13 +116,25 @@
 "Folder" = "文件夹";
 
 /* No comment provided by engineer. */
+"Format: %@" = "格式： %@";
+
+/* No comment provided by engineer. */
 "General" = "通用";
+
+/* No comment provided by engineer. */
+"Global Application Settings:" = "全局应用程序菜单项设置：";
 
 /* Go Parent Directory */
 "Go Parent Directory" = "前往上层文件夹";
 
 /* No comment provided by engineer. */
 "If you feel this app is useful for you, please consider supporting me" = "如果本App对你有帮助，请考虑支持作者";
+
+/* No comment provided by engineer. */
+"Inherit from global arguments:" = "继承全局启动参数";
+
+/* No comment provided by engineer. */
+"Inherit from global environment:" = "继承全局环境变量";
 
 /* No comment provided by engineer. */
 "Inspired by [SwiftyMenu](https://apps.apple.com/cn/app/swiftymenu/id1567748223?l=en&mt=12) [Lex Tang](https://twitter.com/lexrus)" = "灵感来源 [SwiftyMenu](https://apps.apple.com/cn/app/swiftymenu/id1567748223?l=en&mt=12) [Lex Tang](https://twitter.com/lexrus)";

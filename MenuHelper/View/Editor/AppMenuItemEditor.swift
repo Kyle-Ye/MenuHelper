@@ -37,7 +37,7 @@ struct AppMenuItemEditor: View {
                 TextField("Display Name", text: $item.itemName)
             }
             HStack {
-                Toggle("Inherit from globel arguments:", isOn: $item.inheritFromGlobalArguments)
+                Toggle("Inherit from global arguments:", isOn: $item.inheritFromGlobalArguments)
                     .toggleStyle(.switch)
                 Spacer()
             }
@@ -49,7 +49,7 @@ struct AppMenuItemEditor: View {
                 Text("Format: \("-a -b --help")").font(.footnote).foregroundColor(.secondary)
             }
             HStack {
-                Toggle("Inherit from globel environment:", isOn: $item.inheritFromGlobalEnvironment)
+                Toggle("Inherit from global environment:", isOn: $item.inheritFromGlobalEnvironment)
                     .toggleStyle(.switch)
                 Spacer()
             }
