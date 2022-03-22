@@ -16,8 +16,10 @@ struct AppMenuItem: MenuItem {
 
     var url: URL
     var itemName: String
-
-    var enabled: Bool = true
+    var enabled = true
+    var inheritFromSharedEnvironment = true
+    var arguments: [String] = []
+    var environment: [String: String] = [:]
 
     var appName: String {
         FileManager.default.displayName(atPath: url.path)
@@ -28,10 +30,6 @@ struct AppMenuItem: MenuItem {
     }
 
     var icon: NSImage { NSWorkspace.shared.icon(forFile: url.path) }
-
-    static func == (lhs: AppMenuItem, rhs: AppMenuItem) -> Bool {
-        lhs.url == rhs.url
-    }
 }
 
 extension AppMenuItem {

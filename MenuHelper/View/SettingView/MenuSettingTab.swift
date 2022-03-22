@@ -11,7 +11,7 @@ import SwiftUI
 struct MenuSettingTab: View {
     @ObservedObject var store: MenuItemStore
     @State private var isDrogTargeted = false
-    @State private var editedAppMenuItem: AppMenuItem?
+    @State private var appMenuItemEdited = false
 
     @AppStorage(Key.showSubMenuForApplication)
     private var showSubMenuForApplication = false
@@ -52,20 +52,8 @@ struct MenuSettingTab: View {
                         Label("Add Application(s)", systemImage: "plus.app")
                     }
                     ForEach(store.appItems) { item in
-                        HStack {
-                            HStack {
-                                Checkmark(isOn: item.enabled)
-                                Image(nsImage: item.icon)
-                                Text(item.name)
-                            }.onTapGesture {
-                                store.toggleItem(item)
-                            }
-                            Button {
-                                editedAppMenuItem = item
-                            } label: {
-                                Image(systemName: "pencil").foregroundColor(.accentColor)
-                            }
-                        }
+                        AppMenuItemView(item: item)
+                            .environmentObject(store)
                     }
                     .onDelete { store.deleteAppItems(offsets: $0) }
                     .onMove { store.moveAppItems(from: $0, to: $1) }
@@ -86,10 +74,6 @@ struct MenuSettingTab: View {
                     }
                 }
                 .background(.background)
-                .sheet(item: $editedAppMenuItem) { item in
-                    AppMenuItemEditor(item: item)
-                        .environmentObject(store)
-                }
             }
         }
     }

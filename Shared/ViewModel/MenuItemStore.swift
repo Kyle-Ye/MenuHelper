@@ -122,8 +122,8 @@ import SwiftUI
 
     // MARK: - Update Item
 
-    func updateAppItem(item: AppMenuItem) {
-        if let index = appItems.firstIndex(of: item) {
+    func updateAppItem(item: AppMenuItem, index: Int?) {
+        if let index = index {
             appItems[index] = item
         } else {
             appItems.append(item)

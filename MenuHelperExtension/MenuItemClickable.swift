@@ -19,6 +19,8 @@ extension AppMenuItem: MenuItemClickable {
     func menuClick(with urls: [URL]) {
         let config = NSWorkspace.OpenConfiguration()
         config.promptsUserIfNeeded = true
+        config.arguments = arguments
+        config.environment = environment
         Task {
             do {
                 let application = try await NSWorkspace.shared.open(urls, withApplicationAt: url, configuration: config)
