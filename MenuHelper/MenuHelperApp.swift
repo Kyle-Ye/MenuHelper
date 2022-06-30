@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct MenuHelperApp: App {
+    @Environment(\.openWindow) var openWindow
+
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -16,30 +18,34 @@ struct MenuHelperApp: App {
         .commands {
             CommandGroup(replacing: .newItem) {}
         }
-        WindowGroup("Acknowledgements") {
+        
+        Window("Acknowledgements", id: "acknowledgements") {
             AcknowledgementsWindow()
         }
         .handlesExternalEvents(matching: Set(arrayLiteral: "acknowledgements"))
         .commands {
             CommandGroup(after: .appSettings) {
                 Button("Acknowledgements...") {
-                    guard let url = URL(string: "menu-helper://acknowledgements") else { return }
-                    NSWorkspace.shared.open(url)
+                    openWindow(id: "acknowledgements")
                 }
             }
         }
-        WindowGroup("Support") {
+        .defaultSize(width: 400, height: 200)
+        
+        Window("Support", id: "support") {
             SupportWindow()
         }
         .handlesExternalEvents(matching: Set(arrayLiteral: "support"))
         .commands {
             CommandGroup(after: .appSettings) {
                 Button("Support Author...") {
-                    guard let url = URL(string: "menu-helper://support") else { return }
-                    NSWorkspace.shared.open(url)
+                    openWindow(id: "support")
                 }
             }
         }
+        .defaultPosition(.center)
+        .defaultSize(width: 500, height: 300)
+        
         Settings {
             SettingView()
         }
@@ -48,3 +54,4 @@ struct MenuHelperApp: App {
 }
 
 let channel = AppCommChannel()
+

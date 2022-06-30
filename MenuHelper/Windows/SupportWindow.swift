@@ -14,7 +14,6 @@ struct SupportWindow: View {
     var body: some View {
         CoffieStoreView(coffies: store.coffies) { _ in }
             .environmentObject(store)
-            .frame(width: 500, height: 300)
     }
 }
 

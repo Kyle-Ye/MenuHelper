@@ -25,7 +25,7 @@ struct AcknowledgementsWindow: View {
         } footer: {
             Text("Copyright ©️ 2022 YEXULEI. All rights reserved")
                 .font(.footnote)
-        }.frame(minWidth: 400, minHeight: 100)
+        }
     }
 }
 

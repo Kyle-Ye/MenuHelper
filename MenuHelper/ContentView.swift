@@ -14,14 +14,19 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 30) {
             Image("icon")
-            Text("You can turn on MenuHelper's extension in **Finder Extensions prefrences**")
+            Text("You can turn on MenuHelper's extension in **System Settings -> Privacy & Security -> Extensions -> Added Extensions**")
                 .multilineTextAlignment(.center)
             Button {
                 // See this post https://stackoverflow.com/questions/24701362/os-x-system-preferences-url-scheme
                 // Since Extensions.prefPane is not allowed to open via x-apple.systempreferences
-                // I have to manully use hard-coded url path
                 // let url = URL(string: "x-apple.systempreferences:com.apple.preferences.extensions")!
-                let url = URL(fileURLWithPath: "/System/Library/PreferencePanes/Extensions.prefPane")
+                // I have to manully use hard-coded url path
+                // let url = URL(fileURLWithPath: "/System/Library/PreferencePanes/Extensions.prefPane")
+                
+                // Update macOS 13
+                // /System/Library/PreferencePanes/Extensions.prefPane is ignored and we can use Security to replace it.
+                let url = URL(fileURLWithPath: "/System/Library/PreferencePanes/Security.prefPane")
+                
                 let config = NSWorkspace.OpenConfiguration()
                 NSWorkspace.shared.open(url, configuration: config) { _, error in
                     if let error = error {
@@ -34,14 +39,13 @@ struct ContentView: View {
                     }
                 }
             } label: {
-                Text("Quit and Open Finder Extensinos Preferences...")
+                Text("Quit and Open System Settings...")
             }
             Button {
                 logger.notice("Open Preferences Panel")
-                NSApplication.shared.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+                NSApplication.shared.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
             } label: {
-                Text("Open Preferences Panel...")
-                    .accessibilityIdentifier("Open Preferences Panel...")
+                Text("Open Settings Panel...")
             }
         }.frame(width: 425, height: 325)
     }
