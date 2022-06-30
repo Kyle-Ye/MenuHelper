@@ -161,13 +161,13 @@
 "Okay" = "好";
 
 /* No comment provided by engineer. */
-"Open Preferences Panel..." = "打开偏好设置...";
+"Open Settings Panel..." = "打开设置面板...";
 
 /* No comment provided by engineer. */
 "Permission description" = "权限说明";
 
 /* No comment provided by engineer. */
-"Quit and Open Finder Extensinos Preferences..." = "退出并打开访达扩展设置...";
+"Quit and Open System Settings..." = "退出并打开系统设置...";
 
 /* No comment provided by engineer. */
 "Recommended folder is %@ (current user's 🏠 directory)" = "建议文件夹为 %@ （当前用户的🏠目录）";
@@ -215,5 +215,4 @@
 "Wrap entire path with \"\"" = "用\"\"包裹整个路径";
 
 /* No comment provided by engineer. */
-"You can turn on MenuHelper's extension in **Finder Extensions prefrences**" = "您可以在 **系统偏好设置-扩展-“访达”扩展** 中启用“速达-访达扩展”";
-
+"You can turn on MenuHelper's extension in **System Settings -> Privacy & Security -> Extensions -> Added Extensions**" = "您可以在 **系统设置 -> 隐私与安全性 -> 扩展 -> 添加的扩展** 中启用“速达-访达扩展”";
