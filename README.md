@@ -25,9 +25,21 @@ The Finder Sync extension code of MenuHelper.
 
 The UI Test code for MenuHelper
 
-## Download App
+## Download
 
-https://github.com/Kyle-Ye/MenuHelperApp
+### Direct download on Github release
+
+https://github.com/Kyle-Ye/MenuHelper/releases/
+
+### Mac App Store Release
+
+[![Download on Mac App Store](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg "Download on Mac App Store")](https://apps.apple.com/us/app/menuhelper/id1609383899)
+
+### Join Beta on TestFlight
+
+[Join beta on TestFlight](https://testflight.apple.com/join/rubUwjFo)
+
+> Mac App Store℠ and TestFlight® are trademarks of Apple Inc., registered in the U.S. and other countries.
 
 ## Report Issue
 
