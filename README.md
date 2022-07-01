@@ -43,9 +43,9 @@ https://github.com/Kyle-Ye/MenuHelper/releases/
 
 ## Report Issue
 
-For user side issue, please report issue on [MenuHelper repo](https://github.com/Kyle-Ye/MenuHelper)
+For developer side issue, please report issue on [MenuHelper repo](https://github.com/Kyle-Ye/MenuHelper)
 
-For developer side issue, please report issue on [MenuHelperApp repo](https://github.com/Kyle-Ye/MenuHelperApp)
+For user side issue, please report issue on [MenuHelperApp repo](https://github.com/Kyle-Ye/MenuHelperApp)
 
 ## Other similar projects:
 
