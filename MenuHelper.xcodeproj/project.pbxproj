@@ -20,6 +20,7 @@
 		2746558F27B90E2F00DC2F91 /* CoffieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2746558E27B90E2F00DC2F91 /* CoffieView.swift */; };
 		2746559127B90E8C00DC2F91 /* CoffieStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2746559027B90E8C00DC2F91 /* CoffieStoreView.swift */; };
 		2746559327B9319600DC2F91 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2746559227B9319600DC2F91 /* StoreKit.framework */; };
+		276D4123299D465E00C47CAF /* BundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276D4122299D465E00C47CAF /* BundleHelper.swift */; };
 		2781A6292688A0260042B453 /* MenuHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A6282688A0260042B453 /* MenuHelperApp.swift */; };
 		2781A62B2688A0260042B453 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A62A2688A0260042B453 /* ContentView.swift */; };
 		2781A62D2688A0260042B453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2781A62C2688A0260042B453 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		27CC3F30272038F2000A6005 /* SyncFolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CC3F2E272038F2000A6005 /* SyncFolderItem.swift */; };
 		27CC3F3227203924000A6005 /* FolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CC3F3127203924000A6005 /* FolderItem.swift */; };
 		27CC3F3327203924000A6005 /* FolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CC3F3127203924000A6005 /* FolderItem.swift */; };
+		27EC5897299D48680013742C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE45811F27B7FBD40096404C /* Localizable.strings */; };
 		27F15ED2271293A00042944A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F15ED1271293A00042944A /* Assets.xcassets */; };
 		27F15ED5271298690042944A /* FolderItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F15ED3271298650042944A /* FolderItemStore.swift */; };
 		27F15ED62712986B0042944A /* FolderItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F15ED3271298650042944A /* FolderItemStore.swift */; };
@@ -118,6 +120,7 @@
 		2746559027B90E8C00DC2F91 /* CoffieStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffieStoreView.swift; sourceTree = "<group>"; };
 		2746559227B9319600DC2F91 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2746559727B946A900DC2F91 /* MenuHelper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MenuHelper-Info.plist"; sourceTree = "<group>"; };
+		276D4122299D465E00C47CAF /* BundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleHelper.swift; sourceTree = "<group>"; };
 		2781A6252688A0260042B453 /* MenuHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2781A6282688A0260042B453 /* MenuHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHelperApp.swift; sourceTree = "<group>"; };
 		2781A62A2688A0260042B453 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -188,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				2732A5B327B9558D005DB4A0 /* MenuHelperUITestsLaunchTests.swift */,
+				276D4122299D465E00C47CAF /* BundleHelper.swift */,
 				2732A5BA27B955B9005DB4A0 /* TestPlan.xctestplan */,
 			);
 			path = MenuHelperUITests;
@@ -474,6 +478,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27EC5897299D48680013742C /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2732A5B427B9558D005DB4A0 /* MenuHelperUITestsLaunchTests.swift in Sources */,
+				276D4123299D465E00C47CAF /* BundleHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,7 +631,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VB7MJ8R223;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.MenuHelperUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -644,7 +650,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VB7MJ8R223;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.MenuHelperUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -783,7 +789,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MenuHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = VB7MJ8R223;
@@ -819,7 +825,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MenuHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = VB7MJ8R223;
@@ -852,7 +858,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VB7MJ8R223;
 				ENABLE_APP_SANDBOX = YES;
@@ -861,6 +867,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MenuHelperExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MenuHelperExtension;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright ©️ 2022 YEXULEI. All rights reserved";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -884,7 +891,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VB7MJ8R223;
 				ENABLE_APP_SANDBOX = YES;
@@ -893,6 +900,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MenuHelperExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MenuHelperExtension;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright ©️ 2022 YEXULEI. All rights reserved";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

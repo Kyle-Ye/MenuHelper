@@ -2,9 +2,16 @@
   "configurations" : [
     {
       "id" : "51181BC1-0D1D-4DC0-8EE1-9ACA0321EE4B",
-      "name" : "Configuration 1",
+      "name" : "Chinese",
       "options" : {
-
+        "language" : "zh-Hans"
+      }
+    },
+    {
+      "id" : "D45827A1-BDFA-4B4D-9AC4-25452D993188",
+      "name" : "English",
+      "options" : {
+        "language" : "en"
       }
     }
   ],

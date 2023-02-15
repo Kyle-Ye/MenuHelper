@@ -36,7 +36,8 @@ class MenuHelperUITestsLaunchTests: XCTestCase {
             attachment.lifetime = .keepAlways
             add(attachment)
         }
-        mainWindow.buttons[String(localized: "Open Preferences Panel...")].click()
+        let title = String(localized: "Open Settings Panel...", bundle: Bundle(for: BundleHelper.self), locale: .current)
+        mainWindow.buttons[title].click()
         let settingWindow = app.windows.firstMatch
         let toolbarItems = settingWindow.toolbars.buttons.allElementsBoundByIndex
         for toolbarItem in toolbarItems {
