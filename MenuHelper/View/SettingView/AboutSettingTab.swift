@@ -10,18 +10,30 @@ import SwiftUI
 
 struct AboutSettingTab: View {
     private let contentWidth: Double = 400
+    @State private var rainbow = false
 
     var body: some View {
         VStack {
             HStack {
                 Text("Made by")
                 Link(destination: URL(string: "https://github.com/Kyle-Ye")!) {
-                    Image("Kyle")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 45, height: 45)
-                        .clipShape(Circle())
-                        .rainbowGlow()
+                    ZStack {
+                        Image("Kyle")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 45, height: 45)
+                            .clipShape(Circle())
+                            .opacity(0.5)
+                        Image("Kyle")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 45, height: 45)
+                            .clipShape(Circle())
+                            .rainbowGlow()
+                            .opacity(rainbow ? 1 : 0)
+                            .animation(.default, value: rainbow)
+                    }
+                    .onHover { rainbow = $0}
                 }
                 Text("with 🥰")
             }
@@ -41,7 +53,7 @@ extension View {
     ///   - condition: The condition to evaluate.
     ///   - transform: The transform to apply to the source `View`.
     /// - Returns: Either the original `View` or the modified `View` if the condition is `true`.
-    @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+    @ViewBuilder func `if`(_ condition: Bool, transform: (Self) -> some View) -> some View {
         if condition {
             transform(self)
         } else {
