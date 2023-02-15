@@ -25,7 +25,7 @@
 		2781A62D2688A0260042B453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2781A62C2688A0260042B453 /* Assets.xcassets */; };
 		2781A6302688A0260042B453 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2781A62F2688A0260042B453 /* Preview Assets.xcassets */; };
 		2781C5932688A4540042B453 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781C5922688A4540042B453 /* FinderSync.swift */; };
-		2781C5972688A4540042B453 /* MenuHelperExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2781C5902688A4540042B453 /* MenuHelperExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2781C5972688A4540042B453 /* MenuHelperExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2781C5902688A4540042B453 /* MenuHelperExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2795203B268B5B7E00492ABF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795203A268B5B7E00492ABF /* SettingView.swift */; };
 		27952041268B5F0700492ABF /* FolderSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952040268B5F0700492ABF /* FolderSettingTab.swift */; };
 		27952043268B5F1100492ABF /* MenuSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952042268B5F1100492ABF /* MenuSettingTab.swift */; };
@@ -88,15 +88,15 @@
 			name = "Embed XPC Services";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2781C5982688A4540042B453 /* Embed App Extensions */ = {
+		2781C5982688A4540042B453 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				2781C5972688A4540042B453 /* MenuHelperExtension.appex in Embed App Extensions */,
+				2781C5972688A4540042B453 /* MenuHelperExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -385,7 +385,7 @@
 				2781A6212688A0260042B453 /* Sources */,
 				2781A6222688A0260042B453 /* Frameworks */,
 				2781A6232688A0260042B453 /* Resources */,
-				2781C5982688A4540042B453 /* Embed App Extensions */,
+				2781C5982688A4540042B453 /* Embed Foundation Extensions */,
 				27421AC12720083800A0BD28 /* Embed XPC Services */,
 			);
 			buildRules = (
@@ -430,7 +430,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					2732A5AE27B9558D005DB4A0 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -622,6 +622,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VB7MJ8R223;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
@@ -640,6 +641,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VB7MJ8R223;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
@@ -687,6 +689,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -749,6 +752,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -780,6 +784,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 12;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MenuHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = VB7MJ8R223;
 				ENABLE_APP_SANDBOX = YES;
@@ -815,6 +820,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 12;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MenuHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = VB7MJ8R223;
 				ENABLE_APP_SANDBOX = YES;
@@ -847,6 +853,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 12;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VB7MJ8R223;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -878,6 +885,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 12;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VB7MJ8R223;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;

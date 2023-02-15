@@ -15,6 +15,8 @@ struct MenuHelperApp: App {
         WindowGroup {
             ContentView()
         }
+        .defaultSize(width: 600, height: 400)
+        .defaultPosition(.center)
         .commands {
             CommandGroup(replacing: .newItem) {}
         }
