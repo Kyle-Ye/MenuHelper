@@ -1,0 +1,719 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "\n" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "- Read permission: Open with custom application" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- 可读：使用自定义应用程序打开"
+          }
+        }
+      }
+    },
+    "- Write permission: New file in folder" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- 可写：在文件夹中新建文件"
+          }
+        }
+      }
+    },
+    ":" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "："
+          }
+        }
+      }
+    },
+    "(When to show related menus)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(以下情况时展示相关菜单)"
+          }
+        }
+      }
+    },
+    "*(Custom toolbar in Finder to show/hide this app in Finder toolbar)*" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "*(在访达中自定义工具栏来添加/移除本App)*"
+          }
+        }
+      }
+    },
+    "*(Unavailable since macOS Big Sur)*" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "*(从macOS Big Sur开始不可用)*"
+          }
+        }
+      }
+    },
+    "About" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关于"
+          }
+        }
+      }
+    },
+    "Acknowledgements" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "致谢"
+          }
+        }
+      }
+    },
+    "Action Menu Items" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "动作菜单项"
+          }
+        }
+      }
+    },
+    "Add %@" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "添加 %@ 动作"
+          }
+        }
+      }
+    },
+    "Add Application(s)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "添加应用程序"
+          }
+        }
+      }
+    },
+    "Add Folder(s)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "添加文件夹"
+          }
+        }
+      }
+    },
+    "All permission are only valid in the Finder Sync extension which runs on Finder.app" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所有权限仅在运行在访达程序的访达扩展有效"
+          }
+        }
+      }
+    },
+    "Application Menu Items" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "应用程序菜单项"
+          }
+        }
+      }
+    },
+    "Arguments" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "启动参数"
+          }
+        }
+      }
+    },
+    "But *contextual menu* will only show in Finder Sync directories" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "但是*上下文*菜单只会出现在“访达同步”文件夹中"
+          }
+        }
+      }
+    },
+    "but the FinderSync extension need it for the following reason:" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "但是访达同步扩展因为下列原因需要："
+          }
+        }
+      }
+    },
+    "Clicks on the extension’s toolbar button." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "点击该扩展的访达工具栏按钮"
+          }
+        }
+      }
+    },
+    "Control-clicks on an item in the sidebar." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在侧边栏项目上Control点击"
+          }
+        }
+      }
+    },
+    "Control-clicks on an item or a group of selected items inside the Finder window." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在访达窗口的一个或一组项目上Control点击"
+          }
+        }
+      }
+    },
+    "Control-clicks on the Finder window’s background." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在访达窗口的背景上Control点击"
+          }
+        }
+      }
+    },
+    "Copy Path" : {
+      "comment" : "Copy Path",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拷贝路径"
+          }
+        }
+      }
+    },
+    "Copy Path Settings:" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拷贝路径菜单项设置"
+          }
+        }
+      }
+    },
+    "Copy Style" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拷贝风格"
+          }
+        }
+      }
+    },
+    "Copyright ©️ 2023 YEXULEI. All rights reserved" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copyright ©️ 2023 YEXULEI. All rights reserved 叶絮雷 版权所有"
+          }
+        }
+      }
+    },
+    "Default is \" \"" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "默认为\" \""
+          }
+        }
+      }
+    },
+    "Directories where you have permission for *application menu items* to open apps and *new file action menu* to create file" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可以使用应用程序菜单项打开和新建文件菜单项新建文件的文件夹"
+          }
+        }
+      }
+    },
+    "Display Name" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示名称"
+          }
+        }
+      }
+    },
+    "Display Settings" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示设置"
+          }
+        }
+      }
+    },
+    "Enable:" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "启用："
+          }
+        }
+      }
+    },
+    "Environment" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "环境变量"
+          }
+        }
+      }
+    },
+    "Escape \" \" with \"\\ \" " : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用\"\\ \"转义\" \""
+          }
+        }
+      }
+    },
+    "File Extension" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "文件扩展"
+          }
+        }
+      }
+    },
+    "File Name" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "文件名"
+          }
+        }
+      }
+    },
+    "Finder Sync Directories" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "访达同步文件夹"
+          }
+        }
+      }
+    },
+    "Folder" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "文件夹"
+          }
+        }
+      }
+    },
+    "Format: %@" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "格式： %@"
+          }
+        }
+      }
+    },
+    "General" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通用"
+          }
+        }
+      }
+    },
+    "Global Application Settings:" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全局应用程序菜单项设置："
+          }
+        }
+      }
+    },
+    "Go Parent Directory" : {
+      "comment" : "Go Parent Directory",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "前往上层文件夹"
+          }
+        }
+      }
+    },
+    "If you feel this app is useful for you, please consider supporting me" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "如果本App对你有帮助，请考虑支持作者"
+          }
+        }
+      }
+    },
+    "Inherit from global arguments:" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "继承全局启动参数"
+          }
+        }
+      }
+    },
+    "Inherit from global environment:" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "继承全局环境变量"
+          }
+        }
+      }
+    },
+    "Inspired by" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "灵感来源"
+          }
+        }
+      }
+    },
+    "Join-separator when multi items are seleted" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "当多个项目被选中时的连接字符串"
+          }
+        }
+      }
+    },
+    "Made by" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "由"
+          }
+        }
+      }
+    },
+    "Menu" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "菜单"
+          }
+        }
+      }
+    },
+    "Menu Helper is made possible with following projects:" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "速达的产生离不开以下开源项目："
+          }
+        }
+      }
+    },
+    "New File" : {
+      "comment" : "New File",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新建文件"
+          }
+        }
+      }
+    },
+    "New File Settings:" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新建文件菜单项设置"
+          }
+        }
+      }
+    },
+    "Okay" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "好"
+          }
+        }
+      }
+    },
+    "Open Settings Panel..." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开设置面板..."
+          }
+        }
+      }
+    },
+    "Permission description" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "权限说明"
+          }
+        }
+      }
+    },
+    "Quit and Open System Settings..." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "退出并打开系统设置..."
+          }
+        }
+      }
+    },
+    "Recommended folder is %@ (current user's 🏠 directory)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "建议文件夹为 %@ （当前用户的🏠目录）"
+          }
+        }
+      }
+    },
+    "Right-click is the same as control-click" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "右击和Control点击等价"
+          }
+        }
+      }
+    },
+    "Show as submenu" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "展示为子菜单"
+          }
+        }
+      }
+    },
+    "Suggest more action menus here" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在这里建议更多的动作菜单"
+          }
+        }
+      }
+    },
+    "Support" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支持"
+          }
+        }
+      }
+    },
+    "Support Author..." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支持作者..."
+          }
+        }
+      }
+    },
+    "Thanks for your supporting" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "感谢您的支持"
+          }
+        }
+      }
+    },
+    "The application itself does not require user seleted folder permission" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "该应用程序本身不会要求用户选择的文件夹权限"
+          }
+        }
+      }
+    },
+    "The persmission will not be shared to the main app" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "这些权限不会分享给主应用"
+          }
+        }
+      }
+    },
+    "Toolbar item menu will show in every directory" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "工具栏菜单会出现在所有文件夹中"
+          }
+        }
+      }
+    },
+    "Untitled" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未命名文件"
+          }
+        }
+      }
+    },
+    "Use origin path" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用原路径"
+          }
+        }
+      }
+    },
+    "User Seleted Directories" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用户选择的文件夹"
+          }
+        }
+      }
+    },
+    "with 🥰" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用 🥰 编写"
+          }
+        }
+      }
+    },
+    "Wrap entire path with \"\"" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用\"\"包裹整个路径"
+          }
+        }
+      }
+    },
+    "You can turn on MenuHelper's extension in **System Settings -> Privacy & Security -> Extensions -> Added Extensions**" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您可以在 **系统设置 -> 隐私与安全性 -> 扩展 -> 添加的扩展** 中启用“速达-访达扩展”"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
