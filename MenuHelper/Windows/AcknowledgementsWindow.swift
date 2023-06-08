@@ -23,7 +23,7 @@ struct AcknowledgementsWindow: View {
         } header: {
             Text("Menu Helper is made possible with following projects:")
         } footer: {
-            Text("Copyright ©️ 2022 YEXULEI. All rights reserved")
+            Text("Copyright ©️ 2023 YEXULEI. All rights reserved")
                 .font(.footnote)
         }
     }

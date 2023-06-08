@@ -789,7 +789,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MenuHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = VB7MJ8R223;
@@ -801,13 +801,13 @@
 				INFOPLIST_FILE = "MenuHelper-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = MenuHelper;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright ©️ 2022 YEXULEI. All rights reserved";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright ©️ 2023 YEXULEI. All rights reserved";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.MenuHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -825,7 +825,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MenuHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = VB7MJ8R223;
@@ -837,13 +837,13 @@
 				INFOPLIST_FILE = "MenuHelper-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = MenuHelper;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright ©️ 2022 YEXULEI. All rights reserved";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright ©️ 2023 YEXULEI. All rights reserved";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.MenuHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -858,7 +858,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VB7MJ8R223;
 				ENABLE_APP_SANDBOX = YES;
@@ -868,14 +868,14 @@
 				INFOPLIST_FILE = MenuHelperExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MenuHelperExtension;
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright ©️ 2022 YEXULEI. All rights reserved";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright ©️ 2023 YEXULEI. All rights reserved";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.MenuHelper.MenuHelperExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -891,7 +891,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VB7MJ8R223;
 				ENABLE_APP_SANDBOX = YES;
@@ -901,14 +901,14 @@
 				INFOPLIST_FILE = MenuHelperExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MenuHelperExtension;
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright ©️ 2022 YEXULEI. All rights reserved";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright ©️ 2023 YEXULEI. All rights reserved";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.MenuHelper.MenuHelperExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
