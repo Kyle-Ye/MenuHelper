@@ -27,7 +27,7 @@ struct AppMenuItemView: View {
                 Image(systemName: "pencil").foregroundColor(.accentColor)
             }
         }
-        .sheet(isPresented: $editingItem) {
+        .sheet(isPresented: $editingItem, onDismiss: nil) {
             AppMenuItemEditor(item: item, index: store.appItems.firstIndex(of: item))
                 .environmentObject(store)
         }

@@ -18,7 +18,7 @@ enum StoreError: Error {
 class Store: ObservableObject {
     @Published private(set) var coffies: [Product] = []
     @Published private(set) var purchased = false
-    var updateListenerTask: Task<Void, Error>?
+    var updateListenerTask: Task<Void, any Error>?
 
     private let storage = NSUbiquitousKeyValueStore.default
     private static let purchasedKey = "PURCHASED"
@@ -40,7 +40,7 @@ class Store: ObservableObject {
         updateListenerTask?.cancel()
     }
 
-    func listenForTransactions() -> Task<Void, Error> {
+    func listenForTransactions() -> Task<Void, any Error> {
         return Task.detached {
             // Iterate through any transactions which didn't come from a direct call to `purchase()`.
             for await result in Transaction.updates {

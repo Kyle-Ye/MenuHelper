@@ -36,7 +36,7 @@ struct BookmarkFolderItem: FolderItem {
         case url, bookmark
     }
 
-    init(from decoder: Decoder) throws {
+    init(from decoder: any Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         bookmark = try values.decode(Data.self, forKey: .bookmark)
         var isStale = false
