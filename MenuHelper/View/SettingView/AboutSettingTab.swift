@@ -33,12 +33,15 @@ struct AboutSettingTab: View {
                             .opacity(rainbow ? 1 : 0)
                             .animation(.default, value: rainbow)
                     }
-                    .onHover { rainbow = $0}
+                    .onHover { rainbow = $0 }
                 }
                 Text("with 🥰")
             }
-            Text("Inspired by [SwiftyMenu](https://apps.apple.com/cn/app/swiftymenu/id1567748223?l=en&mt=12) [Lex Tang](https://twitter.com/lexrus)")
-                .font(.footnote)
+            (
+                Text("Inspired by") +
+                    Text(try! AttributedString(markdown: " [SwiftyMenu](https://apps.apple.com/cn/app/swiftymenu/id1567748223) [Lex Tang](https://twitter.com/lexrus)"))
+            )
+            .font(.footnote)
         }
         .font(.title)
         .frame(width: CGFloat(contentWidth), alignment: .center)

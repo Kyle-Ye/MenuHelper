@@ -27,8 +27,10 @@ struct MenuHelperApp: App {
         .handlesExternalEvents(matching: Set(arrayLiteral: "acknowledgements"))
         .commands {
             CommandGroup(after: .appSettings) {
-                Button("Acknowledgements...") {
+                Button {
                     openWindow(id: "acknowledgements")
+                } label: {
+                    Text("Acknowledgements") + Text(verbatim: "...")
                 }
             }
         }

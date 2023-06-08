@@ -54,7 +54,7 @@ struct GeneralSettingTab: View {
                         Text("*(Unavailable since macOS Big Sur)*").font(.footnote)
                     }
                 } header: {
-                    Text("Display Settings:") + Text("(When to show related menus)").font(.footnote)
+                    Text("Display Settings") + Text(":") + Text("(When to show related menus)").font(.footnote)
                 } footer: {
                     Text("Right-click is the same as control-click")
                         .font(.footnote)
@@ -67,14 +67,14 @@ struct GeneralSettingTab: View {
                 Section {
                     VStack {
                         HStack {
-                            Text("Arguments:")
+                            Text("Arguments") + Text(":")
                             TextField("Arguments", text: $globalApplicationArgumentsString)
                         }
                         Text("Format: \("-a -b --help")").font(.footnote).foregroundColor(.secondary)
                     }
                     VStack {
                         HStack {
-                            Text("Environment:")
+                            Text("Environment") + Text(":")
                             TextField("Environment", text: $globalApplicationEnvironmentString)
                                 .onSubmit {
                                     let environment = globalApplicationEnvironmentString.toDictionary()

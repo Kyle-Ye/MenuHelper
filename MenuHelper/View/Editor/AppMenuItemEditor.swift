@@ -33,7 +33,7 @@ struct AppMenuItemEditor: View {
                 Spacer()
             }
             HStack {
-                Text("Display Name:")
+                Text("Display Name") + Text(":")
                 TextField("Display Name", text: $item.itemName)
             }
             HStack {
@@ -43,7 +43,7 @@ struct AppMenuItemEditor: View {
             }
             VStack {
                 HStack {
-                    Text("Arguments:")
+                    Text("Arguments") + Text(":")
                     TextField("Arguments", text: $argumentString)
                 }
                 Text("Format: \("-a -b --help")").font(.footnote).foregroundColor(.secondary)
@@ -55,7 +55,7 @@ struct AppMenuItemEditor: View {
             }
             VStack {
                 HStack {
-                    Text("Environment:")
+                    Text("Environment") + Text(":")
                     TextField("Environment", text: $environmentString)
                         .onSubmit {
                             let environment = environmentString.toDictionary()

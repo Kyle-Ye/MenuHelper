@@ -58,7 +58,7 @@ struct FolderSettingTab: View {
                         Text("but the FinderSync extension need it for the following reason:")
                         Text("- Read permission: Open with custom application")
                         Text("- Write permission: New file in folder")
-                        Text("\n")
+                        Text(verbatim: "\n")
                         Text("All permission are only valid in the Finder Sync extension which runs on Finder.app")
                         Text("The persmission will not be shared to the main app")
                     }
