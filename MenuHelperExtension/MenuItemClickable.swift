@@ -17,12 +17,12 @@ protocol MenuItemClickable {
 
 extension AppMenuItem: MenuItemClickable {
     func menuClick(with urls: [URL]) {
-        let config = NSWorkspace.OpenConfiguration()
-        config.promptsUserIfNeeded = true
-        config.arguments = arguments
-        config.environment = environment
         Task {
             do {
+                let config = NSWorkspace.OpenConfiguration()
+                config.promptsUserIfNeeded = true
+                config.arguments = arguments
+                config.environment = environment
                 let application = try await NSWorkspace.shared.open(urls, withApplicationAt: url, configuration: config)
                 if let path = application.bundleURL?.path,
                    let identifier = application.bundleIdentifier,
@@ -38,7 +38,7 @@ extension AppMenuItem: MenuItemClickable {
                         let alert = NSAlert(error: error)
                         alert.addButton(withTitle: String(localized: "OK", comment: "OK button"))
                         alert.addButton(withTitle: String(localized: "Remove", comment: "Remove app button"))
-                        let response = await alert.run()
+                        let response = alert.runModal()
                         logger.notice("NSAlert response result \(response.rawValue)")
                         switch response {
                         case .alertFirstButtonReturn:
@@ -136,22 +136,5 @@ private extension FileManager {
         var isDirectoryBool = ObjCBool(isDirectory)
         let exists = fileExists(atPath: path, isDirectory: &isDirectoryBool)
         return exists && (isDirectoryBool.boolValue == isDirectory)
-    }
-}
-
-private extension NSAlert {
-    /**
-     Workaround to allow using `NSAlert` in a `Task`.
-
-     [FB9857161](https://github.com/feedback-assistant/reports/issues/288)
-     */
-    @MainActor
-    @discardableResult
-    func run() async -> NSApplication.ModalResponse {
-        await withCheckedContinuation { continuation in
-            DispatchQueue.main.async { [self] in
-                continuation.resume(returning: runModal())
-            }
-        }
     }
 }
