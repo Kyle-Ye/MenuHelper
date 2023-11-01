@@ -61,16 +61,6 @@
         }
       }
     },
-    "*(Unavailable since macOS Big Sur)*" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "*(从macOS Big Sur开始不可用)*"
-          }
-        }
-      }
-    },
     "About" : {
       "localizations" : {
         "zh-Hans" : {

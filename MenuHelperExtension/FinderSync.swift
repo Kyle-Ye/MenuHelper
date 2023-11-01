@@ -59,7 +59,6 @@ class FinderSync: FIFinderSync {
             if !UserDefaults.group.showContextualMenuForItem { return NSMenu() }
         case .contextualMenuForContainer:
             if !UserDefaults.group.showContextualMenuForContainer { return NSMenu() }
-        // NOTE: contextualMenuForSidebar will not called since macOS Big Sur
         case .contextualMenuForSidebar:
             if !UserDefaults.group.showContextualMenuForSidebar { return NSMenu() }
         case .toolbarItemMenu:
