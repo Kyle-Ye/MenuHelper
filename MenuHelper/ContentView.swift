@@ -41,10 +41,7 @@ struct ContentView: View {
             } label: {
                 Text("Quit and Open System Settings...")
             }
-            Button {
-                logger.notice("Open Preferences Panel")
-                NSApplication.shared.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
-            } label: {
+            SettingsLink {
                 Text("Open Settings Panel...")
             }
         }.frame(width: 425, height: 325)
