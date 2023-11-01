@@ -44,15 +44,12 @@ struct GeneralSettingTab: View {
             } content: {
                 Section {
                     HStack {
-                        Toggle(isOn: $showToolbarItemMenu) { Text("Clicks on the extension’s toolbar button.") }
+                        Toggle("Clicks on the extension’s toolbar button.", isOn: $showToolbarItemMenu)
                         Text("*(Custom toolbar in Finder to show/hide this app in Finder toolbar)*").font(.footnote)
                     }
-                    Toggle(isOn: $showContextualMenuForItem) { Text("Control-clicks on an item or a group of selected items inside the Finder window.") }
-                    Toggle(isOn: $showContextualMenuForContainer) { Text("Control-clicks on the Finder window’s background.") }
-                    HStack {
-                        Toggle(isOn: $showContextualMenuForSidebar) { Text("Control-clicks on an item in the sidebar.") }
-                        Text("*(Unavailable since macOS Big Sur)*").font(.footnote)
-                    }
+                    Toggle("Control-clicks on an item or a group of selected items inside the Finder window.", isOn: $showContextualMenuForItem)
+                    Toggle("Control-clicks on the Finder window’s background.", isOn: $showContextualMenuForContainer)
+                    Toggle("Control-clicks on an item in the sidebar.", isOn: $showContextualMenuForSidebar)
                 } header: {
                     Text("Display Settings") + Text(":") + Text("(When to show related menus)").font(.footnote)
                 } footer: {
