@@ -7,38 +7,78 @@
 
 import Foundation
 import SwiftUI
+import AcknowKit
 
 struct AcknowledgementsWindow: View {
-    private let licenses = [
-        License(name: "Preferences", link: URL(string: "https://github.com/sindresorhus/Preferences/blob/main/license")!),
-        License(name: "swift-collections", link: URL(string: "https://github.com/sindresorhus/Preferences/blob/main/license")!),
-    ]
     var body: some View {
-        Section {
-            VStack(alignment: .leading) {
-                ForEach(licenses) {
-                    Link($0.name, destination: $0.link)
-                }
-            }
-        } header: {
-            Text("Menu Helper is made possible with following projects:")
-        } footer: {
-            Text("Copyright ©️ 2023 YEXULEI. All rights reserved")
-                .font(.footnote)
+        NavigationStack {
+            AcknowLibraryList(library: library)
         }
     }
+    private let library = AcknowLibrary(
+        items: [
+            .settings,
+            .swiftCollections,
+            .acknowKit,
+        ],
+        header: "Menu Helper is made possible with following projects:",
+        footer: "Copyright ©️ 2023 YEXULEI. All rights reserved"
+    )
 }
 
-private struct License {
-    init(name: String, link: URL) {
-        self.name = name
-        self.link = link
-    }
+extension AcknowLibrary.Item {
+    static let settings = AcknowLibrary.Item(
+        title: "Settings",
+        text: #"""
+        MIT License
 
-    let name: String
-    let link: URL
-}
+        Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
 
-extension License: Identifiable {
-    var id: String { name }
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        """#,
+        author: "Sindre Sorhus",
+        license: .mit,
+        repository: URL(string: "https://github.com/sindresorhus/Settings")
+    )
+
+    static let swiftCollections = AcknowLibrary.Item(
+        title: "swift-collections",
+        author: "Apple",
+        license: .apache,
+        repository: URL(string: "https://github.com/apple/swift-collections")
+    )
+
+    static let acknowKit = AcknowLibrary.Item(
+        title: "AcknowKit",
+        text: #"""
+        MIT License
+
+        Copyright (c) 2023 Kyle-Ye
+
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE
+        """#,
+        author: "Kyle-Ye",
+        license: .mit,
+        repository: URL(string: "https://github.com/Kyle-Ye/AcknowKit")
+    )
 }
