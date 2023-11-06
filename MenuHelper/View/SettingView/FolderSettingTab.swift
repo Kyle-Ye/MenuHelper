@@ -31,18 +31,26 @@ struct FolderSettingTab: View {
         } content: {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("User Seleted Directories")
+                    VStack(alignment: .leading) {
+                        Text("User Seleted Directories")
+                        (
+                            Text("Directories where you have permission for *application menu items* to open apps and *new file action menu* to create file")
+                                + Text(verbatim: "\n")
+                                + Text("Recommended folder is \("/Users/\(NSUserName())") (current user's 🏠 directory)")
+                        )
+                        .foregroundColor(.secondary)
+                        .font(.caption)
+                    }
                     Spacer()
-                    Button {
-                        channel.send(name: "ChoosePermissionFolder", data: nil)
-                    } label: { Label("Add Folder(s)", systemImage: "folder.badge.plus") }
+                    VStack {
+                        Button {
+                            channel.send(name: "ChoosePermissionFolder", data: nil)
+                        } label: { Label("Add Folders", systemImage: "folder.badge.plus") }
+                        Button {
+                            store.deleteAllBookmarkItems()
+                        } label: { Label("Remove All", systemImage: "folder.badge.minus") }
+                    }
                 }
-                VStack(alignment: .leading) {
-                    Text("Directories where you have permission for *application menu items* to open apps and *new file action menu* to create file")
-                    Text("Recommended folder is \("/Users/\(NSUserName())") (current user's 🏠 directory)")
-                }
-                .foregroundColor(.secondary)
-                .font(.caption)
                 List {
                     ForEach(store.bookmarkItems) { item in
                         HStack {
@@ -75,30 +83,40 @@ struct FolderSettingTab: View {
         } content: {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("Finder Sync Directories")
+                    VStack(alignment: .leading) {
+                        Text("Finder Sync Directories")
+                        (
+                            Text("Toolbar item menu will show in every directory")
+                                + Text(verbatim: "\n")
+                                + Text("But *contextual menu* will only show in Finder Sync directories")
+                        )
+                        .foregroundColor(.secondary)
+                        .font(.caption)
+                    }
                     Spacer()
-                    Button {
-                        let panel = NSOpenPanel()
-                        panel.allowsMultipleSelection = true
-                        panel.allowedContentTypes = [.folder]
-                        panel.canChooseDirectories = true
-                        if let pw = getpwuid(getuid()), let home = pw.pointee.pw_dir {
-                            let path = FileManager.default.string(withFileSystemRepresentation: home, length: strlen(home))
-                            panel.directoryURL = URL(fileURLWithPath: path)
-                        } else {
-                            panel.directoryURL = URL(fileURLWithPath: "/Users")
-                        }
-                        if panel.runModal() == .OK {
-                            store.appendItems(panel.urls.map { SyncFolderItem($0) })
-                        }
-                    } label: { Label("Add Folder(s)", systemImage: "folder.badge.plus") }
+                    VStack {
+                        Button {
+                            let panel = NSOpenPanel()
+                            panel.allowsMultipleSelection = true
+                            panel.allowedContentTypes = [.folder]
+                            panel.canChooseDirectories = true
+                            if let pw = getpwuid(getuid()), let home = pw.pointee.pw_dir {
+                                let path = FileManager.default.string(withFileSystemRepresentation: home, length: strlen(home))
+                                panel.directoryURL = URL(fileURLWithPath: path)
+                            } else {
+                                panel.directoryURL = URL(fileURLWithPath: "/Users")
+                            }
+                            if panel.runModal() == .OK {
+                                store.appendItems(panel.urls.map { SyncFolderItem($0) })
+                            }
+                        } label: { Label("Add Folders", systemImage: "folder.badge.plus") }
+                        Button {
+                            store.deleteAllSyncItems()
+                        } label: { Label("Remove All", systemImage: "folder.badge.minus") }
+                    }
                 }
-                VStack(alignment: .leading) {
-                    Text("Toolbar item menu will show in every directory")
-                    Text("But *contextual menu* will only show in Finder Sync directories")
-                }
-                .foregroundColor(.secondary)
-                .font(.caption)
+
+
                 List {
                     ForEach(store.syncItems) { item in
                         HStack {

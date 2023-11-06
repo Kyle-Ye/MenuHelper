@@ -111,7 +111,7 @@
         }
       }
     },
-    "Add Folder(s)" : {
+    "Add Folders" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -550,6 +550,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "建议文件夹为 %@ （当前用户的🏠目录）"
+          }
+        }
+      }
+    },
+    "Remove All" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除全部"
           }
         }
       }

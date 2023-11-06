@@ -82,6 +82,20 @@ class FolderItemStore: ObservableObject {
         try? save()
     }
 
+    @MainActor func deleteAllBookmarkItems() {
+        withAnimation {
+            bookmarkItems.removeAll()
+        }
+        try? save()
+    }
+
+    @MainActor func deleteAllSyncItems() {
+        withAnimation {
+            syncItems.removeAll()
+        }
+        try? save()
+    }
+
     // MARK: - UserDefaults
 
     @MainActor private func load() throws {
