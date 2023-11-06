@@ -5,8 +5,9 @@
 //  Created by Kyle on 2021/6/29.
 //
 
-import Preferences
+import Settings
 import SwiftUI
+import enum Settings.Settings
 
 struct MenuSettingTab: View {
     @ObservedObject var store: MenuItemStore
@@ -19,14 +20,14 @@ struct MenuSettingTab: View {
     private var showSubMenuForAction = false
 
     var body: some View {
-        Preferences.Container(contentWidth: 520) {
+        Settings.Container(contentWidth: 520) {
             appItemSection
             actionItemSection
         }
     }
 
-    var appItemSection: Preferences.Section {
-        Preferences.Section(bottomDivider: true, verticalAlignment: .top) {
+    var appItemSection: Settings.Section {
+        Settings.Section(bottomDivider: true, verticalAlignment: .top) {
             EmptyView()
         } content: {
             VStack(alignment: .leading) {
@@ -78,8 +79,8 @@ struct MenuSettingTab: View {
         }
     }
 
-    var actionItemSection: Preferences.Section {
-        Preferences.Section {
+    var actionItemSection: Settings.Section {
+        Settings.Section {
             EmptyView()
         } content: {
             VStack(alignment: .leading) {

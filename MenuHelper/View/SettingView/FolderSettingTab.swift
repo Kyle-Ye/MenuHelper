@@ -6,7 +6,7 @@
 //
 
 import MenuHelperExtension
-import Preferences
+import enum Settings.Settings
 import SwiftUI
 
 struct FolderSettingTab: View {
@@ -14,7 +14,7 @@ struct FolderSettingTab: View {
     @State private var isExpanded = false
 
     var body: some View {
-        Preferences.Container(contentWidth: 500) {
+        Settings.Container(contentWidth: 500) {
             openSection
             syncSection
         }
@@ -25,8 +25,8 @@ struct FolderSettingTab: View {
         }
     }
 
-    var openSection: Preferences.Section {
-        Preferences.Section(bottomDivider: true, verticalAlignment: .top) {
+    var openSection: Settings.Section {
+        Settings.Section(bottomDivider: true, verticalAlignment: .top) {
             EmptyView()
         } content: {
             VStack(alignment: .leading) {
@@ -69,8 +69,8 @@ struct FolderSettingTab: View {
         }
     }
 
-    var syncSection: Preferences.Section {
-        Preferences.Section {
+    var syncSection: Settings.Section {
+        Settings.Section {
             EmptyView()
         } content: {
             VStack(alignment: .leading) {
