@@ -8,16 +8,58 @@
 import Settings
 import SwiftUI
 
-struct GeneralSettingTab: View {
-    @AppStorage(Key.showContextualMenuForItem)
-    private var showContextualMenuForItem = true
-    @AppStorage(Key.showContextualMenuForContainer)
-    private var showContextualMenuForContainer = true
-    @AppStorage(Key.showContextualMenuForSidebar)
-    private var showContextualMenuForSidebar = true
-    @AppStorage(Key.showToolbarItemMenu)
-    private var showToolbarItemMenu = true
+@Observable
+class GeneralSettingTabState {
+    var showContextualMenuForItem: Bool {
+        get {
+            access(keyPath: \.showContextualMenuForItem)
+            return UserDefaults.group.bool(forKey: Key.showContextualMenuForItem)
+        }
+        set {
+            withMutation(keyPath: \.showContextualMenuForItem) {
+                UserDefaults.group.setValue(newValue, forKey: Key.showContextualMenuForItem)
+            }
+        }
+    }
 
+    var showContextualMenuForContainer: Bool {
+        get {
+            access(keyPath: \.showContextualMenuForContainer)
+            return UserDefaults.group.bool(forKey: Key.showContextualMenuForContainer)
+        }
+        set {
+            withMutation(keyPath: \.showContextualMenuForContainer) {
+                UserDefaults.group.setValue(newValue, forKey: Key.showContextualMenuForContainer)
+            }
+        }
+    }
+
+    var showContextualMenuForSidebar: Bool {
+        get {
+            access(keyPath: \.showContextualMenuForSidebar)
+            return UserDefaults.group.bool(forKey: Key.showContextualMenuForSidebar)
+        }
+        set {
+            withMutation(keyPath: \.showContextualMenuForSidebar) {
+                UserDefaults.group.setValue(newValue, forKey: Key.showContextualMenuForSidebar)
+            }
+        }
+    }
+
+    var showToolbarItemMenu: Bool {
+        get {
+            access(keyPath: \.showToolbarItemMenu)
+            return UserDefaults.group.bool(forKey: Key.showToolbarItemMenu)
+        }
+        set {
+            withMutation(keyPath: \.showToolbarItemMenu) {
+                UserDefaults.group.setValue(newValue, forKey: Key.showToolbarItemMenu)
+            }
+        }
+    }
+}
+
+struct GeneralSettingTab: View {
     @AppStorage(Key.globalApplicationArgumentsString)
     private var globalApplicationArgumentsString = ""
     @AppStorage(Key.globalApplicationEnvironmentString)
@@ -34,6 +76,8 @@ struct GeneralSettingTab: View {
 
     @ObservedObject var menuItemStore: MenuItemStore
 
+    @State private var model = GeneralSettingTabState()
+
     private var hasCopyPath: Bool { menuItemStore.actionItems.contains(ActionMenuItem.copyPath) }
     private var hasNewFile: Bool { menuItemStore.actionItems.contains(ActionMenuItem.newFile) }
 
@@ -44,12 +88,12 @@ struct GeneralSettingTab: View {
             } content: {
                 Section {
                     HStack {
-                        Toggle("Clicks on the extension’s toolbar button.", isOn: $showToolbarItemMenu)
+                        Toggle("Clicks on the extension’s toolbar button.", isOn: $model.showToolbarItemMenu)
                         Text("*(Custom toolbar in Finder to show/hide this app in Finder toolbar)*").font(.footnote)
                     }
-                    Toggle("Control-clicks on an item or a group of selected items inside the Finder window.", isOn: $showContextualMenuForItem)
-                    Toggle("Control-clicks on the Finder window’s background.", isOn: $showContextualMenuForContainer)
-                    Toggle("Control-clicks on an item in the sidebar.", isOn: $showContextualMenuForSidebar)
+                    Toggle("Control-clicks on an item or a group of selected items inside the Finder window.", isOn: $model.showContextualMenuForItem)
+                    Toggle("Control-clicks on the Finder window’s background.", isOn: $model.showContextualMenuForContainer)
+                    Toggle("Control-clicks on an item in the sidebar.", isOn: $model.showContextualMenuForSidebar)
                 } header: {
                     Text("Display Settings") + Text(":") + Text("(When to show related menus)").font(.footnote)
                 } footer: {

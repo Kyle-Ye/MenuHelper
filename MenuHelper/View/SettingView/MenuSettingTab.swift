@@ -6,18 +6,42 @@
 //
 
 import Settings
-import SwiftUI
 import enum Settings.Settings
+import SwiftUI
+
+@Observable
+class MenuSettingTabState {
+    var showSubMenuForApplication: Bool {
+        get {
+            access(keyPath: \.showSubMenuForApplication)
+            return UserDefaults.group.bool(forKey: Key.showSubMenuForApplication)
+        }
+        set {
+            withMutation(keyPath: \.showSubMenuForApplication) {
+                UserDefaults.group.setValue(newValue, forKey: Key.showSubMenuForApplication)
+            }
+        }
+    }
+    
+    var showSubMenuForAction: Bool {
+        get {
+            access(keyPath: \.showSubMenuForAction)
+            return UserDefaults.group.bool(forKey: Key.showSubMenuForAction)
+        }
+        set {
+            withMutation(keyPath: \.showSubMenuForAction) {
+                UserDefaults.group.setValue(newValue, forKey: Key.showSubMenuForAction)
+            }
+        }
+    }
+}
 
 struct MenuSettingTab: View {
     @ObservedObject var store: MenuItemStore
     @State private var isDrogTargeted = false
     @State private var appMenuItemEdited = false
 
-    @AppStorage(Key.showSubMenuForApplication)
-    private var showSubMenuForApplication = false
-    @AppStorage(Key.showSubMenuForAction)
-    private var showSubMenuForAction = false
+    @State private var model = MenuSettingTabState()
 
     var body: some View {
         Settings.Container(contentWidth: 520) {
@@ -34,7 +58,7 @@ struct MenuSettingTab: View {
                 HStack {
                     Text("Application Menu Items")
                     Spacer()
-                    Toggle(isOn: $showSubMenuForApplication) {
+                    Toggle(isOn: $model.showSubMenuForApplication) {
                         Text("Show as submenu")
                     }
                 }
@@ -87,7 +111,7 @@ struct MenuSettingTab: View {
                 HStack {
                     Text("Action Menu Items")
                     Spacer()
-                    Toggle(isOn: $showSubMenuForAction) {
+                    Toggle(isOn: $model.showSubMenuForAction) {
                         Text("Show as submenu")
                     }
                 }
