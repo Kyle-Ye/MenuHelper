@@ -15,9 +15,10 @@ enum StoreError: Error {
     case failedVerification
 }
 
-class Store: ObservableObject {
-    @Published private(set) var coffies: [Product] = []
-    @Published private(set) var purchased = false
+@Observable
+final class Store {
+    private(set) var coffies: [Product] = []
+    private(set) var purchased = false
     var updateListenerTask: Task<Void, any Error>?
 
     private let storage = NSUbiquitousKeyValueStore.default

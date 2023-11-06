@@ -10,7 +10,7 @@ import enum Settings.Settings
 import SwiftUI
 
 struct FolderSettingTab: View {
-    @ObservedObject var store: FolderItemStore
+    var store: FolderItemStore
     @State private var isExpanded = false
 
     var body: some View {
@@ -25,6 +25,7 @@ struct FolderSettingTab: View {
         }
     }
 
+    @MainActor
     var openSection: Settings.Section {
         Settings.Section(bottomDivider: true, verticalAlignment: .top) {
             EmptyView()
@@ -77,6 +78,7 @@ struct FolderSettingTab: View {
         }
     }
 
+    @MainActor
     var syncSection: Settings.Section {
         Settings.Section {
             EmptyView()

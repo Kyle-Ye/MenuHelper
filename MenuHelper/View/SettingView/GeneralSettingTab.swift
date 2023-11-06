@@ -74,7 +74,7 @@ struct GeneralSettingTab: View {
     @AppStorage(Key.newFileExtension)
     private var newFileExtension = NewFileExtension.none
 
-    @ObservedObject var menuItemStore: MenuItemStore
+    var menuItemStore: MenuItemStore
 
     @State private var model = GeneralSettingTabState()
 

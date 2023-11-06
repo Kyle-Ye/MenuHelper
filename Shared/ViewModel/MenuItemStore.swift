@@ -8,9 +8,10 @@
 import OrderedCollections
 import SwiftUI
 
-@MainActor class MenuItemStore: ObservableObject {
-    @Published private(set) var appItems: [AppMenuItem] = []
-    @Published private(set) var actionItems: [ActionMenuItem] = []
+@Observable
+class MenuItemStore {
+    private(set) var appItems: [AppMenuItem] = []
+    private(set) var actionItems: [ActionMenuItem] = []
 
     // MARK: - Init
 

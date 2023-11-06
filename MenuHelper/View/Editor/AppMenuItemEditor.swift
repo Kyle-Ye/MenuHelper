@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AppMenuItemEditor: View {
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject var store: MenuItemStore
+    @Environment(MenuItemStore.self) private var store
 
     @State var item: AppMenuItem
     @State private var argumentString: String = ""
@@ -98,6 +98,6 @@ struct AppMenuItemEditor: View {
 struct AppMenuItemEditor_Previews: PreviewProvider {
     static var previews: some View {
         AppMenuItemEditor(item: AppMenuItem(bundleIdentifier: "com.apple.dt.Xcode")!)
-            .environmentObject(MenuItemStore())
+            .environment(MenuItemStore())
     }
 }

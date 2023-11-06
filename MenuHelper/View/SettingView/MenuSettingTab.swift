@@ -37,7 +37,7 @@ class MenuSettingTabState {
 }
 
 struct MenuSettingTab: View {
-    @ObservedObject var store: MenuItemStore
+    var store: MenuItemStore
     @State private var isDrogTargeted = false
     @State private var appMenuItemEdited = false
 
@@ -50,6 +50,7 @@ struct MenuSettingTab: View {
         }
     }
 
+    @MainActor
     var appItemSection: Settings.Section {
         Settings.Section(bottomDivider: true, verticalAlignment: .top) {
             EmptyView()
@@ -78,7 +79,7 @@ struct MenuSettingTab: View {
                     }
                     ForEach(store.appItems) { item in
                         AppMenuItemView(item: item)
-                            .environmentObject(store)
+                            .environment(store)
                     }
                     .onDelete { store.deleteAppItems(offsets: $0) }
                     .onMove { store.moveAppItems(from: $0, to: $1) }
@@ -103,6 +104,7 @@ struct MenuSettingTab: View {
         }
     }
 
+    @MainActor
     var actionItemSection: Settings.Section {
         Settings.Section {
             EmptyView()

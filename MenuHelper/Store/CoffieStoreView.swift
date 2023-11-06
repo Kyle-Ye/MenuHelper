@@ -9,7 +9,7 @@ import StoreKit
 import SwiftUI
 
 struct CoffieStoreView: View {
-    @EnvironmentObject var store: Store
+    @Environment(Store.self) var store
     let coffies: [Product]
     let onPurchase: (Product) -> Void
 
@@ -51,6 +51,6 @@ struct CoffieStoreView_Previews: PreviewProvider {
         CoffieStoreView(coffies: []) {
             print($0.displayName + $0.displayPrice)
         }
-        .environmentObject(Store())
+        .environment(Store())
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CoffieView: View {
     @Environment(\.colorScheme) var colorScheme
-    @EnvironmentObject var store: Store
+    @Environment(Store.self) var store
     @State private var errorTitle = ""
     @State private var isShowingError = false
 

@@ -12,9 +12,10 @@ import SwiftUI
 
 private let logger = Logger(subsystem: subsystem, category: "folder_item_store")
 
-class FolderItemStore: ObservableObject {
-    @Published private(set) var bookmarkItems: [BookmarkFolderItem] = []
-    @Published private(set) var syncItems: [SyncFolderItem] = []
+@Observable
+final class FolderItemStore: Sendable {
+    private(set) var bookmarkItems: [BookmarkFolderItem] = []
+    private(set) var syncItems: [SyncFolderItem] = []
 
     // MARK: - Init
 
@@ -82,23 +83,28 @@ class FolderItemStore: ObservableObject {
         try? save()
     }
 
-    @MainActor func deleteAllBookmarkItems() {
+    func deleteAllBookmarkItems() {
         withAnimation {
             bookmarkItems.removeAll()
         }
-        try? save()
+        Task.detached {
+            try await self.save()
+        }
     }
 
-    @MainActor func deleteAllSyncItems() {
+    func deleteAllSyncItems() {
         withAnimation {
             syncItems.removeAll()
         }
-        try? save()
+        Task.detached {
+            try await self.save()
+        }
     }
 
     // MARK: - UserDefaults
 
-    @MainActor private func load() throws {
+    @MainActor
+    private func load() throws {
         if let bookmarkItemData = UserDefaults.group.data(forKey: "BOOKMARK_ITEMS"),
            let syncItemData = UserDefaults.group.data(forKey: "SYNC_ITEMS") {
             let decoder = PropertyListDecoder()
@@ -115,6 +121,7 @@ class FolderItemStore: ObservableObject {
         }
     }
 
+    @MainActor
     private func save() throws {
         let encoder = PropertyListEncoder()
         let bookmarkItemData = try encoder.encode(OrderedSet(bookmarkItems))

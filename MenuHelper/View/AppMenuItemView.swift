@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppMenuItemView: View {
-    @EnvironmentObject var store: MenuItemStore
+    @Environment(MenuItemStore.self) var store
     @State private var editingItem = false
     var item: AppMenuItem
 
@@ -29,7 +29,7 @@ struct AppMenuItemView: View {
         }
         .sheet(isPresented: $editingItem, onDismiss: nil) {
             AppMenuItemEditor(item: item, index: store.appItems.firstIndex(of: item))
-                .environmentObject(store)
+                .environment(store)
         }
     }
 }
@@ -37,6 +37,6 @@ struct AppMenuItemView: View {
 struct AppMenuItemView_Previews: PreviewProvider {
     static var previews: some View {
         AppMenuItemView(item: .xcode!)
-            .environmentObject(MenuItemStore())
+            .environment(MenuItemStore())
     }
 }

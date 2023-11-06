@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SettingView: View {
-    @StateObject var menuItemStore = MenuItemStore()
-    @StateObject var folderItemStore = FolderItemStore()
+    @State var menuItemStore = MenuItemStore()
+    @State var folderItemStore = FolderItemStore()
 
     var body: some View {
         TabView {
