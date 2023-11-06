@@ -5,7 +5,7 @@
 //  Created by Kyle on 2021/10/9.
 //
 
-import Preferences
+import Settings
 import SwiftUI
 
 struct GeneralSettingTab: View {
@@ -38,8 +38,8 @@ struct GeneralSettingTab: View {
     private var hasNewFile: Bool { menuItemStore.actionItems.contains(ActionMenuItem.newFile) }
 
     var body: some View {
-        Preferences.Container(contentWidth: 600) {
-            Preferences.Section(bottomDivider: true, verticalAlignment: .top) {
+        Settings.Container(contentWidth: 600) {
+            Settings.Section(bottomDivider: true, verticalAlignment: .top) {
                 EmptyView()
             } content: {
                 Section {
@@ -58,7 +58,7 @@ struct GeneralSettingTab: View {
                         .bold()
                 }
             }
-            Preferences.Section(bottomDivider: hasCopyPath, verticalAlignment: .top) {
+            Settings.Section(bottomDivider: hasCopyPath, verticalAlignment: .top) {
                 EmptyView()
             } content: {
                 Section {
@@ -85,7 +85,7 @@ struct GeneralSettingTab: View {
                 }
             }
 
-            Preferences.Section(bottomDivider: hasNewFile, verticalAlignment: .top) {
+            Settings.Section(bottomDivider: hasNewFile, verticalAlignment: .top) {
                 EmptyView()
             } content: {
                 if hasCopyPath {
@@ -107,7 +107,7 @@ struct GeneralSettingTab: View {
                     }
                 }
             }
-            Preferences.Section(bottomDivider: true, verticalAlignment: .top) {
+            Settings.Section(bottomDivider: true, verticalAlignment: .top) {
                 EmptyView()
             } content: {
                 if hasNewFile {
