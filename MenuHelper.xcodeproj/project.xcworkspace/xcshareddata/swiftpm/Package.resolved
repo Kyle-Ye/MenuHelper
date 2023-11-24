@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Kyle-Ye/AcknowKit.git",
       "state" : {
-        "revision" : "158fe6e0e91df84b84f40bb671d420b201ac9e2b",
-        "version" : "0.0.5"
+        "revision" : "3f4b012df7b8e5836f5b6e0714229ccca06aa78e",
+        "version" : "0.0.6"
       }
     },
     {

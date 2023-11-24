@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct MenuHelperApp: App {
-    @Environment(\.openWindow) var openWindow
+    @Environment(\.openWindow) private var openWindow
 
     var body: some Scene {
         WindowGroup {
