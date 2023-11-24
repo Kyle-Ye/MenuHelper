@@ -5,6 +5,7 @@
 //  Created by Kyle on 2021/6/27.
 //
 
+import FinderSync
 import os.log
 import SwiftUI
 
@@ -16,35 +17,20 @@ struct ContentView: View {
             Image("icon")
             Text("You can turn on MenuHelper's extension in **System Settings -> Privacy & Security -> Extensions -> Added Extensions**")
                 .multilineTextAlignment(.center)
-            Button {
-                // See this post https://stackoverflow.com/questions/24701362/os-x-system-preferences-url-scheme
-                // Since Extensions.prefPane is not allowed to open via x-apple.systempreferences
-                // let url = URL(string: "x-apple.systempreferences:com.apple.preferences.extensions")!
-                // I have to manully use hard-coded url path
-                // let url = URL(fileURLWithPath: "/System/Library/PreferencePanes/Extensions.prefPane")
-                
-                // Update macOS 13
-                // /System/Library/PreferencePanes/Extensions.prefPane is ignored and we can use Security to replace it.
-                let url = URL(fileURLWithPath: "/System/Library/PreferencePanes/Security.prefPane")
-                
-                let config = NSWorkspace.OpenConfiguration()
-                NSWorkspace.shared.open(url, configuration: config) { _, error in
-                    if let error = error {
-                        logger.error("\(error.localizedDescription)")
-                        return
-                    }
-                    DispatchQueue.main.async {
-                        logger.notice("Terminate App")
-                        NSApplication.shared.terminate(nil)
-                    }
+            // FIXME: FIFinderSyncController.isExtensionEnabled is always returning false now.
+            // Hide the related UI and add text description if extension is enabled.
+            if !FIFinderSyncController.isExtensionEnabled {
+                Button {
+                    FIFinderSyncController.showExtensionManagementInterface()
+                } label: {
+                    Text("Open System Extension Panel...")
                 }
-            } label: {
-                Text("Quit and Open System Settings...")
             }
             SettingsLink {
-                Text("Open Settings Panel...")
+                Text("Open App Settings Window...")
             }
-        }.frame(width: 425, height: 325)
+        }
+        .buttonStyle(.borderedProminent)
     }
 }
 

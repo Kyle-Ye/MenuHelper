@@ -11,22 +11,32 @@
         }
       }
     },
-    "- Read permission: Open with custom application" : {
+    "- Read permission: Add Finder Sync Directories" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- 可读：使用自定义应用程序打开"
+            "value" : "- 读权限：添加“访达”同步文件夹"
           }
         }
       }
     },
-    "- Write permission: New file in folder" : {
+    "- Read permission: Open file/folder with custom Application" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- 可写：在文件夹中新建文件"
+            "value" : "- 读权限：使用自定义应用打开文件/文件夹"
+          }
+        }
+      }
+    },
+    "- Write permission: Add New File in Finder" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- 写权限：在“访达”中新建文件"
           }
         }
       }
@@ -56,7 +66,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "*(在访达中自定义工具栏来添加/移除本App)*"
+            "value" : "*(在“访达”中自定义工具栏来添加/移除本App)*"
           }
         }
       }
@@ -111,16 +121,6 @@
         }
       }
     },
-    "All permission are only valid in the Finder Sync extension which runs on Finder.app" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "所有权限仅在运行在访达程序的访达扩展有效"
-          }
-        }
-      }
-    },
     "Application Menu Items" : {
       "localizations" : {
         "zh-Hans" : {
@@ -141,22 +141,22 @@
         }
       }
     },
+    "Both the main app and the extension are sandboxed binary." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主 App 和扩展都是沙盒二进制。"
+          }
+        }
+      }
+    },
     "But *contextual menu* will only show in Finder Sync directories" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "但是*上下文*菜单只会出现在“访达同步”文件夹中"
-          }
-        }
-      }
-    },
-    "but the FinderSync extension need it for the following reason:" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "但是访达同步扩展因为下列原因需要："
+            "value" : "但是*上下文*菜单只会出现在“访达”同步文件夹中"
           }
         }
       }
@@ -166,7 +166,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "点击该扩展的访达工具栏按钮"
+            "value" : "点击该扩展的“访达”工具栏按钮"
           }
         }
       }
@@ -186,7 +186,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "在访达窗口的一个或一组项目上Control点击"
+            "value" : "在“访达”窗口的一个或一组项目上Control点击"
           }
         }
       }
@@ -196,7 +196,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "在访达窗口的背景上Control点击"
+            "value" : "在“访达”窗口的背景上Control点击"
           }
         }
       }
@@ -237,7 +237,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Copyright ©️ 2023 YEXULEI. All rights reserved 叶絮雷 版权所有"
+            "value" : "Copyright ©️ 2023 叶絮雷 版权所有"
           }
         }
       }
@@ -337,7 +337,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "访达同步文件夹"
+            "value" : "“访达”同步文件夹"
           }
         }
       }
@@ -504,6 +504,16 @@
         }
       }
     },
+    "Open App Settings Window..." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开 App 设置窗口"
+          }
+        }
+      }
+    },
     "Open Settings Panel..." : {
       "localizations" : {
         "zh-Hans" : {
@@ -514,22 +524,22 @@
         }
       }
     },
+    "Open System Extension Panel..." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开系统扩展面板"
+          }
+        }
+      }
+    },
     "Permission description" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "权限说明"
-          }
-        }
-      }
-    },
-    "Quit and Open System Settings..." : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "退出并打开系统设置..."
           }
         }
       }
@@ -614,22 +624,22 @@
         }
       }
     },
-    "The application itself does not require user seleted folder permission" : {
+    "The extension need the following user-selected files permissions:" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "该应用程序本身不会要求用户选择的文件夹权限"
+            "value" : "扩展部分需要以下用户选择的文件权限："
           }
         }
       }
     },
-    "The persmission will not be shared to the main app" : {
+    "The main app need the following user-selected files permission:" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "这些权限不会分享给主应用"
+            "value" : "主 App 需要以下用户选择的文件权限："
           }
         }
       }

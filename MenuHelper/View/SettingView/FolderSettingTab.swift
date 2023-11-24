@@ -62,13 +62,12 @@ struct FolderSettingTab: View {
                 DisclosureGroup("Permission description", isExpanded: $isExpanded) {
                     HStack {
                         VStack(alignment: .leading) {
-                            Text("The application itself does not require user seleted folder permission")
-                            Text("but the FinderSync extension need it for the following reason:")
-                            Text("- Read permission: Open with custom application")
-                            Text("- Write permission: New file in folder")
-                            Text(verbatim: "\n")
-                            Text("All permission are only valid in the Finder Sync extension which runs on Finder.app")
-                            Text("The persmission will not be shared to the main app")
+                            Text("Both the main app and the extension are sandboxed binary.")
+                            Text("The main app need the following user-selected files permission:")
+                            Text("- Read permission: Add Finder Sync Directories")
+                            Text("The extension need the following user-selected files permissions:")
+                            Text("- Read permission: Open file/folder with custom Application")
+                            Text("- Write permission: Add New File in Finder")
                         }
                         Spacer()
                     }
