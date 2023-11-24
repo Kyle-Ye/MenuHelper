@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AboutSettingTab: View {
-    private let contentWidth: Double = 400
     @State private var rainbow = false
 
     var body: some View {
@@ -43,7 +42,6 @@ struct AboutSettingTab: View {
             .font(.footnote)
         }
         .font(.title)
-        .frame(width: CGFloat(contentWidth), alignment: .center)
         .padding(.vertical, 20)
         .padding(.horizontal, 30)
     }

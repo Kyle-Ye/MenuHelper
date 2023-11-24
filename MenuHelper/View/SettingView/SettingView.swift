@@ -15,14 +15,16 @@ struct SettingView: View {
         TabView {
             GeneralSettingTab(menuItemStore: menuItemStore)
                 .tabItem { Label("General", systemImage: "wand.and.stars") }
+                .frame(width: 500, height: 400)
             MenuSettingTab(store: menuItemStore)
                 .tabItem { Label("Menu", systemImage: "terminal") }
-                .frame(height: 400)
+                .frame(width: 500, height: 400)
             FolderSettingTab(store: folderItemStore)
                 .tabItem { Label("Folder", systemImage: "folder.badge.plus") }
-                .frame(height: 400)
+                .frame(width: 500, height: 400)
             AboutSettingTab()
                 .tabItem { Label("About", systemImage: "info.circle") }
+                .frame(width: 400, height: 200)
         }
     }
 }
