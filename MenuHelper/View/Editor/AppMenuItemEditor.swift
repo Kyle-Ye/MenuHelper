@@ -11,62 +11,74 @@ struct AppMenuItemEditor: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(MenuItemStore.self) private var store
 
-    @State var item: AppMenuItem
-    @State private var argumentString: String = ""
-    @State private var environmentString: String = ""
-    var index: Int?
+    @State private var item: AppMenuItem
+    private let result: Binding<AppMenuItem>
+
+    private var itemArgumentBinding: Binding<String> {
+        Binding<String> {
+            item.arguments.joined(separator: " ")
+        } set: { newValue in
+            item.arguments = newValue.split(separator: " ").map { String($0) }
+        }
+    }
+
+    private var itemEnvironmentBinding: Binding<String> {
+        Binding<String> {
+            item.environment.toString()
+        } set: { newValue in
+            item.environment = newValue.toDictionary()
+        }
+    }
+
+    init(item: Binding<AppMenuItem>) {
+        self._item = State(wrappedValue: item.wrappedValue)
+        result = item
+    }
 
     var body: some View {
-        VStack {
+        Form {
             HStack {
-                Text(item.appName).font(.title)
-
+                Toggle(isOn: $item.enabled) {
+                    Text(item.appName).font(.title)
+                }.toggleStyle(.button)
+                Spacer()
                 Image(nsImage: item.icon)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 50, height: 50)
             }
-            HStack {
-                Text("Enable:")
-                Checkmark(isOn: item.enabled)
-                    .onTapGesture { item.enabled.toggle() }
-                Spacer()
+            Section {
+                TextField(
+                    text: $item.itemName,
+                    axis: .horizontal
+                ) {
+                    Text("Display Name")
+                }
             }
-            HStack {
-                Text("Display Name") + Text(":")
-                TextField("Display Name", text: $item.itemName)
-            }
-            HStack {
+            Section {
                 Toggle("Inherit from global arguments:", isOn: $item.inheritFromGlobalArguments)
-                    .toggleStyle(.switch)
-                Spacer()
-            }
-            VStack {
-                HStack {
-                    Text("Arguments") + Text(":")
-                    TextField("Arguments", text: $argumentString)
+
+                TextField(
+                    text: itemArgumentBinding,
+                    prompt: Text(verbatim: "-a -b --help"),
+                    axis: .horizontal
+                ) {
+                    Text("Arguments")
                 }
-                Text("Format: \("-a -b --help")").font(.footnote).foregroundColor(.secondary)
             }
-            HStack {
+            Section {
                 Toggle("Inherit from global environment:", isOn: $item.inheritFromGlobalEnvironment)
-                    .toggleStyle(.switch)
-                Spacer()
-            }
-            VStack {
-                HStack {
-                    Text("Environment") + Text(":")
-                    TextField("Environment", text: $environmentString)
-                        .onSubmit {
-                            let environment = environmentString.toDictionary()
-                            environmentString = environment.toString()
-                        }
+                TextField(
+                    text: itemEnvironmentBinding,
+                    prompt: Text(verbatim: "KEY_A=0 KEY_B=1"),
+                    axis: .horizontal
+                ) {
+                    Text("Environment")
                 }
-                Text("Format: \("KEY_A=0 KEY_B=1")").font(.footnote).foregroundColor(.secondary)
             }
-            Spacer()
         }
-        .padding()
+        .controlSize(.large)
+        .formStyle(.grouped)
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 Button {
@@ -77,27 +89,24 @@ struct AppMenuItemEditor: View {
             }
             ToolbarItem(placement: .confirmationAction) {
                 Button {
-                    Task {
-                        item.arguments = argumentString.split(separator: " ").map { String($0) }
-                        item.environment = environmentString.toDictionary()
-                        store.updateAppItem(item: item, index: index)
-                        dismiss()
-                    }
+                    result.wrappedValue = item
+                    dismiss()
                 } label: {
                     Image(systemName: "checkmark.circle")
                 }
             }
         }
-        .onAppear {
-            argumentString = item.arguments.joined(separator: " ")
-            environmentString = item.environment.toString()
-        }
     }
 }
 
-struct AppMenuItemEditor_Previews: PreviewProvider {
-    static var previews: some View {
-        AppMenuItemEditor(item: AppMenuItem(bundleIdentifier: "com.apple.dt.Xcode")!)
-            .environment(MenuItemStore())
+#Preview {
+    struct EditorPreview: View {
+        @State private var store = MenuItemStore()
+        @State private var item = AppMenuItem.xcode!
+        var body: some View {
+            AppMenuItemEditor(item: $item)
+                    .environment(store)
+        }
     }
+    return EditorPreview()
 }

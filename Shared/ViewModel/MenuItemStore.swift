@@ -10,8 +10,8 @@ import SwiftUI
 
 @Observable
 class MenuItemStore {
-    private(set) var appItems: [AppMenuItem] = []
-    private(set) var actionItems: [ActionMenuItem] = []
+    var appItems: [AppMenuItem] = []
+    var actionItems: [ActionMenuItem] = []
 
     // MARK: - Init
 
@@ -25,22 +25,6 @@ class MenuItemStore {
 
     func refresh() {
         try? load()
-    }
-
-    // MARK: - Toggle Item
-
-    func toggleItem(_ item: AppMenuItem) {
-        if let index = appItems.firstIndex(of: item) {
-            appItems[index].enabled.toggle()
-            try? save()
-        }
-    }
-
-    func toggleItem(_ item: ActionMenuItem) {
-        if let index = actionItems.firstIndex(of: item) {
-            actionItems[index].enabled.toggle()
-            try? save()
-        }
     }
 
     // MARK: - Append Item
