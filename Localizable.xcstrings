@@ -91,16 +91,6 @@
         }
       }
     },
-    "Add %@" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "添加 %@ 动作"
-          }
-        }
-      }
-    },
     "Add Application(s)" : {
       "localizations" : {
         "zh-Hans" : {

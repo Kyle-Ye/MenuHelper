@@ -32,7 +32,6 @@
 		2781A6302688A0260042B453 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2781A62F2688A0260042B453 /* Preview Assets.xcassets */; };
 		2781C5932688A4540042B453 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781C5922688A4540042B453 /* FinderSync.swift */; };
 		2781C5972688A4540042B453 /* MenuHelperExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2781C5902688A4540042B453 /* MenuHelperExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2784C1EE2AF225280097263C /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = 2784C1ED2AF225280097263C /* Settings */; };
 		2795203B268B5B7E00492ABF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795203A268B5B7E00492ABF /* SettingView.swift */; };
 		27952041268B5F0700492ABF /* FolderSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952040268B5F0700492ABF /* FolderSettingTab.swift */; };
 		27952043268B5F1100492ABF /* MenuSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952042268B5F1100492ABF /* MenuSettingTab.swift */; };
@@ -168,7 +167,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				27ADFF902AF202ED00731FA8 /* AcknowKit in Frameworks */,
-				2784C1EE2AF225280097263C /* Settings in Frameworks */,
 				2746559327B9319600DC2F91 /* StoreKit.framework in Frameworks */,
 				272986B92711FDAF00EBCCBF /* OrderedCollections in Frameworks */,
 			);
@@ -399,7 +397,6 @@
 			packageProductDependencies = (
 				272986B82711FDAF00EBCCBF /* OrderedCollections */,
 				27ADFF8F2AF202ED00731FA8 /* AcknowKit */,
-				2784C1ED2AF225280097263C /* Settings */,
 			);
 			productName = FinderHelper;
 			productReference = 2781A6252688A0260042B453 /* MenuHelper.app */;
@@ -460,7 +457,6 @@
 			packageReferences = (
 				272986B72711FDAF00EBCCBF /* XCRemoteSwiftPackageReference "swift-collections" */,
 				27ADFF8E2AF202ED00731FA8 /* XCRemoteSwiftPackageReference "AcknowKit" */,
-				2784C1EC2AF225280097263C /* XCRemoteSwiftPackageReference "Settings" */,
 			);
 			productRefGroup = 2781A6262688A0260042B453 /* Products */;
 			projectDirPath = "";
@@ -938,14 +934,6 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		2784C1EC2AF225280097263C /* XCRemoteSwiftPackageReference "Settings" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/Settings.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.5;
-			};
-		};
 		27ADFF8E2AF202ED00731FA8 /* XCRemoteSwiftPackageReference "AcknowKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Kyle-Ye/AcknowKit.git";
@@ -966,11 +954,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 272986B72711FDAF00EBCCBF /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = OrderedCollections;
-		};
-		2784C1ED2AF225280097263C /* Settings */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2784C1EC2AF225280097263C /* XCRemoteSwiftPackageReference "Settings" */;
-			productName = Settings;
 		};
 		27ADFF8F2AF202ED00731FA8 /* AcknowKit */ = {
 			isa = XCSwiftPackageProductDependency;

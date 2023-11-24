@@ -5,7 +5,6 @@
 //  Created by Kyle on 2021/10/9.
 //
 
-import Settings
 import SwiftUI
 
 @Observable
@@ -82,102 +81,103 @@ struct GeneralSettingTab: View {
     private var hasNewFile: Bool { menuItemStore.actionItems.contains(ActionMenuItem.newFile) }
 
     var body: some View {
-        Settings.Container(contentWidth: 600) {
-            Settings.Section(bottomDivider: true, verticalAlignment: .top) {
-                EmptyView()
-            } content: {
-                Section {
-                    HStack {
-                        Toggle("Clicks on the extension’s toolbar button.", isOn: $model.showToolbarItemMenu)
-                        Text("*(Custom toolbar in Finder to show/hide this app in Finder toolbar)*").font(.footnote)
-                    }
-                    Toggle("Control-clicks on an item or a group of selected items inside the Finder window.", isOn: $model.showContextualMenuForItem)
-                    Toggle("Control-clicks on the Finder window’s background.", isOn: $model.showContextualMenuForContainer)
-                    Toggle("Control-clicks on an item in the sidebar.", isOn: $model.showContextualMenuForSidebar)
-                } header: {
-                    Text("Display Settings") + Text(":") + Text("(When to show related menus)").font(.footnote)
-                } footer: {
-                    Text("Right-click is the same as control-click")
-                        .font(.footnote)
-                        .bold()
-                }
+        Form {
+            displaySection
+            applicationSection
+            if hasCopyPath {
+                copyPathSection
             }
-            Settings.Section(bottomDivider: hasCopyPath, verticalAlignment: .top) {
-                EmptyView()
-            } content: {
-                Section {
-                    VStack {
-                        HStack {
-                            Text("Arguments") + Text(":")
-                            TextField("Arguments", text: $globalApplicationArgumentsString)
-                        }
-                        Text("Format: \("-a -b --help")").font(.footnote).foregroundColor(.secondary)
+            if hasNewFile {
+                newFileSection
+            }
+        }
+        .controlSize(.large)
+        .formStyle(.grouped)
+        .frame(width: 600)
+    }
+
+    private var displaySection: some View {
+        Section {
+            Toggle(isOn: $model.showToolbarItemMenu) {
+                Text("Clicks on the extension’s toolbar button.")
+                    + Text("*(Custom toolbar in Finder to show/hide this app in Finder toolbar)*").font(.footnote)
+            }
+            Toggle("Control-clicks on an item or a group of selected items inside the Finder window.", isOn: $model.showContextualMenuForItem)
+            Toggle("Control-clicks on the Finder window’s background.", isOn: $model.showContextualMenuForContainer)
+            Toggle("Control-clicks on an item in the sidebar.", isOn: $model.showContextualMenuForSidebar)
+        } header: {
+            Text("Display Settings") + Text(":") + Text("(When to show related menus)").font(.footnote)
+        } footer: {
+            Text("Right-click is the same as control-click")
+                .font(.footnote)
+                .bold()
+        }
+    }
+
+    // TODO: Add advanced GUI manager
+    private var applicationSection: some View {
+        Section {
+            TextField(
+                text: $globalApplicationArgumentsString,
+                prompt: Text(verbatim: "-a -b --help"),
+                axis: .horizontal
+            ) {
+                Text("Arguments")
+            }
+            TextField(
+                text: $globalApplicationEnvironmentString,
+                prompt: Text(verbatim: "KEY_A=0 KEY_B=1"),
+                axis: .horizontal
+            ) {
+                Text("Environment")
+            }
+            .onSubmit {
+                let environment = globalApplicationEnvironmentString.toDictionary()
+                globalApplicationEnvironmentString = environment.toString()
+            }
+        } header: {
+            Text("Global Application Settings:")
+        }
+    }
+
+    private var copyPathSection: some View {
+        Section {
+            HStack {
+                HStack {
+                    Text("Join-separator when multi items are seleted")
+                    TextField(#"Default is " ""#, text: $copyPathSeparator)
+                }
+                Picker(selection: $copyPathOption, label: Text("Copy Style")) {
+                    ForEach(CopyPathOption.allCases) { option in
+                        Text(option.description).tag(option)
                     }
-                    VStack {
-                        HStack {
-                            Text("Environment") + Text(":")
-                            TextField("Environment", text: $globalApplicationEnvironmentString)
-                                .onSubmit {
-                                    let environment = globalApplicationEnvironmentString.toDictionary()
-                                    globalApplicationEnvironmentString = environment.toString()
-                                }
-                        }
-                        Text("Format: \("KEY_A=0 KEY_B=1")").font(.footnote).foregroundColor(.secondary)
-                    }
-                } header: {
-                    Text("Global Application Settings:")
                 }
             }
 
-            Settings.Section(bottomDivider: hasNewFile, verticalAlignment: .top) {
-                EmptyView()
-            } content: {
-                if hasCopyPath {
-                    Section {
-                        HStack {
-                            HStack {
-                                Text("Join-separator when multi items are seleted")
-                                TextField(#"Default is " ""#, text: $copyPathSeparator)
-                            }
-                            Picker(selection: $copyPathOption, label: Text("Copy Style")) {
-                                ForEach(CopyPathOption.allCases) { option in
-                                    Text(option.description).tag(option)
-                                }
-                            }
-                        }
+        } header: {
+            Text("Copy Path Settings:")
+        }
+    }
 
-                    } header: {
-                        Text("Copy Path Settings:")
+    private var newFileSection: some View {
+        Section {
+            HStack {
+                HStack {
+                    Text("File Name")
+                    TextField("Untitled", text: $newFileName)
+                }
+                Picker(selection: $newFileExtension, label: Text("File Extension")) {
+                    ForEach(NewFileExtension.allCases) { fileExtension in
+                        Text(fileExtension.rawValue).tag(fileExtension)
                     }
                 }
             }
-            Settings.Section(bottomDivider: true, verticalAlignment: .top) {
-                EmptyView()
-            } content: {
-                if hasNewFile {
-                    Section {
-                        HStack {
-                            HStack {
-                                Text("File Name")
-                                TextField("Untitled", text: $newFileName)
-                            }
-                            Picker(selection: $newFileExtension, label: Text("File Extension")) {
-                                ForEach(NewFileExtension.allCases) { fileExtension in
-                                    Text(fileExtension.rawValue).tag(fileExtension)
-                                }
-                            }
-                        }
-                    } header: {
-                        Text("New File Settings:")
-                    }
-                }
-            }
+        } header: {
+            Text("New File Settings:")
         }
     }
 }
 
-struct GeneralSettingTab_Previews: PreviewProvider {
-    static var previews: some View {
-        GeneralSettingTab(menuItemStore: MenuItemStore())
-    }
+#Preview {
+    GeneralSettingTab(menuItemStore: MenuItemStore())
 }
