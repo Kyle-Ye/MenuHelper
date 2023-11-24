@@ -46,11 +46,9 @@ struct CoffieStoreView: View {
     }
 }
 
-struct CoffieStoreView_Previews: PreviewProvider {
-    static var previews: some View {
-        CoffieStoreView(coffies: []) {
-            print($0.displayName + $0.displayPrice)
-        }
-        .environment(Store())
+#Preview {
+    CoffieStoreView(coffies: []) {
+        print($0.displayName + $0.displayPrice)
     }
+    .environment(Store())
 }

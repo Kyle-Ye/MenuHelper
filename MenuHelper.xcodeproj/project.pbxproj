@@ -103,13 +103,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2727E3112B10F77A000302B5 /* Menu Helper.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Menu Helper.storekit"; sourceTree = "<group>"; };
 		2732A5AF27B9558D005DB4A0 /* MenuHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2732A5B327B9558D005DB4A0 /* MenuHelperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHelperUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2732A5BA27B955B9005DB4A0 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		27421A96271FCB0E00A0BD28 /* AppCommChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommChannel.swift; sourceTree = "<group>"; };
 		27421A98271FCB1600A0BD28 /* FinderCommChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderCommChannel.swift; sourceTree = "<group>"; };
 		27421A9B271FF10400A0BD28 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		2746558627B8BA3500DC2F91 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 		2746558727B903E100DC2F91 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		2746558A27B90A6400DC2F91 /* SupportWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportWindow.swift; sourceTree = "<group>"; };
 		2746558E27B90E2F00DC2F91 /* CoffieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffieView.swift; sourceTree = "<group>"; };
@@ -214,10 +214,10 @@
 		2746558527B8BA1700DC2F91 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				2746558627B8BA3500DC2F91 /* Products.storekit */,
 				2746558727B903E100DC2F91 /* Store.swift */,
 				2746559027B90E8C00DC2F91 /* CoffieStoreView.swift */,
 				2746558E27B90E2F00DC2F91 /* CoffieView.swift */,
+				2727E3112B10F77A000302B5 /* Menu Helper.storekit */,
 			);
 			path = Store;
 			sourceTree = "<group>";

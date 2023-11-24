@@ -1,5 +1,5 @@
 {
-  "identifier" : "46F012FD",
+  "identifier" : "BBB62968",
   "nonRenewingSubscriptions" : [
 
   ],
@@ -7,17 +7,17 @@
     {
       "displayPrice" : "0.99",
       "familyShareable" : false,
-      "internalID" : "B8C5181A",
+      "internalID" : "1609855348",
       "localizations" : [
-        {
-          "description" : "Buy me a lollipop",
-          "displayName" : "Buy me a lollipop",
-          "locale" : "en_US"
-        },
         {
           "description" : "打赏一包辣条",
           "displayName" : "打赏一包辣条",
           "locale" : "zh_CN"
+        },
+        {
+          "description" : "Buy me a lollipop",
+          "displayName" : "Buy me a lollipop",
+          "locale" : "en_US"
         }
       ],
       "productID" : "consumable.coffie.price1",
@@ -27,7 +27,7 @@
     {
       "displayPrice" : "2.99",
       "familyShareable" : false,
-      "internalID" : "AE0C9815",
+      "internalID" : "1609855569",
       "localizations" : [
         {
           "description" : "Buy me a cup of milk",
@@ -47,17 +47,17 @@
     {
       "displayPrice" : "4.99",
       "familyShareable" : false,
-      "internalID" : "566F2973",
+      "internalID" : "1609856417",
       "localizations" : [
-        {
-          "description" : "Buy me a cup of beer",
-          "displayName" : "Buy me a cup of beer",
-          "locale" : "en_US"
-        },
         {
           "description" : "打赏一碗面条",
           "displayName" : "打赏一碗面条",
           "locale" : "zh_CN"
+        },
+        {
+          "description" : "Buy me a cup of beer",
+          "displayName" : "Buy me a cup of beer",
+          "locale" : "en_US"
         }
       ],
       "productID" : "consumable.coffie.price3",
@@ -66,7 +66,10 @@
     }
   ],
   "settings" : {
+    "_applicationInternalID" : "1609383899",
+    "_developerTeamID" : "VB7MJ8R223",
     "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 722532230.68322599,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [

@@ -5,7 +5,6 @@
 //  Created by Kyle on 2021/6/29.
 //
 
-import Settings
 import SwiftUI
 
 struct MenuSettingTab: View {
