@@ -34,7 +34,7 @@ struct MenuHelperApp: App {
                 }
             }
         }
-        .defaultSize(width: 400, height: 200)
+        .defaultSize(width: 400, height: 300)
         
         Window("Support", id: "support") {
             SupportWindow()
