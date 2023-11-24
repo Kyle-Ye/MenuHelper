@@ -12,25 +12,53 @@ import SwiftUI
 private let logger = Logger(subsystem: subsystem, category: "main")
 
 struct ContentView: View {
+    private var enable: Bool {
+        FIFinderSyncController.isExtensionEnabled
+    }
+
+    private var imageName: String {
+        enable ? "gear.badge.checkmark" : "gear.badge.xmark"
+    }
+
+    private var hint: LocalizedStringKey {
+        enable
+        ? "You can turn off MenuHelper's extension in **System Settings -> Privacy & Security -> Extensions -> Added Extensions**"
+        : "You can turn on MenuHelper's extension in **System Settings -> Privacy & Security -> Extensions -> Added Extensions**"
+    }
+
     var body: some View {
-        VStack(spacing: 30) {
-            Image("icon")
-            Text("You can turn on MenuHelper's extension in **System Settings -> Privacy & Security -> Extensions -> Added Extensions**")
-                .multilineTextAlignment(.center)
-            // FIXME: FIFinderSyncController.isExtensionEnabled is always returning false now.
-            // Hide the related UI and add text description if extension is enabled.
-            if !FIFinderSyncController.isExtensionEnabled {
+        Form {
+            Section {
+                HStack {
+                    Image(systemName: imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50)
+                        .symbolRenderingMode(.multicolor)
+                    Text(hint)
+                        .multilineTextAlignment(.leading)
+                }
+            } header: {
+                HStack {
+                    Spacer()
+                    Image("icon")
+                    Spacer()
+                }
+            }
+            Section {
                 Button {
                     FIFinderSyncController.showExtensionManagementInterface()
                 } label: {
                     Text("Open System Extension Panel...")
                 }
+                SettingsLink {
+                    Text("Open App Settings Window...")
+                }
             }
-            SettingsLink {
-                Text("Open App Settings Window...")
-            }
+            .buttonStyle(.link)
+            .foregroundStyle(.accent)
         }
-        .buttonStyle(.borderedProminent)
+        .formStyle(.grouped)
     }
 }
 
