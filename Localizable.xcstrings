@@ -212,7 +212,7 @@
         }
       }
     },
-    "Copy Path Settings:" : {
+    "Copy Path Settings" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -372,12 +372,12 @@
         }
       }
     },
-    "Global Application Settings:" : {
+    "Global Application Settings" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "全局应用程序菜单项设置："
+            "value" : "全局应用程序菜单项设置"
           }
         }
       }
@@ -463,12 +463,12 @@
         }
       }
     },
-    "Menu Helper is made possible with following projects:" : {
+    "Menu Helper is made possible with following projects" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "速达的产生离不开以下开源项目："
+            "value" : "速达的产生离不开以下开源项目"
           }
         }
       }

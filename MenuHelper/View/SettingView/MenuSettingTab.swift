@@ -49,7 +49,6 @@ struct MenuSettingTab: View {
         }
         .controlSize(.large)
         .formStyle(.grouped)
-        .frame(width: 520)
     }
 
     @MainActor

@@ -77,8 +77,16 @@ struct GeneralSettingTab: View {
 
     @State private var model = GeneralSettingTabState()
 
-    private var hasCopyPath: Bool { menuItemStore.actionItems.contains(ActionMenuItem.copyPath) }
-    private var hasNewFile: Bool { menuItemStore.actionItems.contains(ActionMenuItem.newFile) }
+    private var hasCopyPath: Bool {
+        guard let copyPath = menuItemStore.actionItems.first(where: { $0 == ActionMenuItem.copyPath })
+        else { return false }
+        return copyPath.enabled
+    }
+    private var hasNewFile: Bool {
+        guard let newFile = menuItemStore.actionItems.first(where: { $0 == ActionMenuItem.newFile })
+        else { return false }
+        return newFile.enabled
+    }
 
     var body: some View {
         Form {
@@ -93,7 +101,6 @@ struct GeneralSettingTab: View {
         }
         .controlSize(.large)
         .formStyle(.grouped)
-        .frame(width: 600)
     }
 
     private var displaySection: some View {
@@ -106,7 +113,7 @@ struct GeneralSettingTab: View {
             Toggle("Control-clicks on the Finder window’s background.", isOn: $model.showContextualMenuForContainer)
             Toggle("Control-clicks on an item in the sidebar.", isOn: $model.showContextualMenuForSidebar)
         } header: {
-            Text("Display Settings") + Text(":") + Text("(When to show related menus)").font(.footnote)
+            Text("Display Settings") + Text("(When to show related menus)").font(.footnote)
         } footer: {
             Text("Right-click is the same as control-click")
                 .font(.footnote)
@@ -136,40 +143,41 @@ struct GeneralSettingTab: View {
                 globalApplicationEnvironmentString = environment.toString()
             }
         } header: {
-            Text("Global Application Settings:")
+            Text("Global Application Settings")
         }
     }
 
     private var copyPathSection: some View {
         Section {
-            HStack {
-                HStack {
-                    Text("Join-separator when multi items are seleted")
-                    TextField(#"Default is " ""#, text: $copyPathSeparator)
-                }
-                Picker(selection: $copyPathOption, label: Text("Copy Style")) {
-                    ForEach(CopyPathOption.allCases) { option in
-                        Text(option.description).tag(option)
-                    }
+            TextField(
+                text: $copyPathSeparator,
+                prompt: Text(#"Default is " ""#),
+                axis: .horizontal
+            ) {
+                Text("Join-separator when multi items are seleted")
+            }
+            Picker(selection: $copyPathOption, label: Text("Copy Style")) {
+                ForEach(CopyPathOption.allCases) { option in
+                    Text(option.description).tag(option)
                 }
             }
-
         } header: {
-            Text("Copy Path Settings:")
+            Text("Copy Path Settings")
         }
     }
 
     private var newFileSection: some View {
         Section {
-            HStack {
-                HStack {
-                    Text("File Name")
-                    TextField("Untitled", text: $newFileName)
-                }
-                Picker(selection: $newFileExtension, label: Text("File Extension")) {
-                    ForEach(NewFileExtension.allCases) { fileExtension in
-                        Text(fileExtension.rawValue).tag(fileExtension)
-                    }
+            TextField(
+                text: $newFileName,
+                prompt: Text("Untitled"),
+                axis: .horizontal
+            ) {
+                Text("File Name")
+            }
+            Picker(selection: $newFileExtension, label: Text("File Extension")) {
+                ForEach(NewFileExtension.allCases) { fileExtension in
+                    Text(fileExtension.rawValue).tag(fileExtension)
                 }
             }
         } header: {

@@ -44,7 +44,7 @@ enum CopyPathOption: Int, CustomStringConvertible, CaseIterable, Identifiable {
 
 enum NewFileExtension: String, CaseIterable, Identifiable {
     var id: String { rawValue }
-    case none = ""
+    case none = "(none)"
     case swift
     case txt
 }
