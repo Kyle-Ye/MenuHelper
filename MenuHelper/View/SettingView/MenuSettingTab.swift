@@ -6,41 +6,18 @@
 //
 
 import Settings
-import enum Settings.Settings
 import SwiftUI
 
-@Observable
-class MenuSettingTabState {
-    var showSubMenuForApplication: Bool {
-        get {
-            access(keyPath: \.showSubMenuForApplication)
-            return UserDefaults.group.bool(forKey: Key.showSubMenuForApplication)
-        }
-        set {
-            withMutation(keyPath: \.showSubMenuForApplication) {
-                UserDefaults.group.setValue(newValue, forKey: Key.showSubMenuForApplication)
-            }
-        }
-    }
-    
-    var showSubMenuForAction: Bool {
-        get {
-            access(keyPath: \.showSubMenuForAction)
-            return UserDefaults.group.bool(forKey: Key.showSubMenuForAction)
-        }
-        set {
-            withMutation(keyPath: \.showSubMenuForAction) {
-                UserDefaults.group.setValue(newValue, forKey: Key.showSubMenuForAction)
-            }
-        }
-    }
-}
-
 struct MenuSettingTab: View {
-    var store: MenuItemStore
+    @Bindable var store: MenuItemStore
     @State private var isDrogTargeted = false
     @State private var appMenuItemEdited = false
-    @State private var model = MenuSettingTabState()
+
+    @AppStorage(Key.showSubMenuForApplication)
+    private var showSubMenuForApplication = false
+
+    @AppStorage(Key.showSubMenuForAction)
+    private var showSubMenuForAction = false
 
     var body: some View {
         Form {
@@ -54,12 +31,12 @@ struct MenuSettingTab: View {
     @MainActor
     var appItemSection: some View {
         Section {
-            Toggle(isOn: $model.showSubMenuForApplication) {
+            Toggle(isOn: $showSubMenuForApplication) {
                 Text("Show as submenu")
             }
             List {
-                ForEach(store.appItems) { item in
-                    AppMenuItemView(item: item)
+                ForEach($store.appItems) { $item in
+                    AppMenuItemView(item: $item)
                         .environment(store)
                 }
                 .onDelete { store.deleteAppItems(offsets: $0) }
@@ -103,19 +80,18 @@ struct MenuSettingTab: View {
     @MainActor
     var actionItemSection: some View {
         Section {
-            Toggle(isOn: $model.showSubMenuForAction) {
+            Toggle(isOn: $showSubMenuForAction) {
                 Text("Show as submenu")
             }
-            ForEach(store.actionItems) { item in
+            ForEach($store.actionItems) { $item in
                 HStack {
-                    Checkmark(isOn: item.enabled)
                     Image(nsImage: item.icon)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 32, height: 32)
-                    Text(item.name)
-                }.onTapGesture {
-                    store.toggleItem(item)
+                    Toggle(isOn: $item.enabled) {
+                        Text(item.name)
+                    }.toggleStyle(.button)
                 }
             }
             .onMove { store.moveActionItems(from: $0, to: $1) }

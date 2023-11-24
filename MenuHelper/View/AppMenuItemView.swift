@@ -8,35 +8,35 @@
 import SwiftUI
 
 struct AppMenuItemView: View {
-    @Environment(MenuItemStore.self) var store
+    @Environment(MenuItemStore.self) private var store
     @State private var editingItem = false
-    var item: AppMenuItem
+    @Binding var item: AppMenuItem
 
     var body: some View {
         HStack {
-            HStack {
-                Checkmark(isOn: item.enabled)
-                Image(nsImage: item.icon)
+            Image(nsImage: item.icon)
+            Toggle(isOn: $item.enabled) {
                 Text(item.name)
-            }.onTapGesture {
-                store.toggleItem(item)
             }
+            .toggleStyle(.button)
+        }
+        .contextMenu {
             Button {
                 editingItem = true
             } label: {
-                Image(systemName: "pencil").foregroundColor(.accentColor)
+                Label("Edit", systemImage: "pencil")
             }
         }
         .sheet(isPresented: $editingItem, onDismiss: nil) {
-            AppMenuItemEditor(item: item, index: store.appItems.firstIndex(of: item))
+            AppMenuItemEditor(item: $item)
                 .environment(store)
         }
     }
 }
 
-struct AppMenuItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        AppMenuItemView(item: .xcode!)
-            .environment(MenuItemStore())
-    }
+#Preview {
+    @State var store = MenuItemStore()
+    return AppMenuItemView(item: .constant(.xcode!))
+        .environment(store)
+        .padding()
 }

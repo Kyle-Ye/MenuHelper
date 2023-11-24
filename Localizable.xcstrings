@@ -41,16 +41,6 @@
         }
       }
     },
-    ":" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "："
-          }
-        }
-      }
-    },
     "(When to show related menus)" : {
       "localizations" : {
         "zh-Hans" : {
@@ -282,12 +272,12 @@
         }
       }
     },
-    "Enable:" : {
+    "Edit" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "启用："
+            "value" : "编辑"
           }
         }
       }
@@ -348,16 +338,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "文件夹"
-          }
-        }
-      }
-    },
-    "Format: %@" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "格式： %@"
           }
         }
       }
