@@ -50,21 +50,6 @@ struct AboutSettingTab: View {
 }
 
 extension View {
-    /// Applies the given transform if the given condition evaluates to `true`.
-    /// - Parameters:
-    ///   - condition: The condition to evaluate.
-    ///   - transform: The transform to apply to the source `View`.
-    /// - Returns: Either the original `View` or the modified `View` if the condition is `true`.
-    @ViewBuilder func `if`(_ condition: Bool, transform: (Self) -> some View) -> some View {
-        if condition {
-            transform(self)
-        } else {
-            self
-        }
-    }
-}
-
-extension View {
     func glow(color: Color = .red, radius: CGFloat = 20) -> some View {
         self
             .shadow(color: color, radius: radius / 3)
@@ -85,8 +70,6 @@ extension View {
     }
 }
 
-struct AboutSettingTab_Previews: PreviewProvider {
-    static var previews: some View {
-        AboutSettingTab()
-    }
+#Preview {
+    AboutSettingTab()
 }
