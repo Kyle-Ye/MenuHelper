@@ -1,3 +1,35 @@
-You are permitted to use this source code, with or without modification, in source or binary form, on your devices however you see fit. You are not permitted to redistribute binaries of this source code, with or without modification. In other words, you cannot put this application or any application derived from it, on the Apple App Store, Cydia, or any other binary-only distribution channel.
+Kyle-Ye Apple Platform Project License
 
-你可以任意修改、使用该源代码，也可以用于商业目的。但不能将此应用或者修改的应用的二进制文件上传到 App Store 或者通过其它分发渠道（包括但不限于网站、网盘、聊天软件）分享二进制文件。
+Copyright (c) 2023 Kyle-Ye
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice is required in copies
+or substantial portions of the Software.
+
+You are not permitted to submit this software to App Store, or any store related
+to Apple. You are not permitted to redistribute binaries of this source code,
+with or without modification. In other words, you cannot put this application
+or any application derived from it, on the Apple App Store, Cydia, or
+any other binary-only distribution channel.
+
+The copyright of the binary files uploaded to the App Store and any other
+binary-only distribution channel belong to Kyle-Ye. And you are permitted to
+use this source code, with or without modification, in source or binary form,
+on your own devices however you like. 
+
+Nor the name of the copyright holders may be used to endorse or promote products
+derived from this software without specific prior written permission.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
