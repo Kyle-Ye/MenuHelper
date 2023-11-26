@@ -79,6 +79,11 @@ class MenuItemStore {
         try? save()
     }
 
+    func resetActionItems() {
+        actionItems = ActionMenuItem.all
+        try? save()
+    }
+
     // MARK: - Move Items
 
     func moveAppItems(from source: IndexSet, to destination: Int) {

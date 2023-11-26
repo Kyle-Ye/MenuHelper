@@ -91,12 +91,12 @@
         }
       }
     },
-    "Add Application(s)" : {
+    "Add Application Menu Items(s)" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "添加应用程序"
+            "value" : "添加应用程序菜单项"
           }
         }
       }
@@ -191,6 +191,17 @@
         }
       }
     },
+    "Copy File Name" : {
+      "comment" : "Copy File Name",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拷贝文件名"
+          }
+        }
+      }
+    },
     "Copy Path" : {
       "comment" : "Copy Path",
       "localizations" : {
@@ -202,12 +213,12 @@
         }
       }
     },
-    "Copy Path Settings" : {
+    "Copy Settings" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "拷贝路径菜单项设置"
+            "value" : "拷贝相关设置"
           }
         }
       }
@@ -540,6 +551,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "删除全部"
+          }
+        }
+      }
+    },
+    "Reset Action Menu Items" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重置动作菜单项"
           }
         }
       }

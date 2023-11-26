@@ -19,8 +19,8 @@ enum Key {
     static let globalApplicationArgumentsString = "GLOBAL_APPLICATION_ARGUMENTS_STRING"
     static let globalApplicationEnvironmentString = "GLOBAL_APPLICATION_ENVIRONMENT_STRING"
 
-    static let copyPathSeparator = "COPY_PATH_SEPARATOR"
-    static let copyPathOption = "COPY_PATH_OPTION"
+    static let copySeparator = "COPY_SEPARATOR"
+    static let copyOption = "COPY_OPTION"
     static let newFileName = "NEW_FILE_NAME"
     static let newFileExtension = "NEW_FILE_EXTENSION"
 
@@ -28,7 +28,7 @@ enum Key {
     static let showSubMenuForAction = "SHOW_SUB_MENU_FOR_ACTION"
 }
 
-enum CopyPathOption: Int, CustomStringConvertible, CaseIterable, Identifiable {
+enum CopyOption: Int, CustomStringConvertible, CaseIterable, Identifiable {
     var id: Int { rawValue }
 
     case origin, escape, quoto
