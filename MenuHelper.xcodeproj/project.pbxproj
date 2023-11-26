@@ -31,7 +31,7 @@
 		2781A62D2688A0260042B453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2781A62C2688A0260042B453 /* Assets.xcassets */; };
 		2781A6302688A0260042B453 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2781A62F2688A0260042B453 /* Preview Assets.xcassets */; };
 		2781C5932688A4540042B453 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781C5922688A4540042B453 /* FinderSync.swift */; };
-		2781C5972688A4540042B453 /* MenuHelperExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2781C5902688A4540042B453 /* MenuHelperExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2781C5972688A4540042B453 /* MenuHelperExtensionDebug.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2781C5902688A4540042B453 /* MenuHelperExtensionDebug.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2795203B268B5B7E00492ABF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795203A268B5B7E00492ABF /* SettingView.swift */; };
 		27952041268B5F0700492ABF /* FolderSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952040268B5F0700492ABF /* FolderSettingTab.swift */; };
 		27952043268B5F1100492ABF /* MenuSettingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27952042268B5F1100492ABF /* MenuSettingTab.swift */; };
@@ -95,7 +95,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				2781C5972688A4540042B453 /* MenuHelperExtension.appex in Embed Foundation Extensions */,
+				2781C5972688A4540042B453 /* MenuHelperExtensionDebug.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +107,9 @@
 		2732A5AF27B9558D005DB4A0 /* MenuHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2732A5B327B9558D005DB4A0 /* MenuHelperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHelperUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2732A5BA27B955B9005DB4A0 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
+		273F70B12B132E4900CD37B1 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		273F70B22B132E4900CD37B1 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		273F70B32B132E4900CD37B1 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		27421A96271FCB0E00A0BD28 /* AppCommChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommChannel.swift; sourceTree = "<group>"; };
 		27421A98271FCB1600A0BD28 /* FinderCommChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderCommChannel.swift; sourceTree = "<group>"; };
 		27421A9B271FF10400A0BD28 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -121,12 +124,12 @@
 		274C25FA2A32427000A6CE0F /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		274C25FC2A32427000A6CE0F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		276D4122299D465E00C47CAF /* BundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleHelper.swift; sourceTree = "<group>"; };
-		2781A6252688A0260042B453 /* MenuHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2781A6252688A0260042B453 /* MenuHelperDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuHelperDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2781A6282688A0260042B453 /* MenuHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHelperApp.swift; sourceTree = "<group>"; };
 		2781A62A2688A0260042B453 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2781A62C2688A0260042B453 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2781A62F2688A0260042B453 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2781C5902688A4540042B453 /* MenuHelperExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MenuHelperExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2781C5902688A4540042B453 /* MenuHelperExtensionDebug.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MenuHelperExtensionDebug.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2781C5922688A4540042B453 /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
 		2781C5942688A4540042B453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2795203A268B5B7E00492ABF /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
@@ -191,6 +194,16 @@
 			path = MenuHelperUITests;
 			sourceTree = "<group>";
 		};
+		273F70B02B132E4900CD37B1 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				273F70B12B132E4900CD37B1 /* Common.xcconfig */,
+				273F70B22B132E4900CD37B1 /* Debug.xcconfig */,
+				273F70B32B132E4900CD37B1 /* Release.xcconfig */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
 		27421A92271FCA9600A0BD28 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +258,7 @@
 				2746559727B946A900DC2F91 /* MenuHelper-Info.plist */,
 				274C25F82A32427000A6CE0F /* MenuHelper-InfoPlist.xcstrings */,
 				274C25FC2A32427000A6CE0F /* Localizable.xcstrings */,
+				273F70B02B132E4900CD37B1 /* Configs */,
 				27421A92271FCA9600A0BD28 /* Shared */,
 				2781A6272688A0260042B453 /* MenuHelper */,
 				2781C5912688A4540042B453 /* MenuHelperExtension */,
@@ -257,8 +271,8 @@
 		2781A6262688A0260042B453 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2781A6252688A0260042B453 /* MenuHelper.app */,
-				2781C5902688A4540042B453 /* MenuHelperExtension.appex */,
+				2781A6252688A0260042B453 /* MenuHelperDebug.app */,
+				2781C5902688A4540042B453 /* MenuHelperExtensionDebug.appex */,
 				2732A5AF27B9558D005DB4A0 /* MenuHelperUITests.xctest */,
 			);
 			name = Products;
@@ -396,7 +410,7 @@
 				27ADFF8F2AF202ED00731FA8 /* AcknowKit */,
 			);
 			productName = FinderHelper;
-			productReference = 2781A6252688A0260042B453 /* MenuHelper.app */;
+			productReference = 2781A6252688A0260042B453 /* MenuHelperDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2781C58F2688A4540042B453 /* MenuHelperExtension */ = {
@@ -416,7 +430,7 @@
 				272986BA2711FDCD00EBCCBF /* OrderedCollections */,
 			);
 			productName = FinderMenu;
-			productReference = 2781C5902688A4540042B453 /* MenuHelperExtension.appex */;
+			productReference = 2781C5902688A4540042B453 /* MenuHelperExtensionDebug.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -577,6 +591,7 @@
 /* Begin XCBuildConfiguration section */
 		2732A5B727B9558D005DB4A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 273F70B22B132E4900CD37B1 /* Debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
@@ -596,6 +611,7 @@
 		};
 		2732A5B827B9558D005DB4A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 273F70B32B132E4900CD37B1 /* Release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
@@ -615,6 +631,7 @@
 		};
 		2781A6312688A0260042B453 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 273F70B22B132E4900CD37B1 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -681,6 +698,7 @@
 		};
 		2781A6322688A0260042B453 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 273F70B32B132E4900CD37B1 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -740,6 +758,7 @@
 		};
 		2781A6342688A0260042B453 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 273F70B22B132E4900CD37B1 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -768,8 +787,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 3.2.0;
 				OTHER_SWIFT_FLAGS = "-enable-upcoming-feature BareSlashRegexLiterals -enable-upcoming-feature ConciseMagicFile -enable-upcoming-feature ExistentialAny -enable-upcoming-feature ForwardTrailingClosures -enable-upcoming-feature ImplicitOpenExistentials -enable-upcoming-feature StrictConcurrency -warn-concurrency -enable-actor-data-race-checks";
-				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.MenuHelper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -777,6 +794,7 @@
 		};
 		2781A6352688A0260042B453 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 273F70B32B132E4900CD37B1 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -805,8 +823,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 3.2.0;
 				OTHER_SWIFT_FLAGS = "-enable-upcoming-feature BareSlashRegexLiterals -enable-upcoming-feature ConciseMagicFile -enable-upcoming-feature ExistentialAny -enable-upcoming-feature ForwardTrailingClosures -enable-upcoming-feature ImplicitOpenExistentials -enable-upcoming-feature StrictConcurrency -warn-concurrency -enable-actor-data-race-checks";
-				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.MenuHelper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -814,6 +830,7 @@
 		};
 		2781C5992688A4540042B453 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 273F70B22B132E4900CD37B1 /* Debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = MenuHelperExtension/MenuHelperExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -838,8 +855,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 3.0.0;
 				OTHER_SWIFT_FLAGS = "-enable-upcoming-feature BareSlashRegexLiterals -enable-upcoming-feature ConciseMagicFile -enable-upcoming-feature ExistentialAny -enable-upcoming-feature ForwardTrailingClosures -enable-upcoming-feature ImplicitOpenExistentials -enable-upcoming-feature StrictConcurrency -warn-concurrency -enable-actor-data-race-checks";
-				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.MenuHelper.MenuHelperExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -848,6 +863,7 @@
 		};
 		2781C59A2688A4540042B453 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 273F70B32B132E4900CD37B1 /* Release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = MenuHelperExtension/MenuHelperExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -872,8 +888,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 3.0.0;
 				OTHER_SWIFT_FLAGS = "-enable-upcoming-feature BareSlashRegexLiterals -enable-upcoming-feature ConciseMagicFile -enable-upcoming-feature ExistentialAny -enable-upcoming-feature ForwardTrailingClosures -enable-upcoming-feature ImplicitOpenExistentials -enable-upcoming-feature StrictConcurrency -warn-concurrency -enable-actor-data-race-checks";
-				PRODUCT_BUNDLE_IDENTIFIER = top.kyleye.MenuHelper.MenuHelperExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -147,6 +147,10 @@ class MenuItemStore {
 
 extension UserDefaults {
     static var group: UserDefaults {
+        #if DEBUG
+        UserDefaults(suiteName: "group.top.kyleye.MenuHelperDebug")!
+        #else
         UserDefaults(suiteName: "group.top.kyleye.MenuHelper")!
+        #endif
     }
 }
