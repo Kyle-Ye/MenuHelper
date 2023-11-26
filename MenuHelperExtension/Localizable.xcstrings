@@ -21,6 +21,17 @@
         }
       }
     },
+    "Copy File Name" : {
+      "comment" : "Copy File Name",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拷贝文件名"
+          }
+        }
+      }
+    },
     "Copy Path" : {
       "comment" : "Copy Path",
       "localizations" : {

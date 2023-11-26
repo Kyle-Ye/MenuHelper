@@ -27,14 +27,14 @@ extension UserDefaults {
         defaults(for: Key.showToolbarItemMenu) ?? true
     }
 
-    var copyPathSeparator: String {
-        let spparator = defaults(for: Key.copyPathSeparator) ?? ""
+    var copySeparator: String {
+        let spparator = defaults(for: Key.copySeparator) ?? ""
         return spparator.isEmpty ? " " : spparator
     }
 
-    var copyPathOption: CopyPathOption {
-        let optionRaw = defaults(for: Key.copyPathOption) ?? 0
-        return CopyPathOption(rawValue: optionRaw) ?? .origin
+    var copyOption: CopyOption {
+        let optionRaw = defaults(for: Key.copyOption) ?? 0
+        return CopyOption(rawValue: optionRaw) ?? .origin
     }
 
     var newFileName: String {

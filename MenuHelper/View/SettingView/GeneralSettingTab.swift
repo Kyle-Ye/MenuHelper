@@ -64,10 +64,10 @@ struct GeneralSettingTab: View {
     @AppStorage(Key.globalApplicationEnvironmentString)
     private var globalApplicationEnvironmentString = ""
 
-    @AppStorage(Key.copyPathSeparator)
-    private var copyPathSeparator = ""
-    @AppStorage(Key.copyPathOption)
-    private var copyPathOption = CopyPathOption.escape
+    @AppStorage(Key.copySeparator)
+    private var copySeparator = ""
+    @AppStorage(Key.copyOption)
+    private var copyOption = CopyOption.escape
     @AppStorage(Key.newFileName)
     private var newFileName = ""
     @AppStorage(Key.newFileExtension)
@@ -77,12 +77,14 @@ struct GeneralSettingTab: View {
 
     @State private var model = GeneralSettingTabState()
 
-    private var hasCopyPath: Bool {
-        guard let copyPath = menuItemStore.actionItems.first(where: { $0 == ActionMenuItem.copyPath })
+    private var shouldShowCopySection: Bool {
+        guard let copyPath = menuItemStore.actionItems.first(where: { $0 == ActionMenuItem.copyPath }),
+              let copyFileName = menuItemStore.actionItems.first(where: { $0 == ActionMenuItem.copyFileName })
         else { return false }
-        return copyPath.enabled
+        return copyPath.enabled || copyFileName.enabled
     }
-    private var hasNewFile: Bool {
+
+    private var shouldShowNewFileSection: Bool {
         guard let newFile = menuItemStore.actionItems.first(where: { $0 == ActionMenuItem.newFile })
         else { return false }
         return newFile.enabled
@@ -92,10 +94,10 @@ struct GeneralSettingTab: View {
         Form {
             displaySection
             applicationSection
-            if hasCopyPath {
-                copyPathSection
+            if shouldShowCopySection {
+                copySection
             }
-            if hasNewFile {
+            if shouldShowNewFileSection {
                 newFileSection
             }
         }
@@ -147,22 +149,22 @@ struct GeneralSettingTab: View {
         }
     }
 
-    private var copyPathSection: some View {
+    private var copySection: some View {
         Section {
             TextField(
-                text: $copyPathSeparator,
+                text: $copySeparator,
                 prompt: Text(#"Default is " ""#),
                 axis: .horizontal
             ) {
                 Text("Join-separator when multi items are seleted")
             }
-            Picker(selection: $copyPathOption, label: Text("Copy Style")) {
-                ForEach(CopyPathOption.allCases) { option in
+            Picker(selection: $copyOption, label: Text("Copy Style")) {
+                ForEach(CopyOption.allCases) { option in
                     Text(option.description).tag(option)
                 }
             }
         } header: {
-            Text("Copy Path Settings")
+            Text("Copy Settings")
         }
     }
 

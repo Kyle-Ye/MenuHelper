@@ -58,20 +58,23 @@ struct MenuSettingTab: View {
                 .listRowInsets(.init(top: 10, leading: 10, bottom: 10, trailing: 10))
             }
         } header: {
-            Text("Application Menu Items")
-        } footer: {
-            Button {
-                let panel = NSOpenPanel()
-                panel.allowsMultipleSelection = true
-                panel.allowedContentTypes = [.application]
-                panel.canChooseDirectories = false
-                panel.directoryURL = URL(fileURLWithPath: "/Applications/")
-                if panel.runModal() == .OK {
-                    let items = panel.urls.map { AppMenuItem(appURL: $0) }
-                    store.appendItems(items)
+            HStack {
+                Text("Application Menu Items")
+                Spacer()
+                Button {
+                    let panel = NSOpenPanel()
+                    panel.allowsMultipleSelection = true
+                    panel.allowedContentTypes = [.application]
+                    panel.canChooseDirectories = false
+                    panel.directoryURL = URL(fileURLWithPath: "/Applications/")
+                    if panel.runModal() == .OK {
+                        let items = panel.urls.map { AppMenuItem(appURL: $0) }
+                        store.appendItems(items)
+                    }
+                } label: {
+                    Label("Add Application Menu Items(s)", systemImage: "plus.app")
+                        .font(.body)
                 }
-            } label: {
-                Label("Add Application(s)", systemImage: "plus.app")
             }
         }
     }
@@ -94,9 +97,17 @@ struct MenuSettingTab: View {
                 }
             }
             .onMove { store.moveActionItems(from: $0, to: $1) }
-                
         } header: {
-            Text("Action Menu Items")
+            HStack {
+                Text("Action Menu Items")
+                Spacer()
+                Button {
+                    store.resetActionItems()
+                } label: {
+                    Label("Reset Action Menu Items", systemImage: "arrow.triangle.2.circlepath")
+                        .font(.body)
+                }
+            }
         } footer: {
             Link("Suggest more action menus here", destination: URL(string: "https://github.com/Kyle-Ye/MenuHelperApp/issues/new/choose")!)
         }

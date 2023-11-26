@@ -79,6 +79,11 @@ class MenuItemStore {
         try? save()
     }
 
+    func resetActionItems() {
+        actionItems = ActionMenuItem.all
+        try? save()
+    }
+
     // MARK: - Move Items
 
     func moveAppItems(from source: IndexSet, to destination: Int) {
@@ -142,6 +147,10 @@ class MenuItemStore {
 
 extension UserDefaults {
     static var group: UserDefaults {
+        #if DEBUG
+        UserDefaults(suiteName: "group.top.kyleye.MenuHelperDebug")!
+        #else
         UserDefaults(suiteName: "group.top.kyleye.MenuHelper")!
+        #endif
     }
 }

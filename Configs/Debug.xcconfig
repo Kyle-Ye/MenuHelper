@@ -1,0 +1,11 @@
+//
+//  Debug.xcconfig
+//  MenuHelper
+//
+//  Created by Kyle on 2023/11/22.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Configs/Common.xcconfig"
