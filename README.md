@@ -56,6 +56,6 @@ For user side issue, please report issue on [MenuHelperApp repo](https://github.
 
 ## License
 
-Kyle-Ye Apple Platform Project License
+FSL-1.1-MIT
 
 See License.txt for details.
