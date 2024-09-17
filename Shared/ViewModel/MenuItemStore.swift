@@ -122,13 +122,24 @@ class MenuItemStore {
     }
 
     // MARK: - UserDefaults
+    
+    static func migrateFromOldUserDefaults() {
+        let oldGroup = UserDefaults.oldGroup
+        let newGroup = UserDefaults.group
+        
+        if let appItemsData = oldGroup.data(forKey: "APP_ITEMS"),
+           let actionItemsData = oldGroup.data(forKey: "ACTION_ITEMS") {
+            newGroup.set(appItemsData, forKey: "APP_ITEMS")
+            newGroup.set(actionItemsData, forKey: "ACTION_ITEMS")
+        }
+    }
 
     private func load() throws {
-        if let appItemData = UserDefaults.group.data(forKey: "APP_ITEMS"),
-           let actionItemData = UserDefaults.group.data(forKey: "ACTION_ITEMS") {
+        if let appItemsData = UserDefaults.group.data(forKey: "APP_ITEMS"),
+           let actionItemsData = UserDefaults.group.data(forKey: "ACTION_ITEMS") {
             let decoder = PropertyListDecoder()
-            appItems = try decoder.decode([AppMenuItem].self, from: appItemData)
-            actionItems = try decoder.decode([ActionMenuItem].self, from: actionItemData)
+            appItems = try decoder.decode([AppMenuItem].self, from: appItemsData)
+            actionItems = try decoder.decode([ActionMenuItem].self, from: actionItemsData)
         } else {
             appItems = AppMenuItem.defaultApps
             actionItems = ActionMenuItem.all
@@ -146,11 +157,19 @@ class MenuItemStore {
 }
 
 extension UserDefaults {
-    static var group: UserDefaults {
+    static let oldGroup: UserDefaults = {
         #if DEBUG
         UserDefaults(suiteName: "group.top.kyleye.MenuHelperDebug")!
         #else
         UserDefaults(suiteName: "group.top.kyleye.MenuHelper")!
         #endif
-    }
+    }()
+    
+    static let group: UserDefaults = {
+        #if DEBUG
+        UserDefaults(suiteName: "VB7MJ8R223.top.kyleye.MenuHelperDebug")!
+        #else
+        UserDefaults(suiteName: "VB7MJ8R223.top.kyleye.MenuHelper")!
+        #endif
+    }()
 }

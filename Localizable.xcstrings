@@ -464,6 +464,16 @@
         }
       }
     },
+    "Migrate from old UserDefaults" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "从旧 UserDefaults 迁移数据"
+          }
+        }
+      }
+    },
     "New File" : {
       "comment" : "New File",
       "localizations" : {

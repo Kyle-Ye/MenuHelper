@@ -54,6 +54,12 @@ struct ContentView: View {
                 SettingsLink {
                     Text("Open App Settings Window...")
                 }
+                Button {
+                    MenuItemStore.migrateFromOldUserDefaults()
+                    FolderItemStore.migrateFromOldUserDefaults()
+                } label: {
+                    Text("Migrate from old UserDefaults")
+                }
             }
             .buttonStyle(.link)
             .foregroundStyle(.accent)
