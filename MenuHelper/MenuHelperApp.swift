@@ -14,8 +14,10 @@ struct MenuHelperApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .toolbar(removing: .title)
         }
-        .defaultSize(width: 500, height: 350)
+        .windowToolbarLabelStyle(fixed: .iconOnly)
+        .defaultSize(width: 600, height: 400)
         .defaultPosition(.center)
         .commands {
             CommandGroup(replacing: .newItem) {}
@@ -35,10 +37,18 @@ struct MenuHelperApp: App {
             }
         }
         .defaultSize(width: 400, height: 300)
+        .restorationBehavior(.disabled)
         
         Window("Support", id: "support") {
             SupportWindow()
+                .frame(width: 600, height: 400)
+                .toolbar(removing: .title)
+                .toolbarBackgroundVisibility(.hidden, for: .windowToolbar)
+                .containerBackground(.thickMaterial, for: .window)
+                .windowMinimizeBehavior(.disabled)
         }
+        .windowResizability(.contentSize)
+        .restorationBehavior(.disabled)
         .handlesExternalEvents(matching: Set(arrayLiteral: "support"))
         .commands {
             CommandGroup(after: .appSettings) {
@@ -47,8 +57,6 @@ struct MenuHelperApp: App {
                 }
             }
         }
-        .defaultPosition(.center)
-        .defaultSize(width: 500, height: 300)
         
         Settings {
             SettingView()

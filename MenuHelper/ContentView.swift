@@ -65,6 +65,7 @@ struct ContentView: View {
             .foregroundStyle(.accent)
         }
         .formStyle(.grouped)
+        .scrollBounceBehavior(.basedOnSize)
     }
 }
 
