@@ -21,8 +21,8 @@ extension AppMenuItem: MenuItemClickable {
             do {
                 let config = NSWorkspace.OpenConfiguration()
                 config.promptsUserIfNeeded = true
-                config.arguments = arguments
-                config.environment = environment
+                config.arguments = arguments + UserDefaults.group.globalApplicationArguments
+                config.environment = environment.merging(UserDefaults.group.globalApplicationEnvironment, uniquingKeysWith: { old, _ in old })
                 let application = try await NSWorkspace.shared.open(urls, withApplicationAt: url, configuration: config)
                 if let path = application.bundleURL?.path,
                    let identifier = application.bundleIdentifier,

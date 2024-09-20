@@ -60,6 +60,11 @@ extension String {
                 result[key] = value
             }
     }
+    
+    func toArray(separator: Character = " ") -> [String] {
+        split(separator: separator)
+            .map { String($0) }
+    }
 }
 
 extension Dictionary {

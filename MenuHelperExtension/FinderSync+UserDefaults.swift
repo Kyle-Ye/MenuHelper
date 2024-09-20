@@ -53,6 +53,14 @@ extension UserDefaults {
     var showSubMenuForAction: Bool {
         defaults(for: Key.showSubMenuForAction) ?? false
     }
+    
+    var globalApplicationArguments: [String] {
+        (defaults(for: Key.globalApplicationArgumentsString) ?? "").toArray()
+    }
+    
+    var globalApplicationEnvironment: [String: String] {
+        (defaults(for: Key.globalApplicationEnvironmentString) ?? "").toDictionary()
+    }
 
     private func defaults<T>(for key: String) -> T? {
         if let value = object(forKey: key) as? T {

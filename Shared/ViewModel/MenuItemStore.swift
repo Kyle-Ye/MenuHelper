@@ -10,8 +10,16 @@ import SwiftUI
 
 @Observable
 class MenuItemStore {
-    var appItems: [AppMenuItem] = []
-    var actionItems: [ActionMenuItem] = []
+    var appItems: [AppMenuItem] = [] {
+        didSet {
+            try? save()
+        }
+    }
+    var actionItems: [ActionMenuItem] = [] {
+        didSet {
+            try? save()
+        }
+    }
 
     // MARK: - Init
 
