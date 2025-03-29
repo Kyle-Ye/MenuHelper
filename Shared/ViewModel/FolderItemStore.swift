@@ -102,16 +102,6 @@ final class FolderItemStore: Sendable {
     }
 
     // MARK: - UserDefaults
-    
-    static func migrateFromOldUserDefaults() {
-        let oldGroup = UserDefaults.oldGroup
-        let newGroup = UserDefaults.group
-        if let bookmarkItemData = oldGroup.data(forKey: "BOOKMARK_ITEMS"),
-           let syncItemData = oldGroup.data(forKey: "SYNC_ITEMS") {
-            newGroup.set(bookmarkItemData, forKey: "BOOKMARK_ITEMS")
-            newGroup.set(syncItemData, forKey: "SYNC_ITEMS")
-        }
-    }
 
     @MainActor
     private func load() throws {
