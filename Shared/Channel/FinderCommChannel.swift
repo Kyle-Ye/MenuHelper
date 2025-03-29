@@ -15,7 +15,7 @@ class FinderCommChannel {
     func setup() {
         let center = DistributedNotificationCenter.default()
         center.addObserver(self, selector: #selector(choosePermissionFolder(_:)), name: .init(rawValue: "ChoosePermissionFolder"), object: mainAppBundleID)
-        center.addObserver(self, selector: #selector(refreshMenuItems(_:)), name: .init(rawValue: "RefreshMenuItems"), object: mainAppBundleID)
+        // center.addObserver(self, selector: #selector(refreshMenuItems(_:)), name: .init(rawValue: "RefreshMenuItems"), object: mainAppBundleID)
         center.addObserver(self, selector: #selector(refreshFolderItems(_:)), name: .init(rawValue: "RefreshFolderItems"), object: mainAppBundleID)
     }
 
@@ -44,13 +44,14 @@ class FinderCommChannel {
             send(name: "AppRefreshFolderItems", data: nil)
         }
     }
-    
-    @MainActor @objc func refreshMenuItems(_ notification: Notification) {
-        logger.notice("Refresh menu items")
-        menuStore.refresh()
+
+    // Strange infinite loop, comment temporary since we drop sandbox support
+    @objc func refreshMenuItems(_ notification: Notification) {
+//        logger.notice("Refresh menu items")
+//        menuStore.refresh()
     }
     
-    @MainActor @objc func refreshFolderItems(_ notification: Notification) {
+    @objc func refreshFolderItems(_ notification: Notification) {
         logger.notice("Refresh folder items")
         folderStore.refresh()
     }

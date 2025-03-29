@@ -19,7 +19,7 @@ final class FolderItemStore: Sendable {
 
     // MARK: - Init
 
-    init() {
+    nonisolated init() {
         Task {
             await MainActor.run {
                 try? load()
@@ -27,8 +27,12 @@ final class FolderItemStore: Sendable {
         }
     }
 
-    @MainActor func refresh() {
-        try? load()
+    nonisolated func refresh() {
+        Task {
+            await MainActor.run {
+                try? load()
+            }
+        }
     }
 
     // MARK: - Append Item
