@@ -13,7 +13,7 @@ struct FolderSettingTab: View {
 
     var body: some View {
         Form {
-            openSection
+            // openSection
             syncSection
         }
         .formStyle(.grouped)
